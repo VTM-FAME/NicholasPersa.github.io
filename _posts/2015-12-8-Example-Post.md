@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Concepts Behind Motivation: CAR
+title: Concepts Behind Motivation CAR
 ---
 
 Covered here are Markus and Glenns (1997) view of motivation through the concepts of competency, autonomy and motivation.
