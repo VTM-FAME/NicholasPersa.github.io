@@ -1,12 +1,8 @@
 ---
 published: true
----
-
----
 layout: post
-title: Mark Herman's History in Game Design
+title: Game Design Podcast
 ---
-
 
 ## Listening to Podcast Designer Notes: Mark Herman
 
