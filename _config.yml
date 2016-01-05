@@ -93,7 +93,7 @@ prose:
           element: "text"
           value: "post"
       - name: "title"
-      field:
+        field:
           label: "Title"
           element: "text"
           value: "Type A Title Here"
