@@ -8,7 +8,7 @@ published: true
 
 Welcome to my web space!
 
-### So what is this exactly?
+### So what exactly is this?
 
 A few years back, I picked up an Ipad mini for school. I used it to download PDFs, test out note taking apps, and read PowerPoints and ebooks. After getting used to doing my school work and research digitally, I found writing most things down on paper unmotivating. In fact, writing something down on paper and storing it in some dungeon of a file cabinet for limited access and future use seems like a tech-crime.
 
