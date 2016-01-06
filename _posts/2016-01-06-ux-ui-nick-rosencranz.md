@@ -6,7 +6,7 @@ title: UX UI Nick Rosencranz
 
 ## Notes from my meeting with NR
 ###Content Strategy
-a plannful approach to examine what we do online. We'll look at the words we use, the consistency across content, and generally how people go through the experience.
+A plannful approach to examine what we do online. We'll look at the words we use, the consistency across content, and generally how people go through the experience.
 
 ###Business of Interest 
 Braintraffic MPLS
