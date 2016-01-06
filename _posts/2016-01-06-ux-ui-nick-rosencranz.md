@@ -9,7 +9,7 @@ title: UX UI Nick Rosencranz
 A plannful approach to examine what we do online. We'll look at the words we use, the consistency across content, and generally how people go through the experience.
 
 ###Business of Interest 
-Braintraffic MPLS
+[Braintraffic](http://braintraffic.com/)
 
 ###Enterprise Architecture
 This is a process of looking at tools that are cool but might be unfeasible in deployment. E.g., using snapchat as a student resource at UMN. The issue is that snapchat wouldn't be able to handle financial aide. This works examines adoption rates, use across many devices, where a service can be used from, and having power to limit the unreasonable projects.
