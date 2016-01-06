@@ -16,12 +16,17 @@ A plannful approach to examine what we do online. We'll look at the words we use
 This is a process of looking at tools that are cool but might be unfeasible in deployment. E.g., using snapchat as a student resource at UMN. The issue is that snapchat wouldn't be able to handle financial aide. This works examines adoption rates, use across many devices, where a service can be used from, and having power to limit the unreasonable projects.
 
 ###Community UX UI Resources
-[UX Reactions](http://uxreactions.com/).
-[UX Matters](http://www.uxmatters.com/).
-[UX Mastery](http://uxmastery.com/).
-[USERFOCUS](http://userfocus.co.uk/).
-[Putting People First](http://blog.experientia.com/).
-[Boxes and Arrows](http://boxesandarrows.com/).
+[UX Reactions](http://uxreactions.com/)
+
+[UX Matters](http://www.uxmatters.com/)
+
+[UX Mastery](http://uxmastery.com/)
+
+[USERFOCUS](http://userfocus.co.uk/)
+
+[Putting People First](http://blog.experientia.com/)
+
+[Boxes and Arrows](http://boxesandarrows.com/)
 
 Be mindful to check for Twin Cities groups (e.g., IDGC)
 
