@@ -17,10 +17,10 @@ What consequences does the act of testing knowledge have on learning?
 Method: Repeatedly study then test items. Three drop conditions for successfully recalled items. One control condition. All learners then completed a final test one week later.
 
 Conditions:
-- Dropped from study but still tested
-- Dropped from test but still studied
-- Dropped from test and study
-- All items studied and tested (control)
+- 1 - All items studied and tested (control)
+- 2 - Dropped from study but still tested
+- 3 - Dropped from test but still studied
+- 4 - Dropped from test and study
 
 There were no differences between condition recall immediately after the learning phase. All learners had equal recall of the items. All learners also perceived that they would perfrom equally well during the final week delayed test.
 
@@ -28,7 +28,9 @@ There were no differences between condition recall immediately after the learnin
 
 Repeatedly studying items successfully recalled had no performance effect on the final week delayed test.
 
+In the control (1) and still tested (2) conditions, learners recalled 80% (x̅) of the items.
 
+Opposingly in the still studied (3) and completed item removal (4) conditions, learners recalled 36% (x̅) and 33% n), respectively.
 
 
 
