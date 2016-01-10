@@ -30,7 +30,7 @@ Repeatedly studying items successfully recalled had no performance effect on the
 
 In the control (1) and still tested (2) conditions, learners recalled 80% (x̅) of the items.
 
-Opposingly in the still studied (3) and completed item removal (4) conditions, learners recalled 36% (x̅) and 33% n), respectively.
+Opposingly in the still studied (3) and completed item removal (4) conditions, learners recalled 36% (x̅) and 33% (x̅), respectively.
 
 
 
