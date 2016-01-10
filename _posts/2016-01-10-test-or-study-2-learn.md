@@ -10,13 +10,16 @@ Contemporary view: tests are traditionally seen as a pure and neutral assessment
 
 What consequences does the act of testing knowledge have on learning?
 
-	Purpose of research: examine the effects of studying and testing on learning and long-term retention. 
+###Purpose of research
+Examine the effects of studying and testing on learning and long-term retention. 
 
-	Secondary goal: assess students perspective on their learning outcomes.
+###Secondary goal
+Assess students perspective on their learning outcomes.
 
-Method: Repeatedly study then test items. Three drop conditions for successfully recalled items. One control condition. All learners then completed a final test one week later.
+###Method 
+Repeatedly study then test items. Three drop conditions for successfully recalled items. One control condition. All learners then completed a final test one week later.
 
-Conditions:
+###Conditions
 - 1 All items studied and tested (control)
 - 2 Dropped from study but still tested
 - 3 Dropped from test but still studied
