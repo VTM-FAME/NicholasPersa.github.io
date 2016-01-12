@@ -14,4 +14,4 @@ Earlier this year I disovered a similar game called [ZType](http://zty.pe/).
 
 ![ZType.png]({{site.baseurl}}/images/ZType.png)
 
-Although the twitter game didn't exactly meet my expectations, it was completely different from ZType, I enjoyed reading the article about Epistory and the challenge of the games story design.
+Although the twitter game didn't exactly meet my expectations, it was completely different from ZType, I enjoyed reading the article about Epistory and the challenge of the game's story design.
