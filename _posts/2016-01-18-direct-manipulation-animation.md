@@ -4,7 +4,7 @@ layout: post
 title: Direct Manipulation Animation
 ---
 
-## Research by M. Chan & J. Black 2006
+## [Research by M. Chan & J. Black 2006](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.91.6228&rep=rep1&type=pdf)
 
 Issue: When forming mental models of systems, how do you support learner's understandings of structure, purpose and functional relations among system entities. 
 
