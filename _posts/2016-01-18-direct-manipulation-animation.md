@@ -39,7 +39,7 @@ Middle school students learning Newtonian mechanics (energy conversion and law o
 
 The format of the learning significantly predicted performance. Format had an above medium [effect size](http://www.uccs.edu/lbecker/effect-size.html) of .68. So DMA provided the best learning situation.
 
-### As content became more complex, DMA improved learner comphrension, what-if reasoning, problem-solving, and tranfser problems (Chan & Black, 2006).
+### As content became more complex, DMA improved performance in learner comphrension, what-if reasoning, problem-solving, and tranfser problems (Chan & Black, 2006).
 
 Again, DMA fosters concurrent sensorimotor feedback while investigating causal interactions and functional relations in the system of interest.
 
