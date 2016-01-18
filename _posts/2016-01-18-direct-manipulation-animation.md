@@ -25,7 +25,7 @@ Show that text, visuals, and animation in a cohesive setup ultimately promotes s
 
 ### Key Term
 
-Direct-manipulation animation (DMA) allows direct interaction (e.g., sliders and buttons), which contrains viewing direction, content pacing, and system parameter relationships (Chan & Black, 2006). DMA specifically pertains to the haptic learning pathway (see lead 3). 
+Direct-manipulation animation (DMA) allows direct interaction (e.g., sliders and buttons), which contrains viewing direction, content pacing, and system parameter relationships (Chan & Black, 2006). DMA in this study specifically pertains to the haptic learning pathway (see lead 3). 
 
 ### Method
 
@@ -38,6 +38,12 @@ NVA
 - Text and animation (DMA).
 
 The format of the learning significantly predicted performance. Format had an above medium [effect size](http://www.uccs.edu/lbecker/effect-size.html) of .68. So DMA provided the best learning situation.
+
+### As content became more complex, DMA improved learner comphrension, what-if reasoning, problem-solving, and tranfser problems (Chan & Black, 2006).
+
+Again, DMA fosters concurrent sensorimotor feedback while investigating causal interactions and functional relations in the system of interest.
+
+Ultimately, understanding functional relationships (parameter changes interacting with other parameters) is of prime importance when building effective mental models. The DMA condition, involving learning haptically, gave learners an advantage to reasoning and perfroming.
 
 
 
