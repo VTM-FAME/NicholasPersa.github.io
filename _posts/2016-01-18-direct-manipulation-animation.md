@@ -4,6 +4,7 @@ layout: post
 title: Direct Manipulation Animation
 ---
 
+
 ## [Research by M. Chan & J. Black 2006](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.91.6228&rep=rep1&type=pdf)
 
 Issue: When forming mental models of systems, how do you support learner's understandings of structure, purpose and functional relations among system entities. 
@@ -32,7 +33,6 @@ Direct-manipulation animation (DMA) allows direct interaction (e.g., sliders and
 Middle school students learning Newtonian mechanics (energy conversion and law of conversion of energy) in three conditions. Learners were given a pretest, retention test (written summary and diagram), "what-if" test (thought experiment: explain and predict), near-transfer task (apply learning to problem-solving tasks), and a far-transfer task (apply learning in novel situation).
 
 ### Conditions
-NVA
 - Text based format (narrative).
 - Text and visual format.
 - Text and animation (DMA).
@@ -44,6 +44,3 @@ The format of the learning significantly predicted performance. Format had an ab
 Again, DMA fosters concurrent sensorimotor feedback while investigating causal interactions and functional relations in the system of interest.
 
 Ultimately, understanding functional relationships (parameter changes interacting with other parameters) is of prime importance when building effective mental models. The DMA condition, involving learning haptically, gave learners an advantage to reasoning and perfroming.
-
-
-
