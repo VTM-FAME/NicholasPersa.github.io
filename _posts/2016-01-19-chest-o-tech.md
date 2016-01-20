@@ -6,7 +6,6 @@ title: "Chest 'O Tech"
 
 ### [Hiq Lockscreen](https://play.google.com/store/apps/details?id=com.olyware.mathlock&hl=en)
 I think I could make a cool mod of this for other useful data.
-![HomescreenHIQ]({{site.baseurl}}/https://lh6.ggpht.com/6IOeCdxLQLe4T7iOBt83UPnrdNWgXjsafsH528mL1RM2VlYWlKbcGkroohfjzEzqHZk1=h310-rw)
 
 ### [Yo app](https://en.wikipedia.org/wiki/Yo_(app))
 Sometimes really basic programs can have business applications. Try to think how you could streamline other products into business models.
