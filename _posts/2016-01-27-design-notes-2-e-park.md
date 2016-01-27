@@ -1,7 +1,7 @@
 ---
 published: true
 layout: post
-title: "Design Notes 2: E. Park"
+title: "Design Notes: E. Park"
 ---
 
 ## The Space of Creation
