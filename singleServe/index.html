@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<script src="js/jquery.min.js"></script>
+	<script src='js/jquery.elevatezoom.js'></script>
+	<script src="js/main.js"></script>
+
+
+</head>
+<body>
+
+<!--DYNAMIC BACKGROUND-->
+<div id="backgroundHolder"></div>
+
+	<!--TOP HEADER BAR-->
+	<div id="header" class="twelve columns"><p>The Ring</p></div>
+	
+	<!--THEATER AND VIDEO SOURCING-->
+	<div id="theater">
+		<video id="filmRing1">
+			<source src="HTML Clips/Ring/Ring Intro Loop.mp4" type="video/mp4">
+			<source src="HTML Clips/Ring/Ring Intro Loop.webm" type="video/webm">
+		NOTE SUPPORTED!
+		</video>
+		
+		<video id="filmRing2">
+			<source src="HTML Clips/Ring/Ring Pickup.mp4" type="video/mp4">
+		</video>
+		
+		<video id="filmRing3">
+			<source src="HTML Clips/Ring/Ring PBJ.mp4" type="video/mp4">
+		</video>
+		
+		<video id="filmRing4">
+			<source src="HTML Clips/Ring/Ring WalMart.mp4" type="video/mp4">
+		</video>
+		
+		<audio id="trackRing1">
+			<source src="HTML Clips/Ring/Audio Ass.mp3" type="audio/mpeg">
+		</audio>
+		
+		<audio id="trackRing2">
+			<source src="HTML Clips/Ring/Audio Clouds.mp3" type="audio/mpeg">
+		</audio>
+		
+		<audio id="trackRing3">
+			<source src="HTML Clips/Ring/Audio Golf.mp3" type="audio/mpeg">
+		</audio>
+		
+		<audio id="trackRing4">
+			<source src="HTML Clips/Ring/Audio Tuba.mp3" type="audio/mpeg">
+		</audio>
+		
+		<audio id="trackRing5">
+			<source src="HTML Clips/Ring/Audio Who.mp3" type="audio/mpeg">
+		</audio>
+		
+		<!--UI FOR INTERACTIVE FILM-->
+		<div id="pickUp"><p>Pick Up</p></div>
+		<div id="selectResponse">
+			<h1 id="responseCountdown">7</h1>
+			<div id="leftHemi">
+				<img src="images/flower.gif" />
+			</div>
+			<div id="rightHemi">
+				<img src="images/skull.gif" />
+			</div>
+		</div>
+
+	</div>
+	
+	<!--MAIN CONTENT AND GRID-->
+	<div class="container">
+	
+		<!--UI TIME LIMIT FOR CURRENT VIDEO-->
+		<div id="panelVid1" class="six columns content">
+			<div id="time"><p>Time</p></div><div id="counter"><p id="seconds">8</p></div>
+		</div>
+		
+		<!--INTERACTIVE FILM NAVIGATION AND MENU BAR-->
+		<div id="panelVid2" class="six columns content">
+			<ul id="navBar">
+				<li class="nav1"><p>Home</p></li>
+				<li class="nav2"><p>What's This?</p>
+					<div id="SBTellEm">
+						<p>Experimental film RING is recreating the experience of the living world in a prerecorded film series. In the sequences, a number of phone calls are recieved and YOU are able to play a role in controlling the response. A little imagination may be required. This is version one of this style of film project.</p>
+					</div>
+				</li>
+				<li class="nav3"><p>Videos</p>
+					<ul class="videoList">
+						<li class="navVideo"><p>The Ring</p></li>
+						<li class="navVideo"><p>The Cookie</p></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		
+		<!--HOMEPAGE-->
+		<div id="panelHom1" class="two columns content">
+		
+			<!--HOME SPECIFIC NAVIGATION-->
+			<div id="whatIs" class="buttons square tangerine hoverAttr"><p class="navText">What's This?</p>
+				<div id="nowWhat">
+					<p>When you click anywhere on the DIAMOND, you'll be taken to 1 of 2 interactive films. These films are designed to give you a feeling of a live action experience and will be influenced by your choices. Have fun!</p>
+				</div>
+			</div>
+			
+			<div id="videos" class="buttons square tangerine hoverAttr"><p class="navText">Videos</p>
+				<ul class="videoList">
+					<li class="navVideo"><p>The Ring</p></li>
+					<li class="navVideo"><p>The Cookie</p></li>
+				</ul>
+			</div>
+			
+		</div>
+		
+		<!--HOME PORTAL TO INTERACTIVE FILM-->
+		<div id="panelHom2" class="eight columns content">
+		
+			<div id="centerBlock" class="square large tangerine hoverAttr">
+				<p id="playVideo">PLAY</p>
+				<p id="titleOfVideo">The Ring</p>
+				<div id="titleSquare" class="square small white">
+				</div>
+			</div>
+			
+		</div>
+		
+		<!--GRID SPACE HOLDER-->
+		<div id="panelHom3" class="two columns content"></div>
+		
+	</div>
+	
+</body>
+</html>
