@@ -12,8 +12,12 @@ $(document).ready (function() {
 		});*/
 	$("#videos").hover(function() {
 		$("#centerBlock").addClass("disappear");
+		$("#filmRing1").get(0).play();
+
 	}, function(){
 		$("#centerBlock").removeClass("disappear");
+		$("#filmRing1").get(0).pause();
+
 	});
 	
 	$("#whatIs").hover(function() {
@@ -24,6 +28,11 @@ $(document).ready (function() {
 	
 	$(".nav1").click(function(){
 		location.reload();
+	});
+	
+	$("#playAnother").click(function() {
+		PlayRing();
+		document.getElementById("playAnother").style.display = "none";
 	});
 	
 	$("#centerBlock").click(function(){
@@ -96,7 +105,8 @@ $(document).ready (function() {
 	
 	var sceneID;
 	var sceneFrequency;
-	
+	var sceneNames;
+
 	var goodSelected;
 	var nonresponsive;
 	var audioID;
@@ -105,16 +115,18 @@ $(document).ready (function() {
 	var audioFrequencyBad;
 	var audioIDGood;
 	var audioFrequencyGood;
+	var audioNames;
 	
 	function PlayRing() {
 		
 		//Reset, prepare, and intialize variables for starting scene.
-		var introDuration = $("#filmRing1").get(0).duration *1000;
-		$("#filmRing1").get(0).currentTime = 0;
+		//loadVideo("Intro Loop", false);
+		//$("#filmRing1").get(0).load();
+		//$("#filmRing1").get(0).currentTime = 0;
 		document.getElementById("filmRing1").style.display = "block";
 		document.getElementById("pickUp").style.display = "block";
 		$("#counter").animate({width:"80%"}, 0);
-		$("#counter").animate({width:"0px"}, introDuration);
+		$("#counter").animate({width:"0px"}, 9000);
 
 		//$("#counter").addClass("countdownScroll");
 		document.getElementById("counter").style.display = "block";
@@ -127,8 +139,9 @@ $(document).ready (function() {
 		goodSelected = true;
 		nonresponsive = true;
 		
-		sceneID = [2, 3, 4];
-		sceneFrequency = [.6, .2, .2];
+		sceneID = [0, 1, 2];
+		sceneFrequency = [.2, .6, .2];
+		sceneNames = ["PBJ", "Pickup", "WalMart"];
 		
 		audioFrequency = [.4, .1, .1, .2, .2];
 		audioID = [1, 2, 3, 4, 5];
@@ -136,6 +149,7 @@ $(document).ready (function() {
 		audioFrequencyBad = [.4, .6];
 		audioIDGood = [2, 3, 4];
 		audioFrequencyGood = [.2, .4, .4];
+		audioNames = ["Ass", "Clouds", "Golf", "Tuba", "Who"];
 
 		
 		//Setup stop condition for when user has clicked UI.
@@ -161,8 +175,10 @@ $(document).ready (function() {
 			
 			//Check to see if user has interacted, and load next clip if true.
 			if(pickedUp){
+				//pickedUp = false;
+				//counter = 0;
 				//var randomClip = 2;
-				var clipDuration;
+				//var clipDuration;
 				var random_clip = getRandomClip(sceneID, sceneFrequency);
 				var random_audio = getRandomClip(audioID, audioFrequency);
 				var random_audioBad = getRandomClip(audioIDBad, audioFrequencyBad);
@@ -174,9 +190,13 @@ $(document).ready (function() {
 				document.getElementById("filmRing1").style.display = "none";
 				document.getElementById("pickUp").style.display = "none";
 				document.getElementById("counter").style.display = "none";
-				document.getElementById("filmRing"+random_clip).style.display = "block";
-				$("#filmRing1").get(0).pause();
-				if(random_clip == 2){
+				document.getElementById("filmRing2").style.display = "block";
+				
+				pauseVideo();
+				//$("#filmRing1").get(0).pause();
+				
+				if(random_clip == 1){
+					loadVideo(sceneNames[random_clip], true, false);
 					document.getElementById("selectResponse").style.display = "block";
 					//Timer for UI Response
 					document.getElementById("responseCountdown").style.display = "inline-block";
@@ -195,38 +215,44 @@ $(document).ready (function() {
 					
 					window.setTimeout(function(){
 						if(nonresponsive){
-							$("#trackRing"+random_audio).get(0).play();}
+							//$("#trackRing"+random_audio).get(0).play();
+							audio = new Audio("HTML Clips/Ring/Audio "+audioNames[random_audio-1]+".mp3");
+							audio.play();
+							}
 						else{
 							if(goodSelected){
-								$("#trackRing"+random_audioGood).get(0).play();
+								//$("#trackRing"+random_audioGood).get(0).play();
+								audio = new Audio("HTML Clips/Ring/Audio "+audioNames[random_audioGood-1]+".mp3");
+								audio.play();
 							}
 							else{
-								$("#trackRing"+random_audioBad).get(0).play();
+								//$("#trackRing"+random_audioBad).get(0).play();
+								audio = new Audio("HTML Clips/Ring/Audio "+audioNames[random_audioBad-1]+".mp3");
+								audio.play();
 							}
 						}
 					}, 8000);
 					
 				}else{}
 				
-				$("#filmRing"+random_clip).get(0).currentTime = 0;
-				$("#filmRing"+random_clip).get(0).play();
-				clipDuration = $("#filmRing"+random_clip).get(0).duration * 1000;
+				//$("#filmRing"+random_clip).get(0).currentTime = 0;
+				//$("#filmRing"+random_clip).get(0).play();
+				//clipDuration = $("#filmRing"+random_clip).get(0).duration * 1000;
 				
-				//Reload the film and play another scene.
-				window.setTimeout(function(){
-					document.getElementById("filmRing"+random_clip).style.display = "none";
-					document.getElementById("selectResponse").style.display = "none";
-					document.getElementById("seconds").innerHTML = "8";
-					$("#leftHemi").removeClass("selected");
-					$("#rightHemi").removeClass("selected");
-					PlayRing();
-				}, clipDuration);
+				console.log(sceneNames[random_clip]);
+				loadVideo(sceneNames[random_clip], true, false);
+				
+				//clipDuration assigned in playVideo
+				//playVideoWithDelay();
 
 			}else{
 				//Upon first pass, play starter scene.
 				if(counter == 9){
 					//audioVizzy($('#filmRing1 source:nth-child(1)').attr('src'));
-					$("#filmRing1").get(0).play();
+					//playVideo();
+					loadVideo("Intro Loop", true, true);
+
+
 				}else{}
 				
 				//Countdown.
@@ -255,6 +281,95 @@ $(document).ready (function() {
 			//1000 == 1 second timing for countdown.
 		}, 1000);
 	}
+	
+	var handler = function(event) {
+	
+		var temp = document.getElementById('filmRing1');
+		temp.play();
+		console.log(temp.duration);
+		
+		//Reload the film and play another scene.
+		window.setTimeout(function(){
+			//document.getElementById("filmRing2").style.display = "none";
+			document.getElementById("selectResponse").style.display = "none";
+			document.getElementById("seconds").innerHTML = "8";
+			$("#leftHemi").removeClass("selected");
+			$("#rightHemi").removeClass("selected");
+			PlayRing();
+			removeEventListener("loadeddata", handler, false);
+		}, temp.duration);
+		
+	};
+	
+	function videoEnded () {
+		document.getElementById("selectResponse").style.display = "none";
+		document.getElementById("seconds").innerHTML = "8";
+		$("#leftHemi").removeClass("selected");
+		$("#rightHemi").removeClass("selected");
+		document.getElementById("filmRing2").style.display = "none";
+		PlayRing();
+	}
+	
+	function loadVideo(id, play, intro)
+	{
+		if(intro){
+			var video = document.getElementById('filmRing1');
+			var mp4 = document.getElementsByClassName('SOURCE')[0];
+		}
+		else{
+			var video = document.getElementById('filmRing2');
+			var mp4 = document.getElementsByClassName('SOURCE')[1];
+		}
+		
+		
+		mp4.src = "HTML Clips/Ring/Ring " + id + ".mp4"; //Ring Pickup.mp4
+		
+		video.load();
+		
+		if(play){
+			
+			if(!intro){
+				//console.log(video.duration);
+				//video.addEventListener("loadeddata",handler, false);
+				video.play();
+			}
+			else {
+				video.play();
+			}
+		}
+		else{}
+	}
+	
+	function pauseVideo() {
+		var temp = document.getElementById('filmRing1');
+		temp.pause();
+	}
+	
+	function playVideo () {
+		var temp = document.getElementById('filmRing1');
+		//clipDuration = temp.duration;
+		temp.play();
+	}
+	
+	
+	function playVideoWithDelay () {
+		var temp = document.getElementById('filmRing1');
+		temp.play();
+		
+		//Reload the film and play another scene.
+		window.setTimeout(function(){
+				//document.getElementById("filmRing"+random_clip).style.display = "none";
+			document.getElementById("selectResponse").style.display = "none";
+			document.getElementById("seconds").innerHTML = "8";
+			$("#leftHemi").removeClass("selected");
+			$("#rightHemi").removeClass("selected");
+			PlayRing();
+		}, temp.duration);
+		
+		console.log($('#filmRing1').get(0).duration);
+	}
+
+
 
 //Random function to choose next scene.
 var randomSelection = function(min, max) {

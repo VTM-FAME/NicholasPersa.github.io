@@ -4,8 +4,17 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<script src="js/jquery.min.js"></script>
-	<script src='js/jquery.elevatezoom.js'></script>
 	<script src="js/main.js"></script>
+	
+		<script>function videoEnded () {
+		document.getElementById("selectResponse").style.display = "none";
+		document.getElementById("seconds").innerHTML = "8";
+		$("#leftHemi").removeClass("selected");
+		$("#rightHemi").removeClass("selected");
+		document.getElementById("filmRing2").style.display = "none";
+		document.getElementById("playAnother").style.display = "block";
+		//turn on a thing
+		}</script>
 
 
 </head>
@@ -16,46 +25,46 @@
 
 	<!--TOP HEADER BAR-->
 	<div id="header" class="twelve columns"><p>The Ring</p></div>
-	
+	<div id="playAnother"><p>Play Another?</p></div>
+
 	<!--THEATER AND VIDEO SOURCES-->
 	<div id="theater">
 	
 		<!--SCENES FOR RING FILM-->
-		<video id="filmRing1" preload="auto">
-			<source src="HTML Clips/Ring/Ring Intro Loop.mp4" type="video/mp4">
-			<source src="HTML Clips/Ring/Ring Intro Loop.webm" type="video/webm">
+		<video id="filmRing1">
+			<source class="SOURCE" type="video/mp4">
 		NOTE SUPPORTED!
 		</video>
 		
-		<video id="filmRing2" preload="auto">
-			<source src="HTML Clips/Ring/Ring Pickup.mp4" type="video/mp4">
+		<video id="filmRing2" onended="videoEnded()">
+			<source class="SOURCE" type="video/mp4">
 		</video>
 		
-		<video id="filmRing3" preload="auto">
+		<!--<video id="filmRing3" >
 			<source src="HTML Clips/Ring/Ring PBJ.mp4" type="video/mp4">
 		</video>
 		
-		<video id="filmRing4" preload="auto">
+		<video id="filmRing4" >
 			<source src="HTML Clips/Ring/Ring WalMart.mp4" type="video/mp4">
-		</video>
+		</video>-->
 		
-		<audio id="trackRing1" preload="auto">
+		<!--<audio id="trackRing1" >
 			<source src="HTML Clips/Ring/Audio Ass.mp3" type="audio/mpeg">
 		</audio>
 		
-		<audio id="trackRing2" preload="auto">
+		<audio id="trackRing2" >
 			<source src="HTML Clips/Ring/Audio Clouds.mp3" type="audio/mpeg">
 		</audio>
 		
-		<audio id="trackRing3" preload="auto">
+		<audio id="trackRing3" >
 			<source src="HTML Clips/Ring/Audio Golf.mp3" type="audio/mpeg">
 		</audio>
 		
-		<audio id="trackRing4" preload="auto">
+		<audio id="trackRing4" >
 			<source src="HTML Clips/Ring/Audio Tuba.mp3" type="audio/mpeg">
 		</audio>
 		
-		<audio id="trackRing5" preload="auto">
+		<audio id="trackRing5" >
 			<source src="HTML Clips/Ring/Audio Who.mp3" type="audio/mpeg">
 		</audio>
 		
@@ -72,62 +81,57 @@
 		</div>
 		
 		<!--SCENES FOR COOKIE FILM-->
-		<video id="filmCookie1" preload="auto">
-			<source src="HTML Clips/Ring/Ring Intro Loop.mp4" type="video/mp4">
-		NOTE SUPPORTED!
-		</video>
-		
-		<video id="filmCookie1" preload="auto">
+		<!--<video id="filmCookie1" >
 			<source src="HTML Clips/Cookie/Cookie 3 Stack.mp4" type="video/mp4">
 		</video>
 		
-		<video id="filmCookie2" preload="auto">
+		<video id="filmCookie2" >
 			<source src="HTML Clips/Cookie/Devour 3 Stack.mp4" type="video/mp4">
 		</video>
 		
-		<video id="filmCookie3" preload="auto">
+		<video id="filmCookie3" >
 			<source src="HTML Clips/Cookie/Dunk 3 Stack.mp4" type="video/mp4">
 		</video>
 		
-		<video id="filmCookie4" preload="auto">
+		<video id="filmCookie4" >
 			<source src="HTML Clips/Cookie/Twist 3 Stack.mp4" type="video/mp4">
 		</video>
 		
-		<video id="filmCookie5" preload="auto">
+		<video id="filmCookie5" >
 			<source src="HTML Clips/Cookie/Cookie 2 Stack.mp4" type="video/mp4">
 		</video>
 		
-		<video id="filmCookie6" preload="auto">
+		<video id="filmCookie6" >
 			<source src="HTML Clips/Cookie/Devour 2 Stack.mp4" type="video/mp4">
 		</video>
 		
-		<video id="filmCookie7" preload="auto">
+		<video id="filmCookie7" >
 			<source src="HTML Clips/Cookie/Dunk 2 Stack.mp4" type="video/mp4">
 		</video>
 		
-		<video id="filmCookie8" preload="auto">
+		<video id="filmCookie8" >
 			<source src="HTML Clips/Cookie/Twist 2 Stack.mp4" type="video/mp4">
 		</video>
 		
-		<video id="filmCookie9" preload="auto">
+		<video id="filmCookie9" >
 			<source src="HTML Clips/Cookie/Cookie 1 Stack.mp4" type="video/mp4">
 		</video>
 		
-		<video id="filmCookie10" preload="auto">
+		<video id="filmCookie10" >
 			<source src="HTML Clips/Cookie/Devour 1 Stack.mp4" type="video/mp4">
 		</video>
 		
-		<video id="filmCookie11" preload="auto">
+		<video id="filmCookie11" >
 			<source src="HTML Clips/Cookie/Dunk 1 Stack.mp4" type="video/mp4">
 		</video>
 		
-		<video id="filmCookie12" preload="auto">
+		<video id="filmCookie12" >
 			<source src="HTML Clips/Cookie/Twist 1 Stack.mp4" type="video/mp4">
 		</video>
 		
-		<video id="filmCookie13" preload="auto">
+		<video id="filmCookie13" >
 			<source src="HTML Clips/Cookie/Cookie End.mp4" type="video/mp4">
-		</video>
+		</video>-->
 		
 		<!--UI FOR RING FILM-->
 		<div id="responseBar">
@@ -205,6 +209,6 @@
 		<div id="panelHom3" class="two columns content"></div>
 		
 	</div>
-	
+
 </body>
 </html>

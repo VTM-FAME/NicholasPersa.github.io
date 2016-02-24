@@ -37,6 +37,22 @@ p {
 	z-index:101;
 }
 
+#playAnother {
+	display:none;
+	position:absolute;
+	top:50vh;
+	left:50vw;
+	-webkit-transform:translateX(-50%) translateY(-50%);
+	transform:translateX(-50%) translateY(-50%);
+	z-index:110;
+	cursor:pointer;
+}
+
+#playAnother p {
+	color:white;
+	font-size:50px;
+}
+
 .hoverAttr:hover {
 	background:skyblue;
 	cursor:pointer;
@@ -123,6 +139,7 @@ p {
 	display:none;
 	height:auto;
 	width:100vw;
+	background:black;
 	z-index:99;
 	-webkit-transition: all 1s cubic-bezier(.8, 0.5, 1.0, 1.0);
 	transition: all 1s cubic-bezier(.8, 0.5, 1.0, 1.0);
