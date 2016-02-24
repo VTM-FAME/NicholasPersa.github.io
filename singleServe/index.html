@@ -3,6 +3,8 @@
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link href="https://fonts.googleapis.com/css?family=Pacifico" rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/css?family=Hind:400,500,600" rel='stylesheet' type='text/css'>
 	<script src="js/jquery.min.js"></script>
 	<script src="js/main.js"></script>
 	
@@ -13,7 +15,6 @@
 		$("#rightHemi").removeClass("selected");
 		document.getElementById("filmRing2").style.display = "none";
 		document.getElementById("playAnother").style.display = "block";
-		//turn on a thing
 		}</script>
 
 
@@ -25,7 +26,7 @@
 
 	<!--TOP HEADER BAR-->
 	<div id="header" class="twelve columns"><p>The Ring</p></div>
-	<div id="playAnother"><p>Play Another?</p></div>
+	<div id="playAnother"><p><span class="standout">Play</span> another?</p></div>
 
 	<!--THEATER AND VIDEO SOURCES-->
 	<div id="theater">
@@ -33,7 +34,7 @@
 		<!--SCENES FOR RING FILM-->
 		<video id="filmRing1">
 			<source class="SOURCE" type="video/mp4">
-		NOTE SUPPORTED!
+		NOT SUPPORTED!
 		</video>
 		
 		<video id="filmRing2" onended="videoEnded()">
@@ -162,10 +163,10 @@
 				<li class="nav1"><p>Home</p></li>
 				<li class="nav2"><p>What's This?</p>
 					<div id="SBTellEm">
-						<p>Experimental film RING is recreating the experience of the living world in a prerecorded film series. In the sequences, a number of phone calls are recieved and YOU are able to play a role in controlling the response. A little imagination may be required. This is version one of this style of film project.</p>
+						<p>Experimental film, <em>RING</em>, recreates the living world in a prerecorded shot sequence. In this series, a number of phone calls are recieved and <span class="embolden tighten">YOU</span> are able to play a role in controlling the responses. A little imagination is required. This is version one of this style of film project.</p>
 					</div>
 				</li>
-				<li class="nav3"><p>Videos</p>
+				<li class="nav3"><p class="smallNav">Videos</p>
 					<ul class="videoList">
 						<li class="navVideo"><p>The Ring</p></li>
 						<li class="navVideo"><p>The Cookie</p></li>
@@ -178,13 +179,17 @@
 		<div id="panelHom1" class="two columns content">
 		
 			<!--HOME SPECIFIC NAVIGATION-->
-			<div id="whatIs" class="buttons square tangerine hoverAttr"><p class="navText">What's This?</p>
+			<div id="whatIs" class="buttons hoverAttr">
+				<p class="navText">What <span class="biggerText">is</span> This?
+					<div class="lilConnect"></div>
+					<div class="lilConnect rightside"></div>
+				</p>
 				<div id="nowWhat">
-					<p>When you click anywhere on the DIAMOND, you'll be taken to 1 of 2 interactive films. These films are designed to give you a feeling of a live action experience and will be influenced by your choices. Have fun!</p>
+					<p>When you click anywhere on the <em>DIAMOND</em>, you'll be taken to 1 of 2 interactive films. These films are designed to give you a feeling of a live action experience and will be influenced by your choices.</p>
 				</div>
 			</div>
 			
-			<div id="videos" class="buttons square tangerine hoverAttr"><p class="navText">Videos</p>
+			<div id="videos" class="buttons hoverAttr"><p class="videoText">Films</p>
 				<ul class="videoList">
 					<li class="navVideo"><p>The Ring</p></li>
 					<li class="navVideo"><p>The Cookie</p></li>
@@ -197,7 +202,7 @@
 		<div id="panelHom2" class="eight columns content">
 		
 			<div id="centerBlock" class="square large tangerine hoverAttr">
-				<p id="playVideo">PLAY</p>
+				<p id="playVideo" class="embolden">PLAY</p>
 				<p id="titleOfVideo">The Ring</p>
 				<div id="titleSquare" class="square small white">
 				</div>

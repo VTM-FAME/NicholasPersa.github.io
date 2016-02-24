@@ -21,9 +21,9 @@ $(document).ready (function() {
 	});
 	
 	$("#whatIs").hover(function() {
-		$("#videos").addClass("disappear");
+		//$("#videos").addClass("disappear");
 	}, function(){
-		$("#videos").removeClass("disappear");
+		//$("#videos").removeClass("disappear");
 	});
 	
 	$(".nav1").click(function(){
@@ -38,8 +38,8 @@ $(document).ready (function() {
 	$("#centerBlock").click(function(){
 	
 		$(".buttons").addClass("minimize");
-		document.getElementsByClassName("navText")[0].style.color = "transparent";
-		document.getElementsByClassName("navText")[1].style.color = "transparent";
+		document.getElementsByClassName("navText")[0].style.display = "none";
+		document.getElementsByClassName("videoText")[0].style.color = "transparent";
 		$("#titleSquare").fadeTo("fast",0);
 		$("#titleOfVideo").fadeTo("fast",0);
 		$("#playVideo").fadeTo("fast",0);
@@ -52,6 +52,7 @@ $(document).ready (function() {
 			$("#centerBlock").addClass("rotate45 videoWindow");
 
 			window.setTimeout(function() {
+				document.getElementById("centerBlock").style.display = "none";
 				$("#panelHom2").insertBefore("#panelHom1");
 				$("#panelHom2").addClass("twelve");
 				$("#panelHom2").removeClass("eight");
@@ -62,7 +63,6 @@ $(document).ready (function() {
 					document.getElementById("theater").style.display = "block";
 					//alert($("#film").attr("offsetHeight"));
 					//$("#theater").css("height", $("#film").attr("offsetHeight"));
-					document.getElementById("centerBlock").style.display = "none";
 					//document.getElementById("backgroundHolder").style.opacity = "0";
 					
 					window.setTimeout(function () {
@@ -322,14 +322,14 @@ $(document).ready (function() {
 		
 	};
 	
-	function videoEnded () {
+	/*function videoEnded () {
 		document.getElementById("selectResponse").style.display = "none";
 		document.getElementById("seconds").innerHTML = "8";
 		$("#leftHemi").removeClass("selected");
 		$("#rightHemi").removeClass("selected");
 		document.getElementById("filmRing2").style.display = "none";
 		PlayRing();
-	}
+	}*/
 	
 	function loadVideo(id, play, intro, sceneType)
 	{
@@ -350,11 +350,11 @@ $(document).ready (function() {
 		if(play){
 			
 			if(!intro){
-				console.log(sceneType);
+				//console.log(sceneType);
 				//console.log(video.duration);
 				//video.addEventListener("loadeddata",handler, false);
 				video.oncanplay = function () {
-					console.log("Inner "+sceneType);
+					//console.log("Inner "+sceneType);
 					video.play();
 					switchAnimation();
 					if(sceneType == 1){responseAnimation();}
