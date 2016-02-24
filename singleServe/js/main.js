@@ -66,6 +66,7 @@ $(document).ready (function() {
 						document.getElementById("panelVid2").style.display = "block";
 						document.getElementsByClassName("container")[0].style.height = "auto";
 						//document.getElementsByClassName("container")[0].style.top = "20%";
+						
 						PlayRing();
 						
 					},1000);
@@ -121,7 +122,7 @@ $(document).ready (function() {
 		//$("#counter").addClass("flash");
 		
 		//Assign values to regulating variables.
-		counter = 8;
+		counter = 9;
 		pickedUp = false;
 		goodSelected = true;
 		nonresponsive = true;
@@ -215,7 +216,7 @@ $(document).ready (function() {
 				window.setTimeout(function(){
 					document.getElementById("filmRing"+random_clip).style.display = "none";
 					document.getElementById("selectResponse").style.display = "none";
-					document.getElementById("seconds").innerHTML = "8";
+					document.getElementById("seconds").innerHTML = "9";
 					$("#leftHemi").removeClass("selected");
 					$("#rightHemi").removeClass("selected");
 					PlayRing();
@@ -235,7 +236,7 @@ $(document).ready (function() {
 				if(counter <= 0) {
 					clearInterval(ticker);
 					document.getElementById("seconds").style.display = "none";
-					document.getElementById("seconds").innerHTML = "8";
+					document.getElementById("seconds").innerHTML = "9";
 					//$("#counter").removeClass("countdownScroll");
 					//$("#counter").removeClass("flash");
 					
