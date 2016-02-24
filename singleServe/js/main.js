@@ -116,6 +116,10 @@ $(document).ready (function() {
 	var audioIDGood;
 	var audioFrequencyGood;
 	var audioNames;
+	var random_clip;
+	var random_audio;
+	var random_audioBad;
+	var random_audioGood;
 	
 	function PlayRing() {
 		
@@ -123,14 +127,10 @@ $(document).ready (function() {
 		//loadVideo("Intro Loop", false);
 		//$("#filmRing1").get(0).load();
 		//$("#filmRing1").get(0).currentTime = 0;
-		document.getElementById("filmRing1").style.display = "block";
-		document.getElementById("pickUp").style.display = "block";
-		$("#counter").animate({width:"80%"}, 0);
-		$("#counter").animate({width:"0px"}, 9000);
+		
 
 		//$("#counter").addClass("countdownScroll");
-		document.getElementById("counter").style.display = "block";
-		document.getElementById("seconds").style.display = "inline-block";
+
 		//$("#counter").addClass("flash");
 		
 		//Assign values to regulating variables.
@@ -179,68 +179,32 @@ $(document).ready (function() {
 				//counter = 0;
 				//var randomClip = 2;
 				//var clipDuration;
-				var random_clip = getRandomClip(sceneID, sceneFrequency);
-				var random_audio = getRandomClip(audioID, audioFrequency);
-				var random_audioBad = getRandomClip(audioIDBad, audioFrequencyBad);
-				var random_audioGood = getRandomClip(audioIDGood, audioFrequencyGood);
+				random_clip = getRandomClip(sceneID, sceneFrequency);
+				random_audio = getRandomClip(audioID, audioFrequency);
+				random_audioBad = getRandomClip(audioIDBad, audioFrequencyBad);
+				random_audioGood = getRandomClip(audioIDGood, audioFrequencyGood);
 
 				clearInterval(ticker);
 				//$("#counter").removeClass("countdownScroll");
 				//$("#counter").removeClass("flash");
-				document.getElementById("filmRing1").style.display = "none";
-				document.getElementById("pickUp").style.display = "none";
-				document.getElementById("counter").style.display = "none";
-				document.getElementById("filmRing2").style.display = "block";
+
 				
 				pauseVideo();
 				//$("#filmRing1").get(0).pause();
 				
 				if(random_clip == 1){
-					loadVideo(sceneNames[random_clip], true, false);
-					document.getElementById("selectResponse").style.display = "block";
+					loadVideo(sceneNames[random_clip], true, false, 1);
 					//Timer for UI Response
-					document.getElementById("responseCountdown").style.display = "inline-block";
-					var time = 0;
-					var i = 7;
-					var interval = setInterval(function() {
-						$("#responseCountdown").text(i);
-						if (i == time) {
-							clearInterval(interval);
-							document.getElementById("responseCountdown").style.display = "none";
-							$("#responseCountdown").text(7);
+				}else{
+					loadVideo(sceneNames[random_clip], true, false, 2);
 
-						}
-						i--;
-					}, 1000);
-					
-					window.setTimeout(function(){
-						if(nonresponsive){
-							//$("#trackRing"+random_audio).get(0).play();
-							audio = new Audio("HTML Clips/Ring/Audio "+audioNames[random_audio-1]+".mp3");
-							audio.play();
-							}
-						else{
-							if(goodSelected){
-								//$("#trackRing"+random_audioGood).get(0).play();
-								audio = new Audio("HTML Clips/Ring/Audio "+audioNames[random_audioGood-1]+".mp3");
-								audio.play();
-							}
-							else{
-								//$("#trackRing"+random_audioBad).get(0).play();
-								audio = new Audio("HTML Clips/Ring/Audio "+audioNames[random_audioBad-1]+".mp3");
-								audio.play();
-							}
-						}
-					}, 8000);
-					
-				}else{}
+				}
 				
 				//$("#filmRing"+random_clip).get(0).currentTime = 0;
 				//$("#filmRing"+random_clip).get(0).play();
 				//clipDuration = $("#filmRing"+random_clip).get(0).duration * 1000;
 				
-				console.log(sceneNames[random_clip]);
-				loadVideo(sceneNames[random_clip], true, false);
+				//console.log(sceneNames[random_clip]);
 				
 				//clipDuration assigned in playVideo
 				//playVideoWithDelay();
@@ -250,7 +214,7 @@ $(document).ready (function() {
 				if(counter == 9){
 					//audioVizzy($('#filmRing1 source:nth-child(1)').attr('src'));
 					//playVideo();
-					loadVideo("Intro Loop", true, true);
+					loadVideo("Intro Loop", true, true, 0);
 
 
 				}else{}
@@ -282,6 +246,63 @@ $(document).ready (function() {
 		}, 1000);
 	}
 	
+	function responseAnimation () {
+		document.getElementById("selectResponse").style.display = "block";
+		document.getElementById("responseCountdown").style.display = "inline-block";
+		var time = 0;
+		var i = 7;
+		var interval = setInterval(function() {
+			$("#responseCountdown").text(i);
+			if (i == time) {
+				clearInterval(interval);
+				document.getElementById("responseCountdown").style.display = "none";
+				$("#responseCountdown").text(7);
+				
+			}
+			i--;
+		}, 1000);
+		
+		window.setTimeout(function(){
+			if(nonresponsive){
+					//$("#trackRing"+random_audio).get(0).play();
+				audio = new Audio("HTML Clips/Ring/Audio "+audioNames[random_audio-1]+".mp3");
+				audio.play();
+			}
+			else{
+				if(goodSelected){
+						//$("#trackRing"+random_audioGood).get(0).play();
+					audio = new Audio("HTML Clips/Ring/Audio "+audioNames[random_audioGood-1]+".mp3");
+					audio.play();
+				}
+				else{
+						//$("#trackRing"+random_audioBad).get(0).play();
+					audio = new Audio("HTML Clips/Ring/Audio "+audioNames[random_audioBad-1]+".mp3");
+					audio.play();
+				}
+			}
+		}, 8000);
+	}
+	
+	function switchAnimation () {
+	
+		document.getElementById("filmRing1").style.display = "none";
+		document.getElementById("pickUp").style.display = "none";
+		document.getElementById("counter").style.display = "none";
+		document.getElementById("filmRing2").style.display = "block";
+	}
+	
+	function introAnimation () {
+	
+		document.getElementById("filmRing1").style.display = "block";
+		document.getElementById("pickUp").style.display = "block";
+		$("#counter").animate({width:"80%"}, 0);
+		$("#counter").animate({width:"0px"}, 9000);
+		
+		document.getElementById("counter").style.display = "block";
+		document.getElementById("seconds").style.display = "inline-block";
+	
+	}
+	
 	var handler = function(event) {
 	
 		var temp = document.getElementById('filmRing1');
@@ -310,7 +331,7 @@ $(document).ready (function() {
 		PlayRing();
 	}
 	
-	function loadVideo(id, play, intro)
+	function loadVideo(id, play, intro, sceneType)
 	{
 		if(intro){
 			var video = document.getElementById('filmRing1');
@@ -329,12 +350,22 @@ $(document).ready (function() {
 		if(play){
 			
 			if(!intro){
+				console.log(sceneType);
 				//console.log(video.duration);
 				//video.addEventListener("loadeddata",handler, false);
-				video.play();
+				video.oncanplay = function () {
+					console.log("Inner "+sceneType);
+					video.play();
+					switchAnimation();
+					if(sceneType == 1){responseAnimation();}
+					else{}
+				};
 			}
 			else {
-				video.play();
+				video.oncanplay = function () {
+					video.play();
+					introAnimation();
+				};
 			}
 		}
 		else{}
