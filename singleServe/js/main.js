@@ -216,7 +216,7 @@ $(document).ready (function() {
 				window.setTimeout(function(){
 					document.getElementById("filmRing"+random_clip).style.display = "none";
 					document.getElementById("selectResponse").style.display = "none";
-					document.getElementById("seconds").innerHTML = "9";
+					document.getElementById("seconds").innerHTML = "8";
 					$("#leftHemi").removeClass("selected");
 					$("#rightHemi").removeClass("selected");
 					PlayRing();
@@ -224,7 +224,7 @@ $(document).ready (function() {
 
 			}else{
 				//Upon first pass, play starter scene.
-				if(counter == 8){
+				if(counter == 9){
 					//audioVizzy($('#filmRing1 source:nth-child(1)').attr('src'));
 					$("#filmRing1").get(0).play();
 				}else{}
@@ -236,7 +236,7 @@ $(document).ready (function() {
 				if(counter <= 0) {
 					clearInterval(ticker);
 					document.getElementById("seconds").style.display = "none";
-					document.getElementById("seconds").innerHTML = "9";
+					document.getElementById("seconds").innerHTML = "8";
 					//$("#counter").removeClass("countdownScroll");
 					//$("#counter").removeClass("flash");
 					
