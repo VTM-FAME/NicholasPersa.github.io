@@ -25,49 +25,27 @@
 <div id="backgroundHolder"></div>
 
 	<!--TOP HEADER BAR-->
-	<div id="header" class="twelve columns"><p>The Ring</p></div>
+	<div id="header" class="twelve columns"><p id="headerText">The Ring</p></div>
 	<div id="playAnother"><p><span class="standout">Play</span> another?</p></div>
 
-	<!--THEATER AND VIDEO SOURCES-->
+	<!--THEATER WINDOW FOR FILMS AND UI-->
 	<div id="theater">
 	
-		<!--SCENES FOR RING FILM-->
+		<!--STRUCTURE FOR RING FILM-->
 		<video id="filmRing1">
 			<source class="SOURCE" type="video/mp4">
-		NOT SUPPORTED!
+			THIS VIDEO IS NOT SUPPORTED
 		</video>
 		
 		<video id="filmRing2" onended="videoEnded()">
 			<source class="SOURCE" type="video/mp4">
+			THIS VIDEO IS NOT SUPPORTED
 		</video>
 		
-		<!--<video id="filmRing3" >
-			<source src="HTML Clips/Ring/Ring PBJ.mp4" type="video/mp4">
+		<video id="filmCookie">
+			<source class="SOURCE" type="video/mp4">
+			THIS VIDEO IS NOT SUPPORTED
 		</video>
-		
-		<video id="filmRing4" >
-			<source src="HTML Clips/Ring/Ring WalMart.mp4" type="video/mp4">
-		</video>-->
-		
-		<!--<audio id="trackRing1" >
-			<source src="HTML Clips/Ring/Audio Ass.mp3" type="audio/mpeg">
-		</audio>
-		
-		<audio id="trackRing2" >
-			<source src="HTML Clips/Ring/Audio Clouds.mp3" type="audio/mpeg">
-		</audio>
-		
-		<audio id="trackRing3" >
-			<source src="HTML Clips/Ring/Audio Golf.mp3" type="audio/mpeg">
-		</audio>
-		
-		<audio id="trackRing4" >
-			<source src="HTML Clips/Ring/Audio Tuba.mp3" type="audio/mpeg">
-		</audio>
-		
-		<audio id="trackRing5" >
-			<source src="HTML Clips/Ring/Audio Who.mp3" type="audio/mpeg">
-		</audio>
 		
 		<!--UI FOR RING FILM-->
 		<div id="pickUp"><p>Pick Up</p></div>
@@ -81,106 +59,57 @@
 			</div>
 		</div>
 		
-		<!--SCENES FOR COOKIE FILM-->
-		<!--<video id="filmCookie1" >
-			<source src="HTML Clips/Cookie/Cookie 3 Stack.mp4" type="video/mp4">
-		</video>
-		
-		<video id="filmCookie2" >
-			<source src="HTML Clips/Cookie/Devour 3 Stack.mp4" type="video/mp4">
-		</video>
-		
-		<video id="filmCookie3" >
-			<source src="HTML Clips/Cookie/Dunk 3 Stack.mp4" type="video/mp4">
-		</video>
-		
-		<video id="filmCookie4" >
-			<source src="HTML Clips/Cookie/Twist 3 Stack.mp4" type="video/mp4">
-		</video>
-		
-		<video id="filmCookie5" >
-			<source src="HTML Clips/Cookie/Cookie 2 Stack.mp4" type="video/mp4">
-		</video>
-		
-		<video id="filmCookie6" >
-			<source src="HTML Clips/Cookie/Devour 2 Stack.mp4" type="video/mp4">
-		</video>
-		
-		<video id="filmCookie7" >
-			<source src="HTML Clips/Cookie/Dunk 2 Stack.mp4" type="video/mp4">
-		</video>
-		
-		<video id="filmCookie8" >
-			<source src="HTML Clips/Cookie/Twist 2 Stack.mp4" type="video/mp4">
-		</video>
-		
-		<video id="filmCookie9" >
-			<source src="HTML Clips/Cookie/Cookie 1 Stack.mp4" type="video/mp4">
-		</video>
-		
-		<video id="filmCookie10" >
-			<source src="HTML Clips/Cookie/Devour 1 Stack.mp4" type="video/mp4">
-		</video>
-		
-		<video id="filmCookie11" >
-			<source src="HTML Clips/Cookie/Dunk 1 Stack.mp4" type="video/mp4">
-		</video>
-		
-		<video id="filmCookie12" >
-			<source src="HTML Clips/Cookie/Twist 1 Stack.mp4" type="video/mp4">
-		</video>
-		
-		<video id="filmCookie13" >
-			<source src="HTML Clips/Cookie/Cookie End.mp4" type="video/mp4">
-		</video>-->
-		
 		<!--UI FOR RING FILM-->
-		<div id="responseBar">
-			<div id="twist">
-				<img src="images/flower.gif" />
-			</div>
+		<div id="cookieUI">
 			<div id="dunk">
-				<img src="images/skull.gif" />
+				<img src="images/DunkUI.png" />
 			</div>
 			<div id="devour">
-				<img src="images/skull.gif" />
+				<img src="images/DevourUI.png" />
+			</div>
+			<div id="twist">
+				<img src="images/TwistUI.png" />
 			</div>
 		</div>
 		
 	</div>
+	<!--END OF THEATER-->
 	
-	<!--MAIN CONTENT AND GRID-->
+	<!--CONTAINER GRID-->
 	<div class="container">
 	
-		<!--UI TIME LIMIT FOR CURRENT VIDEO-->
+	
+		<!--HTML FOR THEATER SCEEN-->
+		<!--UI: TIMER DISPLAY FOR CURRENT VIDEO-->
 		<div id="panelVid1" class="six columns content">
-			<div id="time"><p>Time</p></div><div id="counter"><p id="seconds">8</p></div>
+			<div id="time"><p>Time</p></div><div id="counter"><p id="seconds"></p></div>
 		</div>
 		
-		<!--INTERACTIVE FILM NAVIGATION AND MENU BAR-->
+		<!--NAVIGATION AND MENUS-->
 		<div id="panelVid2" class="six columns content">
 			<ul id="navBar">
 				<li class="nav1"><p>Home</p></li>
 				<li class="nav2"><p>What's This?</p>
 					<div id="SBTellEm">
-						<p>Experimental film, <em>RING</em>, recreates the living world in a prerecorded shot sequence. In this series, a number of phone calls are recieved and <span class="embolden tighten">YOU</span> are able to play a role in controlling the responses. A little imagination is required. This is version one of this style of film project.</p>
+						<p id="contextInfo"></p>
 					</div>
 				</li>
-				<li class="nav3"><p class="smallNav">Videos</p>
+				<!--<li class="nav3"><p class="smallNav">Videos</p>
 					<ul class="videoList">
-						<li class="navVideo"><p>The Ring</p></li>
-						<li class="navVideo"><p>The Cookie</p></li>
+						<li class="navVideo ringVideo"><p>The Ring</p></li>
+						<li class="navVideo cookieVideo"><p>The Cookie</p></li>
 					</ul>
-				</li>
+				</li>-->
 			</ul>
 		</div>
-		
-		<!--HOMEPAGE-->
+		<!--END HTML FOR THEATER SCEEN-->
+	
+		<!--HTML FOR HOMEPAGE-->
 		<div id="panelHom1" class="two columns content">
 		
-			<!--HOME SPECIFIC NAVIGATION-->
-			<div id="whatIs" class="buttons hoverAttr">
-				<p class="navText">What <span class="biggerText">is</span> This?
+			<!--NAVIGATION AND MENUS-->
+			<div id="whatIs" class="buttons">
+				<p class="whatIsText">What <span class="biggerText">is</span> This?
 					<div class="lilConnect"></div>
 					<div class="lilConnect rightside"></div>
 				</p>
@@ -189,19 +118,19 @@
 				</div>
 			</div>
 			
-			<div id="videos" class="buttons hoverAttr"><p class="videoText">Films</p>
+			<div id="videos" class="buttons"><p class="videoNavText">Films</p>
 				<ul class="videoList">
-					<li class="navVideo"><p>The Ring</p></li>
-					<li class="navVideo"><p>The Cookie</p></li>
+					<li class="navVideo ringVideo"><p>The Ring</p></li>
+					<li class="navVideo cookieVideo"><p>The Cookie</p></li>
 				</ul>
 			</div>
 			
 		</div>
 		
-		<!--HOME PORTAL TO INTERACTIVE FILM-->
+		<!--PORTAL TO THEATER-->
 		<div id="panelHom2" class="eight columns content">
 		
-			<div id="centerBlock" class="square large tangerine hoverAttr">
+			<div id="centerBlock" class="square large tangerine">
 				<p id="playVideo" class="embolden">PLAY</p>
 				<p id="titleOfVideo">The Ring</p>
 				<div id="titleSquare" class="square small white">
@@ -210,10 +139,13 @@
 			
 		</div>
 		
-		<!--GRID SPACE HOLDER-->
+		<!--GRID SPACE FILLER-->
 		<div id="panelHom3" class="two columns content"></div>
+		<!--END HTML FOR HOMEPAGE-->
 		
 	</div>
+	<!--END CONTAINER GRID-->
+
 
 </body>
 </html>
