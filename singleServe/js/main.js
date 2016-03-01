@@ -1,7 +1,7 @@
 $(document).ready (function() {
 	
 	//Scroll to top of page on load
-	$('body').animate({scrollTop:0},800);
+	$("body").scrollTop(0);
 	
 	$(window).resize(function(){
 		if($(window).width() < 650){
@@ -10,8 +10,6 @@ $(document).ready (function() {
 	});
 	
 	function InitializePage () {
-		
-		$("body").animate({scrollTop:$("#theater").offset().top}, 300);
 
 		document.getElementById("panelVid1").style.borderTop = "0px";
 		document.getElementById("panelVid2").style.borderTop = "0px";
@@ -58,6 +56,7 @@ $(document).ready (function() {
 	//Load another film
 	$("#playAnother").click(function() {
 		playRing = false;
+		singleCheck = 0;
 		InitializePage();
 		PrepareTheater();
 		document.getElementById("playAnother").style.display = "none";
@@ -106,7 +105,6 @@ $(document).ready (function() {
 	
 	//Self explanatory
 	function PrepareTheater(){
-		
 		//Animates buttons to zero width
 		$(".buttons").addClass("minimize");
 		
@@ -231,6 +229,11 @@ $(document).ready (function() {
 		cookieVideo.load();
 		
 		cookieVideo.oncanplay = function () {
+			
+			if(currentCookie == 0){
+				$("body").animate({scrollTop:$("#panelVid1").offset().top + $("#panelVid1").outerHeight(true) - $(window).height()}, 300);
+			}else{}
+
 			cookieVideo.play();
 			if(clicked == false){OperateTimer();}
 			else{ ClearTimer();}
@@ -338,6 +341,7 @@ $(document).ready (function() {
 	
 	//ELEMENTS THAT RUN THE RING FILM SERIES
 	//Regulating variables
+	var singleCheck = 0;
 	var ticker;
 	var interval;
 	var counter;
@@ -528,7 +532,6 @@ $(document).ready (function() {
 			
 			if(!intro){
 				video.oncanplay = function () {
-					//$("body").animate({scrollTop:$("#theater").offset().top}, 300);
 					video.play();
 					switchAnimation();
 					if(sceneType == 1){responseAnimation();}
@@ -537,7 +540,9 @@ $(document).ready (function() {
 			}
 			else {
 				video.oncanplay = function () {
-					//$("body").animate({scrollTop:$("#theater").offset().top}, 300);
+					if(singleCheck == 0){
+						$("body").animate({scrollTop:$("#panelVid1").offset().top + $("#panelVid1").outerHeight(true) - $(window).height()}, 300);
+					}else{}
 					video.play();
 					introAnimation();
 				};
