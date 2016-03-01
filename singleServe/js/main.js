@@ -11,6 +11,8 @@ $(document).ready (function() {
 	
 	function InitializePage () {
 		
+		$("body").animate({scrollTop:$("#theater").offset().top}, 300);
+
 		document.getElementById("panelVid1").style.borderTop = "0px";
 		document.getElementById("panelVid2").style.borderTop = "0px";
 		
@@ -229,7 +231,6 @@ $(document).ready (function() {
 		cookieVideo.load();
 		
 		cookieVideo.oncanplay = function () {
-			$("body").animate({scrollTop:$("#theater").offset().top}, 300);
 			cookieVideo.play();
 			if(clicked == false){OperateTimer();}
 			else{ ClearTimer();}
@@ -527,7 +528,7 @@ $(document).ready (function() {
 			
 			if(!intro){
 				video.oncanplay = function () {
-					$("body").animate({scrollTop:$("#theater").offset().top}, 300);
+					//$("body").animate({scrollTop:$("#theater").offset().top}, 300);
 					video.play();
 					switchAnimation();
 					if(sceneType == 1){responseAnimation();}
@@ -536,7 +537,7 @@ $(document).ready (function() {
 			}
 			else {
 				video.oncanplay = function () {
-					$("body").animate({scrollTop:$("#theater").offset().top}, 300);
+					//$("body").animate({scrollTop:$("#theater").offset().top}, 300);
 					video.play();
 					introAnimation();
 				};
