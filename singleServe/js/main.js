@@ -1,16 +1,33 @@
 $(document).ready (function() {
 	
+	//Scroll to top of page on load
+	$('body').animate({scrollTop:0},800);
+	
+	$(window).resize(function(){
+		if($(window).width() < 650){
+			document.getElementById("panelVid2").style.borderTop = "2px solid black";
+		}else{}
+	});
+	
 	function InitializePage () {
+		
+		document.getElementById("panelVid1").style.borderTop = "0px";
+		document.getElementById("panelVid2").style.borderTop = "0px";
+		
+		if($(window).width() < 650){
+			document.getElementById("panelVid2").style.borderTop = "2px solid black";
+		}else{}
+
 		if(Math.random() > 0.7){
 			document.getElementById("titleOfVideo").innerHTML = "The Cookie";
-			document.getElementById("headerText").innerHTML = "The Cookie";
-			document.getElementById("contextInfo").innerHTML = "Experimental film, <em>Cookie</em>, recreates the living world in a prerecorded shot sequence. In this series, cookies can be eaten by none other than <span class='embolden tighten'>YOU</span>, you'll have total control over your cookie eating. A little imagination is required. This is version one of this style of film project.";
+			document.getElementById("headerText").innerHTML = "The <span class='standout'>Cookie</span>";
+			document.getElementById("contextInfo").innerHTML = "Experimental film, <em>Cookie</em>, recreates the living world in a prerecorded shot sequence. In this series, cookies can be eaten by none other than <span class='embolden tighten'>YOU</span>, you'll have total control over your cookie eating. A little imagination is required.";
 		}
 		else{
 			playRing = true;
 			document.getElementById("titleOfVideo").innerHTML = "The Ring";
-			document.getElementById("headerText").innerHTML = "The Ring";
-			document.getElementById("contextInfo").innerHTML = "Experimental film, <em>RING</em>, recreates the living world in a prerecorded shot sequence. In this series, a number of phone calls are recieved and <span class='embolden tighten'>YOU</span> are able to play a role in controlling the responses. A little imagination is required. This is version one of this style of film project.";
+			document.getElementById("headerText").innerHTML = "The <span class='standout'>Ring</span>";
+			document.getElementById("contextInfo").innerHTML = "Experimental film, <em>RING</em>, recreates the living world in a prerecorded shot sequence. In this series, a number of phone calls are recieved and <span class='embolden tighten'>YOU</span> are able to play a role in controlling the responses. A little imagination is required.";
 		}
 	}
 	
@@ -25,6 +42,11 @@ $(document).ready (function() {
 	}, function(){
 		$("#centerBlock").removeClass("disappear");
 	});
+	
+	//CSS Animation for UI
+	$("#pickUp").hover(function() {
+		wiggle("#pickUp");
+	}, function(){});
 	
 	//Reload page (go home)
 	$(".nav1").click(function(){
@@ -58,7 +80,8 @@ $(document).ready (function() {
 		$("#dunk").disabled = true;
 		$("#devour").disabled = true;
 		$("#twist").disabled = true;
-		document.getElementById("cookieUI").style.display = "none";
+		//document.getElementById("cookieUI").style.display = "none";
+		$("#cookieUI").animate({height:"0vw"}, 1000);
 	});
 	
 	$("#devour").click(function(){
@@ -66,7 +89,8 @@ $(document).ready (function() {
 		$("#dunk").disabled = true;
 		$("#devour").disabled = true;
 		$("#twist").disabled = true;
-		document.getElementById("cookieUI").style.display = "none";
+		//document.getElementById("cookieUI").style.display = "none";
+		$("#cookieUI").animate({height:"0vw"}, 1000);
 	});
 	
 	$("#twist").click(function(){
@@ -74,7 +98,8 @@ $(document).ready (function() {
 		$("#dunk").disabled = true;
 		$("#devour").disabled = true;
 		$("#twist").disabled = true;
-		document.getElementById("cookieUI").style.display = "none";
+		//document.getElementById("cookieUI").style.display = "none";
+		$("#cookieUI").animate({height:"0vw"}, 1000);
 	});
 	
 	//Self explanatory
@@ -105,6 +130,7 @@ $(document).ready (function() {
 				window.setTimeout(function() {
 					document.getElementById("filmRing1").style.display = "block";//This is deactivated by CookieDisplay
 					document.getElementById("header").style.display = "block";
+					document.getElementById("divide").style.display = "block";
 					document.getElementById("theater").style.display = "block";
 					
 					window.setTimeout(function () {
@@ -112,7 +138,7 @@ $(document).ready (function() {
 						//Hide homepage grid
 						document.getElementById("panelHom1").style.display = "none";
 						document.getElementById("panelHom2").style.display = "none";
-						document.getElementById("panelHom3").style.display = "none";
+						//document.getElementById("panelHom3").style.display = "none";
 						
 						//Enable theater grid
 						document.getElementById("panelVid1").style.display = "block";
@@ -217,11 +243,18 @@ $(document).ready (function() {
 				$("#twist").disabled = false;
 				
 				if(currentCookie < 12){
-					document.getElementById("cookieUI").style.display = "block";}
-				else{document.getElementById("cookieUI").style.display = "none";}
+					document.getElementById("cookieUI").style.display = "block";
+					$("#cookieUI").animate({height:"15vw"}, 1000);
+				}
+				else{
+					//document.getElementById("cookieUI").style.display = "none";
+					$("#cookieUI").animate({height:"0vw"}, 1000);
+				}
 				
 				if(currentCookie > 12){
 					document.getElementById("filmCookie").style.display = "none";
+					document.getElementById("panelVid1").style.borderTop = "2px white solid";
+					document.getElementById("panelVid2").style.borderTop = "2px white solid";
 					document.getElementById("playAnother").style.display = "block";
 				}
 				else{
@@ -236,6 +269,7 @@ $(document).ready (function() {
 		document.getElementById('filmRing1').style.display = "none";
 		document.getElementById('filmCookie').style.display = "block";
 		document.getElementById("cookieUI").style.display = "block";
+		$("#cookieUI").animate({height:"15vw"}, 1000);
 	}
 	
 	function NextCookie() {
@@ -448,7 +482,10 @@ $(document).ready (function() {
 	function switchAnimation () {
 	
 		document.getElementById("filmRing1").style.display = "none";
-		document.getElementById("pickUp").style.display = "none";
+		document.getElementById("pickUpText").style.display = "none";
+		$("#pickUp").animate({height:"0"}, 500, function() {
+			document.getElementById("pickUp").style.display = "none";
+		});
 		document.getElementById("counter").style.display = "none";
 		document.getElementById("filmRing2").style.display = "block";
 	}
@@ -457,6 +494,10 @@ $(document).ready (function() {
 	
 		document.getElementById("filmRing1").style.display = "block";
 		document.getElementById("pickUp").style.display = "block";
+		$("#pickUp").animate({height:"10vw"},500, function(){
+			document.getElementById("pickUpText").style.display = "block";
+		});
+		
 		$("#counter").animate({width:"80%"}, 0);
 		$("#counter").animate({width:"0px"}, 9000);
 		
@@ -516,6 +557,15 @@ $(document).ready (function() {
 		return Math.random() * (max - min) + min;
 	};
 	
+	var wiggle = function(myelement) {
+		$(myelement)
+		.animate({left:"-=10px"},200)
+		.animate({left:"+=20px"},200)
+		.animate({left:"-=20px"},200)
+		.animate({left:"+=10px"},200);
+
+	};
+	
 	//Get random element from arrays
 	var getRandomClip = function(list, weight) {
 		var total_weight = weight.reduce(function(previous, current, i, array){
@@ -539,14 +589,14 @@ $(document).ready (function() {
 		if(ifTrue){
 			CookieDisplay();
 			document.getElementById("titleOfVideo").innerHTML = "The Cookie";
-			document.getElementById("headerText").innerHTML = "The Cookie";
-			document.getElementById("contextInfo").innerHTML = "Experimental film, <em>Cookie</em>, recreates the living world in a prerecorded shot sequence. In this series, cookies can be eaten by none other than <span class='embolden tighten'>YOU</span>, you'll have total control over your cookie eating. A little imagination is required. This is version one of this style of film project.";
+			document.getElementById("headerText").innerHTML = "The <span class='standout'>Cookie</span>";
+			document.getElementById("contextInfo").innerHTML = "Experimental film, <em>Cookie</em>, recreates the living world in a prerecorded shot sequence. In this series, cookies can be eaten by none other than <span class='embolden tighten'>YOU</span>, you'll have total control over your cookie eating. A little imagination is required.";
 		}
 		else{
 			playRing = true;
 			document.getElementById("titleOfVideo").innerHTML = "The Ring";
-			document.getElementById("headerText").innerHTML = "The Ring";
-			document.getElementById("contextInfo").innerHTML = "Experimental film, <em>RING</em>, recreates the living world in a prerecorded shot sequence. In this series, a number of phone calls are recieved and <span class='embolden tighten'>YOU</span> are able to play a role in controlling the responses. A little imagination is required. This is version one of this style of film project.";
+			document.getElementById("headerText").innerHTML = "The <span class='standout'>Ring</span>";
+			document.getElementById("contextInfo").innerHTML = "Experimental film, <em>RING</em>, recreates the living world in a prerecorded shot sequence. In this series, a number of phone calls are recieved and <span class='embolden tighten'>YOU</span> are able to play a role in controlling the responses. A little imagination is required.";
 		}
 	}
 	

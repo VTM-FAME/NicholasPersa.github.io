@@ -15,6 +15,8 @@
 		$("#rightHemi").removeClass("selected");
 		document.getElementById("filmRing2").style.display = "none";
 		document.getElementById("playAnother").style.display = "block";
+		document.getElementById("panelVid1").style.borderTop = "2px solid white";
+		document.getElementById("panelVid2").style.borderTop = "2px solid white";
 		}</script>
 
 
@@ -25,7 +27,10 @@
 <div id="backgroundHolder"></div>
 
 	<!--TOP HEADER BAR-->
-	<div id="header" class="twelve columns"><p id="headerText">The Ring</p></div>
+	<div id="header" class="twelve columns"><p id="headerText">The <span class="popOut standout">Ring</span></p></div>
+	<div id="divide" class="twelve columns">
+		<div class="lineBox"></div>
+	</div>
 	<div id="playAnother"><p><span class="standout">Play</span> another?</p></div>
 
 	<!--THEATER WINDOW FOR FILMS AND UI-->
@@ -48,7 +53,7 @@
 		</video>
 		
 		<!--UI FOR RING FILM-->
-		<div id="pickUp"><p>Pick Up</p></div>
+		<div id="pickUp"><p id="pickUpText">Pick Up</p></div>
 		<div id="selectResponse">
 			<h1 id="responseCountdown">7</h1>
 			<div id="leftHemi">
@@ -62,13 +67,13 @@
 		<!--UI FOR RING FILM-->
 		<div id="cookieUI">
 			<div id="dunk">
-				<img src="images/DunkUI.png" />
+				<img src="images/Dunk2.png" />
 			</div>
 			<div id="devour">
-				<img src="images/DevourUI.png" />
+				<img src="images/Devour2.png" />
 			</div>
 			<div id="twist">
-				<img src="images/TwistUI.png" />
+				<img src="images/Twist2.png" />
 			</div>
 		</div>
 		
@@ -109,9 +114,9 @@
 		
 			<!--NAVIGATION AND MENUS-->
 			<div id="whatIs" class="buttons">
+				<div class="lilConnect"></div>
+				<div class="lilConnect rightside"></div>
 				<p class="whatIsText">What <span class="biggerText">is</span> This?
-					<div class="lilConnect"></div>
-					<div class="lilConnect rightside"></div>
 				</p>
 				<div id="nowWhat">
 					<p>When you click anywhere on the <em>DIAMOND</em>, you'll be taken to 1 of 2 interactive films. These films are designed to give you a feeling of a live action experience and will be influenced by your choices.</p>
@@ -133,19 +138,19 @@
 			<div id="centerBlock" class="square large tangerine">
 				<p id="playVideo" class="embolden">PLAY</p>
 				<p id="titleOfVideo">The Ring</p>
-				<div id="titleSquare" class="square small white">
+				<div id="titleSquare">
 				</div>
 			</div>
 			
 		</div>
 		
-		<!--GRID SPACE FILLER-->
-		<div id="panelHom3" class="two columns content"></div>
+		<!--GRID SPACE FILLER
+		<div id="panelHom3" class="two columns content"></div>-->
 		<!--END HTML FOR HOMEPAGE-->
-		
+
 	</div>
 	<!--END CONTAINER GRID-->
-
+	<div id="buffer"></div>
 
 </body>
 </html>
