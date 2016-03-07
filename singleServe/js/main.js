@@ -3,31 +3,18 @@ $(document).ready (function() {
 	//Scroll to top of page on load
 	$("body").scrollTop(0);
 	
-	$(window).resize(function(){
-		if($(window).width() < 650){
-			document.getElementById("panelVid2").style.borderTop = "2px solid black";
-		}else{}
-	});
-	
 	function InitializePage () {
-
-		document.getElementById("panelVid1").style.borderTop = "0px";
-		document.getElementById("panelVid2").style.borderTop = "0px";
-		
-		if($(window).width() < 650){
-			document.getElementById("panelVid2").style.borderTop = "2px solid black";
-		}else{}
 
 		if(Math.random() > 0.7){
 			document.getElementById("titleOfVideo").innerHTML = "The Cookie";
 			document.getElementById("headerText").innerHTML = "The <span class='standout'>Cookie</span>";
-			document.getElementById("contextInfo").innerHTML = "Experimental film, <em>Cookie</em>, recreates the living world in a prerecorded shot sequence. In this series, cookies can be eaten by none other than <span class='embolden tighten'>YOU</span>, you'll have total control over your cookie eating. A little imagination is required.";
+			document.getElementById("contextInfo").innerHTML = "Experimental film, <em>Cookie</em>, recreates the living world in a prerecorded shot sequence. In this series, cookies can be eaten by one of three ways. <span class='embolden tighten'>YOU</span> will have total control over your cookie eating. Imagination required. WARNING: CAUSES PURPLE MONSTER HALLUCINATION.";
 		}
 		else{
 			playRing = true;
 			document.getElementById("titleOfVideo").innerHTML = "The Ring";
 			document.getElementById("headerText").innerHTML = "The <span class='standout'>Ring</span>";
-			document.getElementById("contextInfo").innerHTML = "Experimental film, <em>RING</em>, recreates the living world in a prerecorded shot sequence. In this series, a number of phone calls are recieved and <span class='embolden tighten'>YOU</span> are able to play a role in controlling the responses. A little imagination is required.";
+			document.getElementById("contextInfo").innerHTML = "Experimental film, <em>RING</em>, recreates the living world in a prerecorded shot sequence. In this series, a number of phone calls are recieved and <span class='embolden tighten'>YOU</span> are able to play a role in controlling the responses. Imagination required. WARNING: CAUSES PURPLE MONSTER HALLUCINATION.";
 		}
 	}
 	
@@ -35,12 +22,45 @@ $(document).ready (function() {
 	InitializePage();
 	
 	
-	//CSS Hover (used in mobile resolution)
+	//CSS Hover
+	//Mobile resolution
 	$("#videos").hover(function() {
 		$("#centerBlock").addClass("disappear");
 
 	}, function(){
 		$("#centerBlock").removeClass("disappear");
+	});
+	
+	//Desktop resolution
+	$("#whatIs").hover(function() {
+		$("#nowWhat").addClass("appear");
+		$("#titleOfVideo").addClass("hiddenBlock");
+		$("#titleSquare").addClass("hiddenBlock");
+		$("#playVideo").addClass("hiddenBlock");
+		$("#centerBlock").addClass("whatIsBk");
+
+	}, function(){
+		$("#nowWhat").removeClass("appear");
+		$("#titleOfVideo").removeClass("hiddenBlock");
+		$("#titleSquare").removeClass("hiddenBlock");
+		$("#playVideo").removeClass("hiddenBlock");
+		$("#centerBlock").removeClass("whatIsBk");
+	});
+	
+	$(".nav2").hover(function() {
+		$("#filmInfo").addClass("appear");
+		
+		if(runEd){
+		
+			runEd = false;
+			OperateEd();
+	
+		}else{}
+		
+	}, function(){
+		$("#filmInfo").removeClass("appear");
+		runEd = true;
+		
 	});
 	
 	//CSS Animation for UI
@@ -56,7 +76,6 @@ $(document).ready (function() {
 	//Load another film
 	$("#playAnother").click(function() {
 		playRing = false;
-		singleCheck = 0;
 		InitializePage();
 		PrepareTheater();
 		document.getElementById("playAnother").style.display = "none";
@@ -64,9 +83,13 @@ $(document).ready (function() {
 	
 	//Load film based on navigation UI
 	$(".ringVideo").click(function() {
+		if($(window).width() >= 750){
+			document.getElementById("videos").style.display = "none";}else{}
 		NavigationSelect(false);
 	});
 	$(".cookieVideo").click(function() {
+		if($(window).width() >= 750){
+			document.getElementById("videos").style.display = "none";}else{}
 		NavigationSelect(true);
 	});
 	
@@ -81,8 +104,8 @@ $(document).ready (function() {
 		$("#dunk").disabled = true;
 		$("#devour").disabled = true;
 		$("#twist").disabled = true;
-		//document.getElementById("cookieUI").style.display = "none";
 		$("#cookieUI").animate({height:"0vw"}, 1000);
+
 	});
 	
 	$("#devour").click(function(){
@@ -90,7 +113,6 @@ $(document).ready (function() {
 		$("#dunk").disabled = true;
 		$("#devour").disabled = true;
 		$("#twist").disabled = true;
-		//document.getElementById("cookieUI").style.display = "none";
 		$("#cookieUI").animate({height:"0vw"}, 1000);
 	});
 	
@@ -99,7 +121,6 @@ $(document).ready (function() {
 		$("#dunk").disabled = true;
 		$("#devour").disabled = true;
 		$("#twist").disabled = true;
-		//document.getElementById("cookieUI").style.display = "none";
 		$("#cookieUI").animate({height:"0vw"}, 1000);
 	});
 	
@@ -125,12 +146,11 @@ $(document).ready (function() {
 
 			window.setTimeout(function() {
 				//This animation will only happen once per reload
+				document.getElementById("backgroundHolder").style.display = "none";
 				document.getElementById("centerBlock").style.display = "none";
 				
 				window.setTimeout(function() {
-					document.getElementById("filmRing1").style.display = "block";//This is deactivated by CookieDisplay
 					document.getElementById("header").style.display = "block";
-					document.getElementById("divide").style.display = "block";
 					document.getElementById("theater").style.display = "block";
 					
 					window.setTimeout(function () {
@@ -141,11 +161,12 @@ $(document).ready (function() {
 						//document.getElementById("panelHom3").style.display = "none";
 						
 						//Enable theater grid
-						document.getElementById("panelVid1").style.display = "block";
-						document.getElementById("panelVid2").style.display = "block";
-						document.getElementsByClassName("container")[0].style.height = "auto";
+						document.getElementById("timerBar").style.display = "block";
+						document.getElementById("theaterNav").style.display = "block";
+						document.getElementsByClassName("container")[0].style.height = "6vw";
 						
 						if(playRing){
+							document.getElementById("filmRing1").style.display = "block";
 							PlayRing();
 						}else{
 							CookieDisplay();
@@ -180,7 +201,6 @@ $(document).ready (function() {
 	var clicked = false;
 	
 	function PlayCookie () {
-	
 		console.log("playing: "+cookieScene[currentCookie]);
 		LoadCookie();
 	}
@@ -230,10 +250,7 @@ $(document).ready (function() {
 		
 		cookieVideo.oncanplay = function () {
 			
-			if(currentCookie == 0){
-				$("body").animate({scrollTop:$("#panelVid1").offset().top + $("#panelVid1").outerHeight(true) - $(window).height()}, 300);
-			}else{}
-
+			if(Math.random() > .7){OperateEd();}else{}
 			cookieVideo.play();
 			if(clicked == false){OperateTimer();}
 			else{ ClearTimer();}
@@ -257,10 +274,15 @@ $(document).ready (function() {
 				}
 				
 				if(currentCookie > 12){
+					document.getElementById("header").style.display = "none";
 					document.getElementById("filmCookie").style.display = "none";
-					document.getElementById("panelVid1").style.borderTop = "2px white solid";
-					document.getElementById("panelVid2").style.borderTop = "2px white solid";
+					document.getElementById("timerBar").style.display = "none";
+					document.getElementById("theaterNav").style.display = "none";
+					
 					document.getElementById("playAnother").style.display = "block";
+					document.getElementById("backgroundHolder").style.display = "block";
+
+
 				}
 				else{
 					NextCookie();}
@@ -341,7 +363,6 @@ $(document).ready (function() {
 	
 	//ELEMENTS THAT RUN THE RING FILM SERIES
 	//Regulating variables
-	var singleCheck = 0;
 	var ticker;
 	var interval;
 	var counter;
@@ -506,6 +527,7 @@ $(document).ready (function() {
 		
 		$("#counter").animate({width:"80%"}, 0);
 		$("#counter").animate({width:"0px"}, 9000);
+		if(Math.random() > .7){OperateEd();}else{}
 		
 		document.getElementById("counter").style.display = "block";
 		//document.getElementById("seconds").style.display = "inline-block";
@@ -540,9 +562,6 @@ $(document).ready (function() {
 			}
 			else {
 				video.oncanplay = function () {
-					if(singleCheck == 0){
-						$("body").animate({scrollTop:$("#panelVid1").offset().top + $("#panelVid1").outerHeight(true) - $(window).height()}, 300);
-					}else{}
 					video.play();
 					introAnimation();
 				};
@@ -566,14 +585,14 @@ $(document).ready (function() {
 		return Math.random() * (max - min) + min;
 	};
 	
-	var wiggle = function(myelement) {
+	function wiggle (myelement) {
 		$(myelement)
 		.animate({left:"-=10px"},200)
 		.animate({left:"+=20px"},200)
 		.animate({left:"-=20px"},200)
 		.animate({left:"+=10px"},200);
 
-	};
+	}
 	
 	//Get random element from arrays
 	var getRandomClip = function(list, weight) {
@@ -599,13 +618,13 @@ $(document).ready (function() {
 			CookieDisplay();
 			document.getElementById("titleOfVideo").innerHTML = "The Cookie";
 			document.getElementById("headerText").innerHTML = "The <span class='standout'>Cookie</span>";
-			document.getElementById("contextInfo").innerHTML = "Experimental film, <em>Cookie</em>, recreates the living world in a prerecorded shot sequence. In this series, cookies can be eaten by none other than <span class='embolden tighten'>YOU</span>, you'll have total control over your cookie eating. A little imagination is required.";
+			document.getElementById("contextInfo").innerHTML = "Experimental film, <em>Cookie</em>, recreates the living world in a prerecorded shot sequence. In this series, cookies can be eaten by one of three ways. <span class='embolden tighten'>YOU</span> will have total control over your cookie eating. Imagination required. WARNING: CAUSES PURPLE MONSTER HALLUCINATION.";
 		}
 		else{
 			playRing = true;
 			document.getElementById("titleOfVideo").innerHTML = "The Ring";
 			document.getElementById("headerText").innerHTML = "The <span class='standout'>Ring</span>";
-			document.getElementById("contextInfo").innerHTML = "Experimental film, <em>RING</em>, recreates the living world in a prerecorded shot sequence. In this series, a number of phone calls are recieved and <span class='embolden tighten'>YOU</span> are able to play a role in controlling the responses. A little imagination is required.";
+			document.getElementById("contextInfo").innerHTML = "Experimental film, <em>RING</em>, recreates the living world in a prerecorded shot sequence. In this series, a number of phone calls are recieved and <span class='embolden tighten'>YOU</span> are able to play a role in controlling the responses. Imagination required. WARNING: CAUSES PURPLE MONSTER HALLUCINATION.";
 		}
 	}
 	
@@ -614,6 +633,54 @@ $(document).ready (function() {
 		SelectPage(whichVideo);
 		PrepareTheater();
 	}
+	
+	//ED related variables
+	var runEd = true;
+	var stopEd = false;
+	var backAndForth = true;
+	var number;
+
+	function OperateEd () {
+		
+			number = Math.random();
+			var EDD = Math.round(number * 1200);
+		
+			$("#edWalking").append("<img id = "+EDD+" src='images/ed-walk2.gif' />");
+		
+			document.getElementById("edWalking").style.display = "block";
+		
+			var height = number * (500 - 120) + 120;
+			var time = number * (8000 - 4500) + 3000;
+			var layer = Math.round(number * 100);
+			//var top = (10 + (number * 120)) + "px";
+		
+			document.getElementById(EDD).style.height = height +"px";
+			document.getElementById(EDD).style.zIndex = layer;
+			//document.getElementById("ED").style.marginTop = top;
+		
+			if(backAndForth){
+				backAndForth = !backAndForth;
+				$("#"+EDD).removeClass("flipped");
+				$("#"+EDD).velocity({left:"-100%"}, 0);
+				$("#"+EDD).velocity({left:"100%"}, time);
+			}
+			else{
+				backAndForth = !backAndForth;
+				$("#"+EDD).addClass("flipped");
+				$("#"+EDD).velocity({left:"100%"}, 0);
+				$("#"+EDD).velocity({left:"-100%"}, time);
+			}
+		
+			if(!runEd){
+				setTimeout(OperateEd, time);
+			}
+			else{
+				setTimeout(function(){
+					$("#edWalking").empty();
+				}, 30000);
+			}
+	}
+	
 
 });//Ready Function
 

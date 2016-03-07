@@ -8,6 +8,7 @@ body {
 	margin:0;
 	background:white;
 	height:100vh;
+	overflow:hidden;
 }
 
 p {
@@ -19,7 +20,7 @@ p {
 	position:relative;
 	height:100vh;
 	width: 100%;
-	z-index:100;
+	z-index:120;
 	max-width: 960px; /* max width of content */
 	margin: 0 auto;
 	padding: 0 20px;
@@ -27,17 +28,12 @@ p {
 	
 }
 
-.content {
-	height:100%;
-}
-
 #header {
 	position:relative;
 	text-align:center;
 	display:none;
-	background:black;
+	background:white;
 	margin:0;
-	color:white;
 	height:50px;
 	line-height:50px;
 	z-index:101;
@@ -47,32 +43,11 @@ p {
 
 #header p {
 	font-size:30px;
+	color:black;
 }
+
 .standout {
 	font-family:"Pacifico";
-}
-
-
-#divide {
-	position:relative;
-	display:none;
-	height:170px;
-	z-index:101;
-}
-
-.lineBox {
-	display:inline-block;
-	height:100%;
-	width:50%;
-	margin-left:25%;
-	box-sizing:border-box;
-	border-left:2px black solid;
-	border-right:2px black solid;
-}
-
-#buffer {
-	width:100%;
-	height:30vh;
 }
 
 #playAnother {
@@ -96,19 +71,15 @@ p {
 	color:goldenrod;
 }
 
-.hoverAttr:hover {/*unused*/
-	background:skyblue;
-	cursor:pointer;
-	z-index:109;
-}
-
 #panelHom1 {
+	height:100%;
 	position:relative;
 	margin-left:0;
 	z-index:101;
 }
 
 #panelHom2 {
+	height:100%;
 	position:relative;
 	z-index:100;
 }
@@ -122,7 +93,7 @@ p {
 	border:5px solid white;
 }
 
-#titleSquare{
+#titleSquare {
 	position:relative;
 	width:52%;
 	height:0;
@@ -134,8 +105,9 @@ p {
 
 #playVideo {
 	position:absolute;
-	top:48%;
-	left:50%;
+	top:51%;
+	left:33%;
+	color:white;
 	-webkit-transform:translateX(-100%) translateY(-100%);
 	transform:translateX(-100%) translateY(-100%);
 }
@@ -153,12 +125,7 @@ p {
 #whatIs {
 	position:relative;
 	/*background:transparent !important;*/
-	cursor:pointer;
 	z-index:109;
-}
-
-#whatIs:hover #nowWhat, #whatIs:hover .lilConnect {
-	display:block;
 }
 
 .whatIsText {
@@ -191,7 +158,7 @@ p {
 .videoList {
 	position:absolute;
 	display:none;
-	height:200%;
+	height:104px;
 	width:100%;
 	top:100%;
 	left:0px;
@@ -200,6 +167,7 @@ p {
 	z-index:103;
 	list-style:none;
 	border-bottom: 2px solid white;
+	background:rgba(0,0,0,.1);
 	cursor:pointer;
 }
 
@@ -211,7 +179,7 @@ p {
 	font-weight:600;
 }
 
-#titleSquare p, #header p, #time p{
+#titleSquare p, #header p, #time p {
 	position:relative;
 	top:50%;
 	margin:0;
@@ -220,7 +188,63 @@ p {
 	transform:translateY(-50%);
 }
 
+#time p {
+	font-size:18px;
+}
+
+#edWalking {
+	display:none;
+	position:absolute;
+	width:100vw;
+}
+
+#edWalking img {
+	position:absolute;
+	margin-top:20px;
+	left:-100%;
+	height:160px;
+	width:auto;
+}
+
+.flipped {
+    -webkit-transform: scaleX(-1);
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -ms-transform: scaleX(-1);
+    transform: scaleX(-1);
+	filter: FlipH;
+	-ms-filter: "FlipH";
+}
+
+#footer {
+	position:absolute;
+	bottom:10px;
+	left:50%;
+	font-family:"Pacifico";
+	font-size:15px;
+	-webkit-transform: translateX(-50%);
+	transform: translateX(-50%);
+	text-align:center;
+}
+
+.regular {
+	font-family:"Hind";
+	font-size:18px;
+}
+
+.appear {
+	display:block !important;
+}
+
 /* ----------------- Ring Film Sequence and Elements  ----------------- */
+
+#theater {
+	position:relative;
+	display:none;
+	overflow:auto;
+	width:100vw;
+	z-index:100;
+}
 
 #filmRing1, #filmRing2  {
 	position:relative;
@@ -228,26 +252,42 @@ p {
 	height:56.25vw;
 	width:100vw;
 	background:black;
-	z-index:99;
+	z-index:100;
 	/*-webkit-transition: all 1s cubic-bezier(.8, 0.5, 1.0, 1.0);
 	transition: all 1s cubic-bezier(.8, 0.5, 1.0, 1.0);*/
 }
 
-#panelVid1, #panelVid2 {
-	display:none;
-	height:60px;
-	background:teal;
+#timerBar, #theaterNav {
 	position:relative;
+	display:none;
+	height:4vw;
 	background:transparent;
-	border:2px solid white;
-	border-top:0px;
-	box-sizing:border-box;
 	-webkit-transition: all 0s;
 	transition: all 0s;
 }
 
-#panelVid2 {
+#timerBar {
+	position:absolute !important;
+	width:86%;
+	left:8.5%;
+	bottom:1.5vw;
+	border-radius:100px;
+	border:2px solid white;
+	z-index:110;
+	box-sizing:border-box;
+	overflow:hidden;
+}
+
+#theaterNav {
 	cursor:pointer;
+	position:absolute;
+	top:5px;
+	left:37.5%;
+	width:25%;
+	border-top:0px;
+	border-right:0;
+	border-left:0;
+	border:0;
 }
 
 #time {
@@ -256,7 +296,6 @@ p {
 	width:20%;
 	color:white;
 	text-align:center;
-	z-index:100;
 	border-right:2px solid white;
 	border-top:0px;
 	box-sizing:border-box;
@@ -264,12 +303,10 @@ p {
 
 #counter {
 	position:relative;
-	background:rgba(255,255,255,.8);
+	background:rgba(255,255,255,.5);
 	left:20%;
 	height:100%;
 	width:80%;
-	z-index:102;
-	border-right:.5px solid white;
 	box-sizing:border-box;
 }
 
@@ -298,13 +335,14 @@ ul {
 }
 
 .nav1, .nav2 {
+	position:relative;
 	display:inline-block;
 	width:49%;
 	height:100%;
 	margin:0px;
-	color:white;
+	color:black;
 	text-align:center;
-	z-index:100;
+	z-index:111;
 }
 
 .nav1 p, .nav2 p {
@@ -319,30 +357,36 @@ ul {
 	background:skyblue;
 }
 
+.nav1 {
+	border-radius:100px;
+}
+
 .nav2 {
 	float:right;
+	border-radius:100px;
 }
 
-li.nav2:hover > #SBTellEm {
-	display:block;
-}
-
-#SBTellEm {
+#filmInfo {
 	position:absolute;
 	display:none;
 	width:100%;
-	top:105%;
+	height:100%;
+	top:0;
+	z-index:130;
 	left:0;
-	background:rgba(255,255,255,.8);
+	background:rgba(0,0,0,.8);
 }
 
-#SBTellEm p {
-	-webkit-transform:translateY(0%) !important;
-	transform:translateY(0%) !important;
-	text-align:left;
-	text-align:justify;
-	color:black;
+#filmInfo p {
+	position:relative;
+	top:50%;
+	left:50%;
+	width:50%;
+	-webkit-transform:translateX(-50%) translateY(-50%) !important;
+	transform:translateX(-50%) translateY(-50%) !important;
+	color:white;
 	padding:10px;
+	z-index:130;
 }
 
 .tighten {
@@ -363,7 +407,6 @@ li.nav2:hover > #SBTellEm {
 	height:50%;
 	width:100%;
 	display:block;
-	color:white;
 	z-index:103;
 }
 
@@ -377,13 +420,6 @@ li.nav2:hover > #SBTellEm {
 .navVideo:hover {
 	background:goldenrod;
 	color:black;
-}
-
-#theater {
-	position:relative;
-	display:none;
-	overflow:auto;
-	width:100vw;
 }
 
 #pickUp {
@@ -495,8 +531,8 @@ li.nav2:hover > #SBTellEm {
 	display:none;
 	width:30vw;
 	height:0vw; /*15vw*/
-	bottom:7%;
-	right:0%;
+	bottom:13%; /*7%*/
+	right:4%;
 	z-index:110;
 }
 
@@ -599,8 +635,9 @@ li.nav2:hover > #SBTellEm {
 
 .minimize {
 	width:0 !important;
-	-webkit-transition: all .5s cubic-bezier(0.42, 0.0, 1.0, 1.0);
-	transition: all .5s cubic-bezier(0.42, 0.0, 1.0, 1.0);
+	border:0 !important;
+	-webkit-transition: all 1s cubic-bezier(0.42, 0.0, 1.0, 1.0);
+	transition: all 1s cubic-bezier(0.42, 0.0, 1.0, 1.0);
 }
 
 .countdownScroll {
@@ -638,6 +675,7 @@ li.nav2:hover > #SBTellEm {
 	
 	#centerBlock {
 		background:transparent;
+		top:125px;
 	}
 	
 	#centerBlock:hover {
@@ -680,19 +718,20 @@ li.nav2:hover > #SBTellEm {
 		background:goldenrod;
 	}
 	
-	#panelVid1 {/*Fixes alignment with smaller screensize*/
+	#timerBar {/*Fixes alignment with smaller screensize*/
 		border:2px solid black;
 		border-bottom:0;
 		background:rgba(255,255,255,.7);
 	}
 	
-	#panelVid2{
-		border:2px solid black;
+	#theaterNav{
+		width:40%;
+		left:30%;
 		background:rgba(255,255,255,.7);
 	}
 	
 	.videoList {
-		border-color:black !important;
+		border:0 !important;
 	}
 	
 	#playAnother {
@@ -707,20 +746,12 @@ li.nav2:hover > #SBTellEm {
 		color:black !important;
 	}
 	
-	li p {
-		color:black;
-	}
-	
-	.navVideo {
-		color:black;
-	}
-	
 	.standout {
 		font-family:"Pacifico";
 	}
 	
-	#SBTellEm .embolden {
-		color:black !important;
+	#filmInfo .embolden {
+		color:white !important;
 	}
 	
 	#whatIs {
@@ -751,15 +782,7 @@ li.nav2:hover > #SBTellEm {
 		word-spacing:-.18em;
 	}
 	
-	.lilConnect {
-		display:none;
-	}
-	
-	.rightside {
-		display:none;
-	}
-	
-	#nowWhat {
+	/*#nowWhat {
 		position:absolute;
 		display:none;
 		top:100%;
@@ -776,6 +799,45 @@ li.nav2:hover > #SBTellEm {
 		font-size:20px;
 		width:100% !important;
 		z-index:109;
+	}*/
+	
+	#nowWhat {
+		position:absolute;
+		display:none;
+		width:50%;
+		top:50%;
+		left:50%;
+		-webkit-transform:translateY(-40%) translateX(-65%) rotate(45deg);
+		transform:translateY(-40%) translateX(-65%) rotate(45deg);
+	}
+	
+	#nowWhat p {
+		position:relative;
+		text-align:left;
+		color:black;
+		width:210%;
+		font-size:20px;
+		line-height:140%;
+		padding:10px;
+		text-align:center;
+		background:transparent;
+		-webkit-transform:translateX(-25%);
+		transform:translateX(-25%);
+		z-index:102;
+	}
+	
+	.lilCaps {
+		font-variant:small-caps;
+		font-weight:500;
+		font-size:22px;
+	}
+	
+	.whatIsBk {
+		background:rgba(255,255,255,.8) !important;
+	}
+	
+	.hiddenBlock {
+		display:none !important;
 	}
 	
 	#videos {
@@ -797,6 +859,14 @@ li.nav2:hover > #SBTellEm {
 	li.navVideo {
 		margin-top:0 !important;
 		font-weight:600;
+	}
+	
+	.navVideo {
+		color:white !important;
+	}
+	
+	.navVideo:hover {
+		color:black !important;
 	}
 	
 	#panelHom3 {
@@ -850,6 +920,11 @@ li.nav2:hover > #SBTellEm {
 	    transform: translateX(-57%) translateY(-21%) rotate(45deg) !important;
 	}
 	
+	#playVideo {
+		top:54%;
+		left:39%;
+	}
+	
 	.standout {
 		font-family:"Pacifico";
 	}
@@ -860,10 +935,10 @@ li.nav2:hover > #SBTellEm {
 	}
 	
 	#whatIs {
-		width:100%;
+		width:71%;
 		height:50px;
-		top:50%;
-		left:30%;
+		top:48%;
+		left:54%;
 		text-align:center;
 		margin-bottom:0px;
 		background:rgba(255,255,255,.8);
@@ -891,14 +966,17 @@ li.nav2:hover > #SBTellEm {
 		transform:translateY(-50%);
 	}
 	
-	#nowWhat {
+	#theaterNav {
+		width:40%;
+		left:30%;
+	}
+	
+	/*#nowWhat {
 		position:absolute;
 		display:none;
 		width:100%;
 		top:0;
 		left:0;
-		-webkit-transform:translateY(-100%);
-		transform:translateY(-100%);
 		border-bottom:1px solid black;
 		box-sizing:border-box;
 	}
@@ -907,19 +985,61 @@ li.nav2:hover > #SBTellEm {
 		position:relative;
 		text-align:left;
 		padding-left:10px;
+		font-size:15px;
 		width:100%;
 		color:black;
 		-webkit-transform:translateY(0%);
 		transform:translateY(0%);
 		background:rgba(255,255,255,.8);
 		z-index:102;
+	}*/
+	
+	#nowWhat {
+		position:absolute;
+		display:none;
+		width:50%;
+		top:50%;
+		left:50%;
+		-webkit-transform:translateY(-40%) translateX(-65%) rotate(45deg);
+		transform:translateY(-40%) translateX(-65%) rotate(45deg);
 	}
+	
+	#nowWhat p {
+		position:relative;
+		text-align:left;
+		color:black;
+		font-size:15px !important;
+		width:240%;
+		font-size:20px;
+		line-height:140%;
+		padding:10px;
+		text-align:center;
+		background:transparent;
+		-webkit-transform:translateX(-30%);
+		transform:translateX(-30%);
+		z-index:102;
+	}
+	
+	.lilCaps {
+		font-variant:small-caps;
+		font-weight:500;
+		font-size:16px;
+	}
+	
+	.whatIsBk {
+		background:rgba(255,255,255,.8) !important;
+	}
+	
+	.hiddenBlock {
+		display:none !important;
+	}
+	
 	#videos {
 		position:relative;
-		width:100%;
+		width:71%;
 		height:50px;
-		top:60%;
-		left:30%;
+		top:61%;
+		left:54%;
 		text-align:center;
 		-webkit-transform:translateY(-85%) translateX(10%) rotate(45deg);
 		transform:translateY(-85%) translateX(10%) rotate(45deg);
@@ -935,6 +1055,10 @@ li.nav2:hover > #SBTellEm {
 		transform:translateY(-50%);
 	}
 	
+	.navVideo{
+		color:white;
+	}
+	
 	#panelHom3 {
 		display: none !important;
 	}
@@ -944,6 +1068,10 @@ li.nav2:hover > #SBTellEm {
 /* ----------------- CSS for desktop screens ----------------- */
 
 @media (min-width:750px) {
+
+	::-webkit-scrollbar {
+		display: none;
+	}
 
 	#centerBlock {
 		background:transparent;
@@ -958,20 +1086,29 @@ li.nav2:hover > #SBTellEm {
 		background:goldenrod;
 	}
 	
+	#centerBlock:hover #playVideo {
+		color:black;
+	}
+	
 	#whatIs {
+		position:relative;
 		display:inline-block;
 		width:100%;
+		min-width:117.688px;
 		height:auto;
 		top:50%;
-		left:0%;
+		left:-3px;
 		margin-bottom:0;
-		-webkit-transform:translateY(-100%);
-		transform:translateY(-100%);
+		-webkit-transform:translateY(-94%);
+		transform:translateY(-94%);
 	}
 	
 	.biggerText {
+		position:relative;
+		left:-2px;
 		font-size:75px;
-		line-height:92%;
+		line-height:110%;
+		letter-spacing:-.1em;
 		text-transform:uppercase;
 	}
 	
@@ -985,53 +1122,58 @@ li.nav2:hover > #SBTellEm {
 		font-size:30px;
 		line-height:87%;
 		text-align:center;
-		background:rgba(255,255,255,.9);
+		background:transparent;/*rgba(255,255,255,.8);*/
+		color:white;
+		border:2px solid white;
+		border-bottom:0;
 		height:auto;
 		padding:10px;
 		bottom:0;
 		font-family: "Pacifico";
 	}
 	
+	.whatIsText:hover {
+		background:rgba(255,255,255,.5);
+		color:black;
+	}
+	
 	#nowWhat {
 		position:absolute;
 		display:none;
-		top:-20px;
-		left:0;
-		-webkit-transform:translateY(-100%);
-		transform:translateY(-100%);
+		width:50%;
+		top:50%;
+		left:50%;
+		-webkit-transform:translateY(-40%) translateX(-65%) rotate(45deg);
+		transform:translateY(-40%) translateX(-65%) rotate(45deg);
 	}
 	
 	#nowWhat p {
 		position:relative;
 		text-align:left;
-		width:200%;
 		color:black;
-		font-size:15px;
+		width:210%;
+		font-size:20px;
 		line-height:140%;
 		padding:10px;
-		text-align:justify;
-		-webkit-transform:translateY(0%);
-		transform:translateY(0%);
-		background:rgba(255,255,255,.8);
+		text-align:center;
+		background:transparent;
+		-webkit-transform:translateX(-25%);
+		transform:translateX(-25%);
 		z-index:102;
 	}
 	
-	.lilConnect {
-		position:absolute;
-		display:none;
-		top:-20px;
-		left:5%;
-		height:20px;
-		width:10px;
-		border-left: 2px solid black;
-		border-right: 2px solid black;
-		box-sizing:border-box;
+	.lilCaps {
+		font-variant:small-caps;
+		font-weight:500;
+		font-size:22px;
 	}
 	
-	.rightside {
-		left:95%;
-		-webkit-transform:translateX(-100%);
-		transform:translateX(-100%);
+	.whatIsBk {
+		background:rgba(255,255,255,.8) !important;
+	}
+	
+	.hiddenBlock {
+		display:none !important;
 	}
 	
 	#videos {
@@ -1039,22 +1181,36 @@ li.nav2:hover > #SBTellEm {
 		display:inline-block;
 		top:50%;
 		width:100%;
-		height:0;
-		padding-bottom:40%;
-		left:0%;
-		background:rgba(255,255,255,.8);
+		min-width:117.688px;
+		height:52px;
+		left:-3px;
+		background:transparent; /*rgba(255,255,255,.8);*/
 		text-align:center;
-		-webkit-transform:translateY(0%);
-		transform:translateY(0%);
+		border:2px solid white;
+		box-sizing:border-box;
+		-webkit-transform:translateY(15%);
+		transform:translateY(15%);
+	}
+	
+	#videos:hover {
+		background:rgba(255,255,255,.5);
+	}
+	
+	#videos:hover .videoNavText {
+		color:black;
 	}
 	
 	.videoNavText {
 		position:absolute;
-		color:black;
+		color:white;
 		top:50%;
 		left:50%;
 		-webkit-transform:translateY(-50%) translateX(-50%);
 		transform:translateY(-50%) translateX(-50%);
+	}
+	
+	li.navVideo {
+		color:white;
 	}
 	
 }
