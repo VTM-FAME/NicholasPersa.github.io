@@ -8,13 +8,13 @@ $(document).ready (function() {
 		if(Math.random() > 0.7){
 			document.getElementById("titleOfVideo").innerHTML = "The Cookie";
 			document.getElementById("headerText").innerHTML = "The <span class='standout'>Cookie</span>";
-			document.getElementById("contextInfo").innerHTML = "Experimental film, <em>Cookie</em>, recreates the living world in a prerecorded shot sequence. In this series, cookies can be eaten by one of three ways. <span class='embolden tighten'>YOU</span> will have total control over your cookie eating. Imagination required. WARNING: CAUSES PURPLE MONSTER HALLUCINATION.";
+			document.getElementById("contextInfo").innerHTML = "Experimental film, <em>Cookie</em>, recreates the living world in a prerecorded shot sequence. In this series, cookies can be eaten by one of three ways. <span class='embolden tighten'>YOU</span> will have total control over your cookie eating. Imagination required.";
 		}
 		else{
 			playRing = true;
 			document.getElementById("titleOfVideo").innerHTML = "The Ring";
 			document.getElementById("headerText").innerHTML = "The <span class='standout'>Ring</span>";
-			document.getElementById("contextInfo").innerHTML = "Experimental film, <em>RING</em>, recreates the living world in a prerecorded shot sequence. In this series, a number of phone calls are recieved and <span class='embolden tighten'>YOU</span> are able to play a role in controlling the responses. Imagination required. WARNING: CAUSES PURPLE MONSTER HALLUCINATION.";
+			document.getElementById("contextInfo").innerHTML = "Experimental film, <em>RING</em>, recreates the living world in a prerecorded shot sequence. In this series, a number of phone calls are recieved and <span class='embolden tighten'>YOU</span> are able to play a role in controlling the responses. Imagination required.";
 		}
 	}
 	
@@ -50,23 +50,45 @@ $(document).ready (function() {
 	$(".nav2").hover(function() {
 		$("#filmInfo").addClass("appear");
 		
-		if(runEd){
+		if(runImg){
 		
-			runEd = false;
-			OperateEd();
+			runImg = false;
+			for(var i = 0; i < 6; i++){
+				//OperateEd();
+			}
 	
 		}else{}
 		
 	}, function(){
 		$("#filmInfo").removeClass("appear");
-		runEd = true;
+		runImg = true;
 		
 	});
 	
 	//CSS Animation for UI
 	$("#pickUp").hover(function() {
-		wiggle("#pickUp");
-	}, function(){});
+		document.getElementById("radiance").style.display = "none";
+	}, function(){
+		document.getElementById("radiance").style.display = "block";
+	});
+	
+	$("#dunk").hover(function() {
+		$("#dunk").velocity({top:"-=20px"}, 200);
+	}, function(){
+		$("#dunk").velocity({top:"+=40px"}, 200).velocity({top:"-=30px"}, 200).velocity({top:"+=10px"}, 200);
+	});
+	
+	$("#devour").hover(function() {
+		$("#devour").velocity({top:"-=20px"}, 200);
+	}, function(){
+		$("#devour").velocity({top:"+=40px"}, 200).velocity({top:"-=30px"}, 200).velocity({top:"+=10px"}, 200);
+	});
+	
+	$("#twist").hover(function() {
+		$("#twist").velocity({top:"-=20px"}, 200);
+	}, function(){
+		$("#twist").velocity({top:"+=40px"}, 200).velocity({top:"-=30px"}, 200).velocity({top:"+=10px"}, 200);
+	});
 	
 	//Reload page (go home)
 	$(".nav1").click(function(){
@@ -100,56 +122,78 @@ $(document).ready (function() {
 	
 	//UI for cookie film
 	$("#dunk").click(function(){
-		DunkClick();
-		$("#dunk").disabled = true;
-		$("#devour").disabled = true;
-		$("#twist").disabled = true;
-		$("#cookieUI").animate({height:"0vw"}, 1000);
+		if ( $('#dunk').attr('disabled') == "disabled" ) {
+			return false;
+		}
+		else {
+			$("#dunk").attr('disabled','disabled');
+			$("#devour").attr('disabled','disabled');
+			$("#twist").attr('disabled','disabled');
+			DunkClick();
+			$("#devour").animate({height:"0"}, 1000);
+			$("#twist").animate({height:"0"}, 1000);
+		}
 
 	});
 	
 	$("#devour").click(function(){
-		DevourClick();
-		$("#dunk").disabled = true;
-		$("#devour").disabled = true;
-		$("#twist").disabled = true;
-		$("#cookieUI").animate({height:"0vw"}, 1000);
+		if ( $('#devour').attr('disabled') == "disabled" ) {
+			return false;
+		}
+		else {
+			$("#dunk").attr('disabled','disabled');
+			$("#devour").attr('disabled','disabled');
+			$("#twist").attr('disabled','disabled');
+			DevourClick();
+			//$("#cookieUI").animate({height:"0vw"}, 1000); //NO LONGER USED
+			$("#dunk").animate({height:"0"}, 1000);
+			$("#twist").animate({height:"0"}, 1000);
+		}
 	});
 	
 	$("#twist").click(function(){
-		TwistClick();
-		$("#dunk").disabled = true;
-		$("#devour").disabled = true;
-		$("#twist").disabled = true;
-		$("#cookieUI").animate({height:"0vw"}, 1000);
+		if ( $('#twist').attr('disabled') == "disabled" ) {
+			return false;
+		}
+		else {
+			$("#dunk").attr('disabled','disabled');
+			$("#devour").attr('disabled','disabled');
+			$("#twist").attr('disabled','disabled');
+			TwistClick();
+			$("#devour").animate({height:"0"}, 1000);
+			$("#dunk").animate({height:"0"}, 1000);
+		}
 	});
 	
-	//Self explanatory
+	//Prepares DIV elements for theater operation
 	function PrepareTheater(){
 		//Animates buttons to zero width
+		if($(window).width() >= 750){//Stubborn DIV fix
+			document.getElementById("videos").style.display = "none";}else{}
 		$(".buttons").addClass("minimize");
 		
-		//Makes text transparent and stubborn div
-		document.getElementsByClassName("whatIsText")[0].style.display = "none";//Art text makes animation of BK difficult
+		//Makes text transparent for stubborn div
+		//Artistic text makes animating DIV BK difficult
+		document.getElementsByClassName("whatIsText")[0].style.display = "none";
 		document.getElementsByClassName("videoNavText")[0].style.color = "transparent";
+		
 		document.getElementsByClassName("navVideo")[0].style.display = "none";
 		document.getElementsByClassName("navVideo")[1].style.display = "none";
 		$("#titleSquare").fadeTo("fast",0);
 		$("#titleOfVideo").fadeTo("fast",0);
 		$("#playVideo").fadeTo("fast",0);
-		//$(this).removeClass("hoverAttr");
 
 		window.setTimeout(function() {
 			
-			//This animation will only happen once per reload
 			$("#centerBlock").addClass("rotate45 minimizeWindow");
 
 			window.setTimeout(function() {
-				//This animation will only happen once per reload
+
 				document.getElementById("backgroundHolder").style.display = "none";
 				document.getElementById("centerBlock").style.display = "none";
 				
 				window.setTimeout(function() {
+				
 					document.getElementById("header").style.display = "block";
 					document.getElementById("theater").style.display = "block";
 					
@@ -173,15 +217,15 @@ $(document).ready (function() {
 							PlayCookie();
 						}
 						
-					},1000); //Swap from homepage grid to theater grid
+					},1000); //Swap to theater grid from homepage grid
 					
 				},300);//Make theater visible
 				
-			},1200);//Disable play portal
+			},1200);//Disable centerBlock
 			
-		},1000);//Animation, theater and grid control
+		},1000);//Animation: theater and grid
 		
-	}//Move from homepage to theater and reset theater to continuously play films
+	}//Begin moving to theater from homepage
 	
 	
 	//Initial variables for cookie code
@@ -250,27 +294,36 @@ $(document).ready (function() {
 		
 		cookieVideo.oncanplay = function () {
 			
-			if(Math.random() > .7){OperateEd();}else{}
+			if(Math.random() > .5){
+				for(var i = 0; i < 3; i++){//OperateEd();//NO LONGER USED
+				}
+			}else{}
+			
 			cookieVideo.play();
+			
 			if(clicked == false){OperateTimer();}
 			else{ ClearTimer();}
 			
 			$(cookieVideo).bind("ended", function () {
+			
 				$(this).unbind("ended");
 				
 				clicked = false;
 				
-				$("#dunk").disabled = false;
-				$("#devour").disabled = false;
-				$("#twist").disabled = false;
+				$("#dunk").removeAttr('disabled');
+				$("#devour").removeAttr('disabled');
+				$("#twist").removeAttr('disabled');
 				
 				if(currentCookie < 12){
 					document.getElementById("cookieUI").style.display = "block";
-					$("#cookieUI").animate({height:"15vw"}, 1000);
+					$("#dunk").animate({height:"100%"}, 1000);
+					$("#devour").animate({height:"100%"}, 1000);
+					$("#twist").animate({height:"100%"}, 1000);
 				}
 				else{
-					//document.getElementById("cookieUI").style.display = "none";
-					$("#cookieUI").animate({height:"0vw"}, 1000);
+					$("#dunk").animate({height:"0"}, 1000);
+					$("#devour").animate({height:"0"}, 1000);
+					$("#twist").animate({height:"0"}, 1000);
 				}
 				
 				if(currentCookie > 12){
@@ -282,7 +335,6 @@ $(document).ready (function() {
 					document.getElementById("playAnother").style.display = "block";
 					document.getElementById("backgroundHolder").style.display = "block";
 
-
 				}
 				else{
 					NextCookie();}
@@ -292,76 +344,69 @@ $(document).ready (function() {
 	}
 	
 	function CookieDisplay () {
+	
 		console.log("animation");
 		document.getElementById('filmRing1').style.display = "none";
 		document.getElementById('filmCookie').style.display = "block";
 		document.getElementById("cookieUI").style.display = "block";
 		$("#cookieUI").animate({height:"15vw"}, 1000);
+		
 	}
 	
 	function NextCookie() {
+	
 		console.log("next scene");
 		PlayCookie();
+		
 	}
 	
 	function DevourClick () {
-		clicked = true;
-		currentCookie+=1;
-		PauseCookie();
-		PlayCookie();
+			clicked = true;
+			currentCookie+=1;
+			PauseCookie();
+			PlayCookie();
 	}
 	
 	function DunkClick () {
-		clicked = true;
-		currentCookie+=2;
-		PauseCookie();
-		PlayCookie();
+			clicked = true;
+			currentCookie+=2;
+			PauseCookie();
+			PlayCookie();
 	}
 	
 	function TwistClick () {
-		clicked = true;
-		currentCookie+=3;
-		PauseCookie();
-		PlayCookie();
+			clicked = true;
+			currentCookie+=3;
+			PauseCookie();
+			PlayCookie();
 	}
 	
 	function OperateTimer () {
+	
 		document.getElementById("counter").style.display = "block";
 		$("#counter").animate({width:"80%"}, 0);
 		$("#counter").animate({width:"0px"}, cookieVideo.duration*1000);
 		console.log("timer: "+cookieVideo.duration*1000);
 		
-		/*var animationLength = 7;//Math.ceil(cookieVideo.duration);
-		$("#seconds").text(animationLength.toString());
-		
-		var time = 0;
-		var interval = setInterval(function() {
-			console.log(animationLength.toString());
-			$("#seconds").text(animationLength.toString());
-			
-			if (animationLength <= time) {
-				clearInterval(interval);
-				PlayNextCookie();
-				document.getElementById("counter").style.display = "none";
-			}else{
-			animationLength--;}
-		}, 1000);*/
-		
 	}
 	
 	function ClearTimer () {
+	
 		$("#counter").animate({width:"80%"}, 0);
 		document.getElementById("counter").style.display = "none";
+		
 	}
 	
 	function PauseCookie() {
+	
 		var temp = document.getElementById('filmCookie');
 		$(temp).unbind("ended");
 		temp.pause();
+		
 	}
 	
 	
-	//ELEMENTS THAT RUN THE RING FILM SERIES
+	//CODE THAT RUNS THE RING FILM SERIES
 	//Regulating variables
 	var ticker;
 	var interval;
@@ -375,6 +420,7 @@ $(document).ready (function() {
 
 	var goodSelected;
 	var nonresponsive;
+	
 	var audioID;
 	var audioFrequency;
 	var audioIDBad;
@@ -382,6 +428,7 @@ $(document).ready (function() {
 	var audioIDGood;
 	var audioFrequencyGood;
 	var audioNames;
+	
 	var random_clip;
 	var random_audio;
 	var random_audioBad;
@@ -410,27 +457,36 @@ $(document).ready (function() {
 		
 		//Setup stop condition for when user has clicked UI.
 		$("#pickUp").click( function() {
+		
 			pickedUp = true;
+			
 		});
+		
 		$("#leftHemi").click( function() {
+		
 			goodSelected = true;
 			nonresponsive = false;
 			$("#leftHemi").addClass("selected");
 			$("#rightHemi").removeClass("selected");
+			
 		});
+		
 		$("#rightHemi").click( function() {
+		
 			goodSelected = false;
 			nonresponsive = false;
 			$("#rightHemi").addClass("selected");
 			$("#leftHemi").removeClass("selected");
+			
 		});
 
 
-		//Countdown loop for starting scene, the film officially starts.
+		//Countdown loop for starting scene; the film officially starts.
 		ticker = setInterval(function() {
 			
 			//Check to see if user has interacted, and load next clip if true.
 			if(pickedUp){
+			
 				random_clip = getRandomClip(sceneID, sceneFrequency);
 				random_audio = getRandomClip(audioID, audioFrequency);
 				random_audioBad = getRandomClip(audioIDBad, audioFrequencyBad);
@@ -440,9 +496,11 @@ $(document).ready (function() {
 				pauseVideo();
 				
 				if(random_clip == 1){
+				
 					loadVideo(sceneNames[random_clip], true, false, 1);
-					//Timer for UI Response
+					
 				}else{
+				
 					loadVideo(sceneNames[random_clip], true, false, 2);
 
 				}
@@ -450,7 +508,9 @@ $(document).ready (function() {
 			}else{
 				//Upon first pass, play starter scene.
 				if(counter == 9){
+				
 					loadVideo("Intro Loop", true, true, 0);
+					
 				}else{}
 				
 				//Countdown.
@@ -458,12 +518,15 @@ $(document).ready (function() {
 				
 				//Check stop condition of countdown and load next scene if true.
 				if(counter <= 0) {
+				
 					//When finished with countdown, reset if no response in UI.
 					clearInterval(ticker);
 					document.getElementById("seconds").style.display = "none";
 					document.getElementById("seconds").innerHTML = "8";
 					PlayRing();
+					
 				} else {
+				
 					//Update the countdown timer.
 					document.getElementById("seconds").innerHTML = counter.toString();
 				}
@@ -473,11 +536,16 @@ $(document).ready (function() {
 	}
 	
 	function responseAnimation () {
+	
 		document.getElementById("selectResponse").style.display = "block";
+		$("#selectResponse").animate({height:"20vw"}, 1000);
 		document.getElementById("responseCountdown").style.display = "inline-block";
+		
 		var time = 0;
 		var i = 7;
+		
 		interval = setInterval(function() {
+		
 			$("#responseCountdown").text(i);
 			if (i == time) {
 				clearInterval(interval);
@@ -485,10 +553,15 @@ $(document).ready (function() {
 				$("#responseCountdown").text(7);
 				
 			}
+			else if (i == 1){
+				$("#selectResponse").animate({height:"0vw"}, 1000);
+			}
 			i--;
+			
 		}, 1000);
 		
 		window.setTimeout(function(){
+		
 			if(nonresponsive){
 				audio = new Audio("HTML Clips/Ring/Audio "+audioNames[random_audio-1]+".mp3");
 				audio.play();
@@ -527,10 +600,15 @@ $(document).ready (function() {
 		
 		$("#counter").animate({width:"80%"}, 0);
 		$("#counter").animate({width:"0px"}, 9000);
-		if(Math.random() > .7){OperateEd();}else{}
+		
+		if(Math.random() > .5){
+		
+			for(var i = 0; i < 3; i++){//OperateEd();//NO LONGER USED
+			}
+			
+		}else{}
 		
 		document.getElementById("counter").style.display = "block";
-		//document.getElementById("seconds").style.display = "inline-block";
 	
 	}
 
@@ -582,20 +660,14 @@ $(document).ready (function() {
 	
 	//Function to choose next scene randomly.
 	var randomSelection = function(min, max) {
-		return Math.random() * (max - min) + min;
-	};
 	
-	function wiggle (myelement) {
-		$(myelement)
-		.animate({left:"-=10px"},200)
-		.animate({left:"+=20px"},200)
-		.animate({left:"-=20px"},200)
-		.animate({left:"+=10px"},200);
-
-	}
+		return Math.random() * (max - min) + min;
+		
+	};
 	
 	//Get random element from arrays
 	var getRandomClip = function(list, weight) {
+	
 		var total_weight = weight.reduce(function(previous, current, i, array){
 			return previous + current;
 		});
@@ -604,6 +676,7 @@ $(document).ready (function() {
 		var weight_sum = 0;
 		
 		for(var i = 0; i < list.length; i++) {
+		
 			weight_sum += weight[i];
 			weight_sum = +weight_sum.toFixed(2);
 			
@@ -614,75 +687,107 @@ $(document).ready (function() {
 	};
 	
 	function SelectPage (ifTrue) {
+	
 		if(ifTrue){
 			CookieDisplay();
 			document.getElementById("titleOfVideo").innerHTML = "The Cookie";
 			document.getElementById("headerText").innerHTML = "The <span class='standout'>Cookie</span>";
-			document.getElementById("contextInfo").innerHTML = "Experimental film, <em>Cookie</em>, recreates the living world in a prerecorded shot sequence. In this series, cookies can be eaten by one of three ways. <span class='embolden tighten'>YOU</span> will have total control over your cookie eating. Imagination required. WARNING: CAUSES PURPLE MONSTER HALLUCINATION.";
+			document.getElementById("contextInfo").innerHTML = "Experimental film, <em>Cookie</em>, recreates the living world in a prerecorded shot sequence. In this series, cookies can be eaten by one of three ways. <span class='embolden tighten'>YOU</span> will have total control over your cookie eating. Imagination required.";
 		}
 		else{
 			playRing = true;
 			document.getElementById("titleOfVideo").innerHTML = "The Ring";
 			document.getElementById("headerText").innerHTML = "The <span class='standout'>Ring</span>";
-			document.getElementById("contextInfo").innerHTML = "Experimental film, <em>RING</em>, recreates the living world in a prerecorded shot sequence. In this series, a number of phone calls are recieved and <span class='embolden tighten'>YOU</span> are able to play a role in controlling the responses. Imagination required. WARNING: CAUSES PURPLE MONSTER HALLUCINATION.";
+			document.getElementById("contextInfo").innerHTML = "Experimental film, <em>RING</em>, recreates the living world in a prerecorded shot sequence. In this series, a number of phone calls are recieved and <span class='embolden tighten'>YOU</span> are able to play a role in controlling the responses. Imagination required.";
 		}
 	}
 	
 	function NavigationSelect (whichVideo) {
+	
 		playRing = false;
 		SelectPage(whichVideo);
 		PrepareTheater();
+		
 	}
 	
-	//ED related variables
-	var runEd = true;
-	var stopEd = false;
+	//ED related variables //NO LONGER USED
+	var runImg = true;
+	var stopImg = false;
 	var backAndForth = true;
 	var number;
+	var timeouts = [];
+	var type;
 
-	function OperateEd () {
+	function OperateEd () {//NO LONGER USED
+		
+			if($(window).width() < 586){return false;}
+			
+			StopTracked();
+			$("#scrolling2D").fadeTo(0,1);
+			type = playRing ? "person" : "oreo";
 		
 			number = Math.random();
-			var EDD = Math.round(number * 1200);
+			var imgID = Math.round(number * 1200);
+			console.log(type);
+			$("#scrolling2D").append("<img id = "+imgID+" src='images/"+type+".gif' />");
 		
-			$("#edWalking").append("<img id = "+EDD+" src='images/ed-walk2.gif' />");
+			document.getElementById("scrolling2D").style.display = "block";
 		
-			document.getElementById("edWalking").style.display = "block";
-		
-			var height = number * (500 - 120) + 120;
-			var time = number * (8000 - 4500) + 3000;
+			var height = number * (300 - 60) + 60;
+			if(type == "person"){
+				var height = number * (250 - 60) + 60;
+			}
+			var time = number * (8000 - 4500) + 4500;
 			var layer = Math.round(number * 100);
 			//var top = (10 + (number * 120)) + "px";
 		
-			document.getElementById(EDD).style.height = height +"px";
-			document.getElementById(EDD).style.zIndex = layer;
-			//document.getElementById("ED").style.marginTop = top;
+			document.getElementById(imgID).style.height = height +"px";
+			document.getElementById(imgID).style.zIndex = layer;
+			//document.getElementById("ED").style.marginTop = top;//NO LONGER USED
 		
 			if(backAndForth){
 				backAndForth = !backAndForth;
-				$("#"+EDD).removeClass("flipped");
-				$("#"+EDD).velocity({left:"-100%"}, 0);
-				$("#"+EDD).velocity({left:"100%"}, time);
+				//$("#"+EDD).removeClass("flipped");//NO LONGER USED
+				$("#"+imgID).velocity({left:"-100%"}, 0);
+				$("#"+imgID).velocity({left:"100%"}, time);
 			}
 			else{
 				backAndForth = !backAndForth;
-				$("#"+EDD).addClass("flipped");
-				$("#"+EDD).velocity({left:"100%"}, 0);
-				$("#"+EDD).velocity({left:"-100%"}, time);
+				//$("#"+EDD).addClass("flipped");//NO LONGER USED
+				$("#"+imgID).velocity({left:"100%"}, 0);
+				$("#"+imgID).velocity({left:"-100%"}, time);
 			}
 		
-			if(!runEd){
+			if(!runImg){
 				setTimeout(OperateEd, time);
 			}
 			else{
-				setTimeout(function(){
-					$("#edWalking").empty();
-				}, 30000);
+			
+				timeouts.push(setTimeout(function(){
+					
+					$("#scrolling2D").fadeTo(2000,0);
+					
+					setTimeout(function(){
+						$("#scrolling2D").empty();
+					},2000);
+					
+				}, 5000));
+					
 			}
 	}
 	
+	function StopTracked () {
+	
+		for(var i = 0; i < timeouts.length; i++)
+		{
+			clearTimeout(timeouts[i]);
+		}
+		
+		timeouts = [];
+	}
+	
 
-});//Ready Function
+});//Ready Function WOOT WHAT A LOT OF CODE
 
 
 
