@@ -521,14 +521,13 @@ $(document).ready (function() {
 				
 					//When finished with countdown, reset if no response in UI.
 					clearInterval(ticker);
-					document.getElementById("seconds").style.display = "none";
-					document.getElementById("seconds").innerHTML = "8";
 					PlayRing();
 					
 				} else {
 				
 					//Update the countdown timer.
-					document.getElementById("seconds").innerHTML = counter.toString();
+					//NO LONGER USED
+					//document.getElementById("seconds").innerHTML = counter.toString();
 				}
 			}
 			//1000 == 1 second timing for countdown.

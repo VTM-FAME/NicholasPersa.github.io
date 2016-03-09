@@ -12,7 +12,6 @@
 	
 		<script>function videoEnded () {
 		document.getElementById("selectResponse").style.display = "none";
-		document.getElementById("seconds").innerHTML = "7";
 		$("#leftHemi").removeClass("selected");
 		$("#rightHemi").removeClass("selected");
 		
@@ -83,7 +82,7 @@
 		
 		<!--UI TIMER DISPLAY FOR CURRENT VIDEO-->
 		<div id="timerBar">
-			<div id="time"><p>Time</p></div><div id="counter"><p id="seconds"></p></div>
+			<div id="time"><p>Time</p></div><div id="counter"></div>
 		</div>
 		
 		<div id="theaterNav">
