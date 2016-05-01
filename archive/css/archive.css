@@ -1,7 +1,7 @@
 
 @font-face {
 	font-family: "Intro Inline";
-	src: url("../font/Intro/Intro Inline.otf");
+	src: url("../font/Intro Inline.otf");
 }
 
 html {
@@ -55,10 +55,10 @@ h1 {
 	position:absolute;
 	height:100vh;
 	width:100vw;
-	background-image: url("../image/Centerfold/Centerfold.jpg");
+	/*background-image: url("../image/Centerfold/Centerfold.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-	background-position:center;
+	background-position:center;*/
 	-webkit-transform:scale(1.2) !important;
 	transform:scale(1.2) !important;
     /*-moz-transform: scaleX(-1);
