@@ -613,6 +613,7 @@ h1 {
 
 #aboutSheet {
 	position:relative;
+	display:none;
 	top:10%;
 	left:5%;
 	background:rgba(0,0,0,.4);
