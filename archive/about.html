@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	
+	<link rel="stylesheet" type="text/css" href="css/archive.css">
+		<link href="https://fonts.googleapis.com/css?family=Basic" rel='stylesheet' type='text/css'>
+			<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700" rel='stylesheet' type='text/css'>
+				<script src="js/jquery.min.js"></script>
+				<script src="js/velocity.js"></script>
+				<script src="js/velocity.js"></script>
+				<script src="js/velocity.ui.js"></script>
+				<script src="js/Loading.js"></script>
+
+</head>
+
+<body>
+
+	<div id="pageHome" class="twenty wrap">
+		<div id="aboutBackground"></div>
+		
+		<div id="aboutSheet" class="eight"><div id="navSection"><a href="index.html"><div class="twoThirds aboutButton"><p class="buttonText">Home</p></div></a
+				><a href="povMap.html"><div class="twoThirds aboutButton"><p class="buttonText">POV</p></div></a
+				><a href="#"><div id="contact" class="twoThirds aboutButton"><p id="contactButton" class="buttonText">Contact</p></div></a></div>
+			
+			<h1 id="aboutTitle">About</h1>
+			<div id="paraText">
+				<p class="firstPara">I have wanted to build this collection for quite some time.</p>
+				<p>Over the years, I have seen this building as I go to school, work, run errands, party, drive aimlessly, or any other reason for travel.</p>
+				<p>I&apos;ve had every expression right before I see this building: happy, dreary, aloof, angry, zombified, and so on.</p>
+				<p class="lastPara">I can&apos;t imagine what it&apos;ll be like to move one day. Will it be replaced?</p>
+			</div>
+			
+		</div>
+		
+		<script>
+		$(document).ready(function(){
+
+			document.body.style.background = "#fff";
+		
+			var counter = true;
+			$("#contact").click(function(){
+				
+				if(counter){
+					document.getElementById("paraText").innerHTML = "<p>Twitter:@NicholasPersa</p><p>Email:neptunes.bb@gmail.com</p>";
+					document.getElementById("contactButton").innerHTML = "revert";
+				}else{
+					document.getElementById("paraText").innerHTML = "<p class='firstPara'>I have wanted to build this collection for quite some time.</p><p>Over the years, I have seen this building as I go to school, work, run errands, party, drive aimlessly, or any other reason for travel.</p><p>I&apos;ve had every expression right before I see this building: happy, dreary, aloof, angry, zombified, and so on.</p><p class='lastPara'>I can&apos;t imagine what it&apos;ll be like to move one day. Will it be replaced?</p>";
+					document.getElementById("contactButton").innerHTML = "contact";
+				}
+				counter = !counter;
+			});
+		
+			function FadeIn (element, time){
+				$("#"+element).velocity("fadeIn", {duration:500, delay:time});
+			}
+			
+			function BounceIn(element, height, time, dropHeight, delay) {
+			
+				//var currentHeight = $("#"+element).offset().top;
+				//document.getElementById(element).style.display = "none";
+				$("#"+element).css("top",dropHeight);
+				document.getElementById(element).style.display = "block";
+				$("#"+element).velocity({top:height},{duration:time,easing:"easeSineIn", delay:delay});
+			}
+			
+			window.onload = function(){
+				BounceIn("aboutSheet", "10%", 1500,"100%", 3000)
+			};
+		
+			/*FadeIn("aboutSheet",3000);
+			FadeIn ("aboutTitle", 3000);
+			FadeIn("paraText", 5000);
+			FadeIn("navSection", 2000);
+			*/
+			
+			});
+		</script>
+	</div>
+
+</body>
+
+</html>

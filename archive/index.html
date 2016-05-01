@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	
+	<link rel="stylesheet" type="text/css" href="css/archive.css">
+	<link href="https://fonts.googleapis.com/css?family=Righteous" rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/css?family=Basic" rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700" rel='stylesheet' type='text/css'>
+	
+	<script src="js/jquery.min.js"></script>
+	<script src="js/parallax.js"></script>
+	<script src="js/velocity.js"></script>
+	<script src="js/velocity.ui.js"></script>
+	<script src="js/Loading.js"></script>
+	
+</head>
+
+<body>
+
+	<div id="pageHome" class="twenty wrap">
+		<div id="homeBackground">
+			<div class="parallax1 layer" data-depth="0.2"></div>
+			<div class="parallax2 layer" data-depth="0.4"></div>
+			<div class="parallax3 layer" data-depth="0.7"></div>
+		</div>
+		<div id="homeTitle" class="title homeTitle">
+			<h1 class="homeText">The Beacon</h1>
+		</div>
+		
+		<div id="hello"><p>15 photographs by nicholas</p></div>
+		
+		<div id="homeMenu"><h1 class="menuText">Menu</h1></div>
+		
+		<script>
+		$(document).ready(function(){
+
+			$("#homeMenu").click(function(){
+				$("#introSheet").toggleClass("displayThis");
+			});
+		
+			var scene = document.getElementById('homeBackground');
+			var parallax = new Parallax(scene);
+			
+			HomeAnimationStart();
+
+			function HomeAnimationStart() {
+				window.onload = function(){
+					BounceIn("homeTitle","0px",500, "-100%", 4000);
+					SwipeIn("hello", "50%", 500, "-100%", 4400);
+					SwipeIn("homeMenu", "50%", 500, "150%", 4800);
+				};
+			}
+		
+			function BounceIn(element, height, time, dropHeight, delay) {
+			
+				//var currentHeight = $("#"+element).offset().top;
+				//document.getElementById(element).style.display = "none";
+				$("#"+element).css("top",dropHeight);
+				document.getElementById(element).style.display = "block";
+				$("#"+element).velocity({top:height},{duration:time,easing:"spring", delay:delay});
+			}
+		
+			function SwipeIn(element, swipe, time, dropHeight, delay){
+				$("#"+element).css("left",dropHeight);
+				document.getElementById(element).style.display = "block";
+				$("#"+element).velocity({left:swipe},{duration:time,easing:"spring", delay:delay});
+			}
+			
+			});
+		</script>
+		
+		<div id="introSheet" class="twelve">
+		
+			<p>The <span class="littleCaps">beacon</span> is a body of work archiving points of view (POV) from a 15 mile radius around the Wells Fargo Plaza. As I travel for various reasons around the suburbs, this buidling can be nefariously seen. Living very close to this building means that I feel comforted by its visage. Seeing it towering in the distance signals my home.</p>
+			<a href="povMap.html"><div class="two pov"><p id="arrow">&#10163;</p><p class="buttonText">POV</p></div></a>
+		</div>
+	</div>
+
+</body>
+
+</html>
