@@ -1,7 +1,7 @@
 
 @font-face {
 	font-family: "Intro Inline";
-	src: url("../font/Intro/Intro Inline.otf");
+	src: url("../font/Intro Inline.otf");
 }
 
 html {
@@ -569,6 +569,7 @@ h1 {
 
 #aboutSheet {
 	position:relative;
+	display:none;
 	top:10%;
 	left:5%;
 	background:rgba(0,0,0,.4);
