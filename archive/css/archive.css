@@ -1,26 +1,23 @@
 
 @font-face {
 	font-family: "Intro Inline";
-	src: url("../font/Intro Inline.otf");
+	src: url("../font/Intro/Intro Inline.otf");
 }
 
 html {
 	background:#222;
 }
 
-/*body {
-	margin:0;
-	font-size:15px;
-}*/
 body {
-  color: #222;
-  background:rgba(140, 191, 217, 1);
-  height: .25rem;
-  top: 0;
-  bottom: 0;
-  margin: auto;
-  position: absolute;
-  width: 0%;
+	color: #222;
+	background:rgba(140, 191, 217, 1);
+	height: .25rem;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	position: absolute;
+	width: 0%;
+	font-size:15px;
 }
 
 a {
@@ -55,19 +52,12 @@ h1 {
 	position:absolute;
 	height:100vh;
 	width:100vw;
-	/*background-image: url("../image/Centerfold/Centerfold.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-	background-position:center;*/
+	background-image: url("../image/Centerfold/Centerfold.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position:center;
 	-webkit-transform:scale(1.2) !important;
 	transform:scale(1.2) !important;
-    /*-moz-transform: scaleX(-1);
-    -o-transform: scaleX(-1);
-    -webkit-transform: scaleX(-1);
-    -ms-transform: scaleX(-1);
-    transform: scaleX(-1);
-    -ms-filter: "FlipH";
-    filter: FlipH;*/
 }
 
 .parallax1 {
@@ -75,8 +65,8 @@ h1 {
 	height:100vh;
 	width:100vw;
 	background-image: url("../image/Centerfold/Centerfold1.png");
-    background-size: cover;
-    background-repeat: no-repeat;
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 
 .parallax2 {
@@ -84,8 +74,8 @@ h1 {
 	height:100vh;
 	width:100vw;
 	background-image: url("../image/Centerfold/Centerfold2.png");
-    background-size: cover;
-    background-repeat: no-repeat;
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 
 .parallax3 {
@@ -93,8 +83,8 @@ h1 {
 	height:100vh;
 	width:100vw;
 	background-image: url("../image/Centerfold/Centerfold3.png");
-    background-size: cover;
-    background-repeat: no-repeat;
+	background-size: cover;
+	background-repeat: no-repeat;
 	background-position-x:50%;
 }
 
@@ -102,7 +92,6 @@ h1 {
 	background:rgba(0,0,0,.4);
 	color:white;
 	font-weight:800;
-	/*border:1px solid black;*/
 }
 
 .title {
@@ -112,6 +101,9 @@ h1 {
 	font-weight:normal;
 	letter-spacing:.1em;
 	font-size:1.5em;
+	background:rgba(255,255,255,.81);
+	padding-top:15px;
+	white-space:nowrap;
 	-webkit-touch-callout: none; /* iOS Safari */
 	-webkit-user-select: none;   /* Chrome/Safari/Opera */
 	-khtml-user-select: none;    /* Konqueror */
@@ -121,9 +113,7 @@ h1 {
 	cursor:none;
 	-webkit-transform:translateX(-50%);
 	transform:translateX(-50%);
-	background:rgba(255,255,255,.81);
-	padding-top:15px;
-	white-space:nowrap;
+
 }
 
 h1 {
@@ -135,15 +125,13 @@ h1 {
 	font-weight:normal;
 	padding:0px 20px;
 	margin:0;
-	/*background:rgba(0,0,0,.4);*/
 	border-radius:0px;
-	/*border:1px solid white;*/
 }
 
 #hello {
 	position:absolute;
 	display:none;
-	top:87px;
+	top:83px;
 	left:50%;
 	padding:10px 10px 5px 10px;
 	background:rgba(0,0,0,.2);
@@ -159,27 +147,23 @@ h1 {
 }
 
 .homeText {
-	/*background:rgba(0,0,0,.4);*/
 	font-size:3em !important;
 }
 
 .homeTitle {
 	position:absolute;
 	display:none;
-	/*width:35vw;
-	max-width:370px;*/
 }
 
 #homeMenu {
 	position:absolute;
 	display:none;
 	left:50%;
-	top:121px;
+	top:115px;
 	font-family:"Intro Inline";
 	font-weight:800;
 	letter-spacing:.1em;
 	font-size:1.5em;
-	/*text-shadow: -1px 1px 1px #444;*/
 	cursor:pointer;
 	-webkit-transform:translateX(-50%);
 	transform:translateX(-50%);
@@ -247,12 +231,6 @@ h1 {
 .displayThis {
 	display:block !important;
 }
-/*
-@media all and (min-width:1000px){
-	#introSheet {
-		left:100px;
-	}
-}*/
 
 .pov {
 	position:absolute;
@@ -297,7 +275,6 @@ h1 {
 
 /********** POV MAP PAGE **********/
 
-
 #povNavBar {
 	position:absolute;
 	bottom:10vh;
@@ -310,21 +287,21 @@ h1 {
 	height:100vh;
 	width:100vw;
 	background-image: url("../image/mspGoogle.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
+	background-size: cover;
+	background-repeat: no-repeat;
 	pointer-events:none;
 }
 
 .mapTitle {
 	position:absolute;
-	top:1.5%;
-	right:0% !important;
-	background:rgba(0,0,0,.4);
+	top:0;
+	left:50% !important;
+	background:#444;
 	font-weight:normal;
 	letter-spacing:.1em;
-	font-size:1.9em;
-	border:1px solid white;
-	border-right:0;
+	font-size:1.5em;
+	border-radius:3px;
+	border:2px solid #111;
 	-webkit-touch-callout: none; /* iOS Safari */
 	-webkit-user-select: none;   /* Chrome/Safari/Opera */
 	-khtml-user-select: none;    /* Konqueror */
@@ -332,14 +309,17 @@ h1 {
 	-ms-user-select: none;       /* Internet Explorer/Edge */
 	user-select: none;
 	cursor:none;
-
+	-webkit-transform:translateX(-50%);
+	transform:translateX(-50%);
+	
 }
 
 .mapText {
 	padding-top:10px;
+	padding-right:15px;
 	font-size:1.7em;
 	font-weight:600;
-	color:white;
+	color:#666;
 }
 
 #homeTab {
@@ -385,19 +365,6 @@ h1 {
 	cursor:auto;
 }
 
-/*.povNavText {
-	position:absolute;
-	display:block;
-	width:40vw;
-	height:40vw;
-	top:-40%;
-	left:-60%;
-	-webkit-transform:rotate(-45deg);
-	transform:rotate(-45deg);
-	color:#111;
-	font-size:1em;
-}*/
-
 .povNavText {
 	position:absolute;
 	color:#666;
@@ -409,11 +376,6 @@ h1 {
 	-webkit-transform:translateX(-50%);
 	transform:translateX(-50%);
 }
-
-/*#aboutTab .povNavText {
-	-webkit-transform:rotate(-90deg);
-	transform:rotate(-90deg);
-}*/
 
 #outerCircle {
 	position:absolute;
@@ -520,8 +482,6 @@ h1 {
 .ringFourteen {left:57.5vh;top:51%;}/*Observatory*/
 .ringFifteen {left:50.5vh;top:15%;}/*Outlook*/
 
-
-
 .viewed {
 	border:1px #7CE958 solid;
 	background:rgba(102, 153, 51, 1);
@@ -544,10 +504,6 @@ h1 {
 
 .viewed .viewedText {
 	display:inline-block;
-}
-
-.unviewed {
-	border:1px #D95B02 solid;
 }
 
 #milesBox {
@@ -613,7 +569,6 @@ h1 {
 
 #aboutSheet {
 	position:relative;
-	display:none;
 	top:10%;
 	left:5%;
 	background:rgba(0,0,0,.4);
@@ -622,7 +577,6 @@ h1 {
 	border-left:1px solid white;
 	border-right:1px solid white;
 	border-top:1px solid white;
-	overflow:scroll;
 }
 
 #aboutBackground {
@@ -630,8 +584,8 @@ h1 {
 	height:100vh;
 	width:100vw;
 	background-image: url("../image/About.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 
 #aboutSheet p {
@@ -639,6 +593,10 @@ h1 {
 	background:rgba(0,0,0,.7);
 	font-size:1em;
 	color:#fff;
+}
+
+#paraText {
+	/*overflow:scroll;*/
 }
 
 #paraText > p {
@@ -739,7 +697,7 @@ h1 {
 	margin:0 auto;
 	-webkit-transform:translateY(-50%) translateX(-50%);
 	transform:translateY(-50%) translateX(-50%);
- }
+}
 
 #povTab {
 	position:absolute;
@@ -830,8 +788,8 @@ h1 {
 	height:100vh;
 	width:100vw;
 	background-image: url("../image/About.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 
 #povBackground{z-index:100;}
@@ -843,58 +801,50 @@ h1 {
 #hidePoem{z-index:98;}
 #povTab{z-index:100;}
 
-/*@media screen and (max-width:1020px)
-{
-	.homeTitle{
-		font-size:1em;
-		padding:20px 10px 15px 10px;
-	}
-}
-*/
-
-
 /*.heightOne		{height:5vw;}
-.heightTwo		{height:10vw;}
-.heightThree	{height:15vw;}
-.heightFour		{height:20vw;}
-.heightFive		{height:25vw;}
-.heightSix		{height:30vw;}
-.heightSeven	{height:35vw;}
-.heightEight	{height:40vw;}
-.heightNine		{height:45vw;}
-.heightTen		{height:50vw;}
-.heightEleven	{height:55vw;}
-.heightTwelve	{height:60vw;}
-.heightThirteen	{height:65vw;}
-.heightFourteen	{height:70vw;}
-.heightFifteen	{height:75vw;}
-.heightSixteen	{height:80vw;}
-.heightSeventeen{height:85vw;}
-.heightEighteen	{height:90vw;}
-.heightNineteen	{height:95vw;}
+ .heightTwo		{height:10vw;}
+ .heightThree	{height:15vw;}
+ .heightFour		{height:20vw;}
+ .heightFive		{height:25vw;}
+ .heightSix		{height:30vw;}
+ .heightSeven	{height:35vw;}
+ .heightEight	{height:40vw;}
+ .heightNine		{height:45vw;}
+ .heightTen		{height:50vw;}
+ .heightEleven	{height:55vw;}
+ .heightTwelve	{height:60vw;}
+ .heightThirteen	{height:65vw;}
+ .heightFourteen	{height:70vw;}
+ .heightFifteen	{height:75vw;}
+ .heightSixteen	{height:80vw;}
+ .heightSeventeen{height:85vw;}
+ .heightEighteen	{height:90vw;}
+ .heightNineteen	{height:95vw;}
+ 
+ .one		{width:5vw;}
+ .two		{width:10vw;}
+ .twoThirds	{width:13.33vw;}
+ .three		{width:15vw;}
+ .four		{width:20vw;}
+ .five		{width:25vw;}
+ .six		{width:30vw;}
+ .seven		{width:35vw;}
+ .eight		{width:40vw;}
+ .nine		{width:45vw;}
+ .ten		{width:50vw;}
+ .eleven		{width:55vw;}
+ .twelve		{width:60vw;}
+ .thirteen	{width:65vw;}
+ .fourteen	{width:70vw;}
+ .fifteen	{width:75vw;}
+ .sixteen	{width:80vw;}
+ .seventeen	{width:85vw;}
+ .eighteen	{width:90vw;}
+ .nineteen	{width:95vw;}
+ .twenty		{width:100vw;}*/
 
-.one		{width:5vw;}
-.two		{width:10vw;}
-.twoThirds	{width:13.33vw;}
-.three		{width:15vw;}
-.four		{width:20vw;}
-.five		{width:25vw;}
-.six		{width:30vw;}
-.seven		{width:35vw;}
-.eight		{width:40vw;}
-.nine		{width:45vw;}
-.ten		{width:50vw;}
-.eleven		{width:55vw;}
-.twelve		{width:60vw;}
-.thirteen	{width:65vw;}
-.fourteen	{width:70vw;}
-.fifteen	{width:75vw;}
-.sixteen	{width:80vw;}
-.seventeen	{width:85vw;}
-.eighteen	{width:90vw;}
-.nineteen	{width:95vw;}
-.twenty		{width:100vw;}*/
 
+/*************** THE GRID ***************/
 .heightOne		{height:5vh;}
 .heightTwo		{height:10vh;}
 .heightThree	{height:15vh;}
@@ -936,3 +886,9 @@ h1 {
 .eighteen	{width:90vh;}
 .nineteen	{width:95vh;}
 .twenty		{width:100vw;}
+
+
+
+
+
+
