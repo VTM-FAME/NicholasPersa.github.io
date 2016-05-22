@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link href="https://fonts.googleapis.com/css?family=Pacifico" rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/css?family=Hind:400,500,600" rel='stylesheet' type='text/css'>
+	<script src="js/jquery.min.js"></script>
+	<script src = "js/jquery-ui.min.js"></script>
+	<script src = "js/velocity.min.js"></script>
+	<script src="js/main.js"></script>
+	
+		<script>function videoEnded () {
+		document.getElementById("selectResponse").style.display = "none";
+		$("#leftHemi").removeClass("selected");
+		$("#rightHemi").removeClass("selected");
+		
+		document.getElementById("filmRing2").style.display = "none";
+		document.getElementById("header").style.display = "none";
+		document.getElementById("timerBar").style.display = "none";
+		document.getElementById("theaterNav").style.display = "none";
+		
+		document.getElementById("playAnother").style.display = "block";
+		document.getElementById("backgroundHolder").style.display = "block";
+		}</script>
+
+</head>
+<body>
+
+<!--DYNAMIC BACKGROUND-->
+<div id="backgroundHolder"></div>
+
+	<!--TOP HEADER BAR-->
+	<div id="header" class="twelve columns"><p id="headerText">The <span class="popOut standout">Ring</span></p></div>
+	
+	<div id="playAnother"><p><span class="standout">Play</span> another?</p></div>
+
+	<!--THEATER WINDOW FOR FILMS AND UI-->
+	<div id="theater">
+	
+		<!--STRUCTURE FOR RING FILM-->
+		<video id="filmRing1">
+			<source class="SOURCE" type="video/mp4">
+			THE BROWSER DOES NOT SUPPORT THIS VIDEO
+		</video>
+		
+		<video id="filmRing2" onended="videoEnded()">
+			<source class="SOURCE" type="video/mp4">
+			THE BROWSER DOES NOT SUPPORT THIS VIDEO
+		</video>
+		
+		<video id="filmCookie">
+			<source class="SOURCE" type="video/mp4">
+			THE BROWSER DOES NOT SUPPORT THIS VIDEO
+		</video>
+		
+		<!--UI FOR RING FILM-->
+		<div id="pickUp"><p id="pickUpText">Pick Up</p><div id="radiance"></div></div>
+		
+		<div id="selectResponse">
+			<h1 id="responseCountdown">7</h1>
+			<div id="leftHemi">
+				<img src="images/flower.gif" />
+			</div>
+			<div id="rightHemi">
+				<img src="images/skull.gif" />
+			</div>
+		</div>
+		
+		<!--UI FOR RING FILM-->
+		<div id="cookieUI">
+			<div id="dunk">
+				<img src="images/Dunk2.png" />
+			</div>
+			<div id="devour">
+				<img src="images/Devour2.png" />
+			</div>
+			<div id="twist">
+				<img src="images/Twist2.png" />
+			</div>
+		</div>
+		
+		<!--UI TIMER DISPLAY FOR CURRENT VIDEO-->
+		<div id="timerBar">
+			<div id="time"><p>Time</p></div><div id="counter"></div>
+		</div>
+		
+		<div id="theaterNav">
+			<ul id="navBar">
+				<li class="nav1"><p>Home</p></li>
+				<li class="nav2"><p>What's This?</p></li>
+			</ul>
+		</div>
+		
+		<!--About info for each video-->
+		<div id="filmInfo">
+			<p id="contextInfo"></p>
+		</div>
+		
+	</div>
+	<!--END OF THEATER-->
+	
+	<!--CONTAINER GRID-->
+	<div class="container">
+	
+		<!--NO LONGER USED
+		<div id="scrolling2D">
+		</div>-->
+	
+		<!--HTML FOR HOMEPAGE-->
+		<div id="panelHom1" class="two columns">
+		
+			<!--NAVIGATION AND MENUS-->
+			<div id="whatIs" class="buttons">
+				<p class="whatIsText">What <span class="biggerText">is</span> This?</p>
+			</div>
+			
+			<div id="videos" class="buttons"><p class="videoNavText">Films</p>
+				<ul class="videoList">
+					<li class="navVideo ringVideo"><p>The Ring</p></li>
+					<li class="navVideo cookieVideo"><p>The Cookie</p></li>
+				</ul>
+			</div>
+			
+		</div>
+		
+		<!--BUTTON TO THEATER-->
+		<div id="panelHom2" class="eight columns">
+			
+			<div id="centerBlock">
+			
+				<p id="playVideo" class="embolden">PLAY</p>
+				<p id="titleOfVideo">The Ring</p>
+				<div id="titleSquare"></div>
+				
+				<div id="nowWhat">
+					<p>Click anywhere on this <span class="lilCaps">diamond</span><br> to be taken to 1 of 2 interactive films.<br> The films are designed to give you a live <br> action experience and will be <br> influenced by your <br>choices.</p>
+				</div>
+				
+			</div>
+			
+		</div>
+		
+		<!--GRID SPACE FILLER
+		<div id="panelHom3" class="two columns"></div>-->
+		<!--END HTML FOR HOMEPAGE-->
+
+	</div>
+	<!--END CONTAINER GRID-->
+
+<p id="footer"><span class="regular"></span> Nicholas <br>2016</p>
+
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!doctype html>
+<html>
+ 
+ <head>
+	 <script src="lib/js/jquery.min.js" ></script>
+	 <script src="lib/js/jquery-ui.min.js" ></script>
+	 <script src="lib/js/jspsych.js" ></script>
+	 <script src="lib/plugins/EdPsych-Guide.js" ></script>
+	 
+	 <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+	 
+	 <script src="lib/js/sweetalert.min.js"></script>
+	 
+	 <link rel="stylesheet" type="text/css" href="lib/css/sweetalert.css">
+		 <link rel="stylesheet" href="lib/css/jquery-ui.css" ></link>
+		 <link rel="stylesheet" href="lib/css/jspsych.css" ></link>
+		 <link rel="stylesheet" type="text/css" href="lib/css/EdPsych-Guide.css" ></link>
+		 </head>
+ 
+ <body>
+	 <div class="backgroundPsy"></div>
+	 <div id = "jspsych-target"></div>
+ </body>
+ 
+ <script>
+		 //load IP address file from server
+		 //If IP not in list get subject ID and add new IP
+		 //If IP in list load the subject ID.
+		 //Save the IP file
+		 
+		 /*var subject_ip;
+		  $.ajax({
+		  url: 'http://freegeoip.net/json/',
+		  type: 'POST',
+		  dataType: 'jsonp',
+		  success: function(location,subject_ip) {
+		  alert(location.ip);
+		  subject_ip = location.ip;
+		  alert(subject_ip);
+		  
+		  }
+		  });*/
+ 
+	 //saveData("MemoryIP.csv", jsPsych.data.dataAsCSV());
+	 
+		 //Added: function for Javascript-PHP communication
+		 function saveData(filename, filedata){
+			 $.ajax({
+				 type:'post',
+				 cache: false,
+				 url: 'save_data.php', // this is the path to the above PHP script
+				 data: {filename: filename, filedata: filedata}
+				 });
+		 }
+ 
+	 //Initial subject id is null
+	 var subject_id = "";
+	 var today = new Date();
+	 
+	 function startExperiment(subject_id){
+		 
+			 //Choose one problem from a set and store into "problem_assignment"
+			 var problem_num = 1;
+			 var problem_array = ["Benjamin Bloom","Albert Bandura","William James", "B. F. Skinner", "E. L. Thorndike", "Mitzuko Ito", "Ivan Pavlov","Abraham Maslow", "Anthony Gregorc", "Carol Gilligan", "Erik Erickson", "Howard Gardner", "James Paul Gee", "Jean Piaget 1", "Jean Piaget 2", "John Dewey", "Lawrence Kohlberg", "Lev Vygotsky", "McTighe & Wiggins", "Michael Hutchins", "Mihaly Csikszentmihalyi", "Neil Fleming"];
+				 //var problem_array = ["Neil Flemming", "Neil Flemming", "Neil Flemming", "Neil Flemming"];
+				 var problem_assignment = jsPsych.randomization.sample(problem_array, problem_num);
+					 //var problem_assignment = ["Prince"];
+					 //var problem_assignment = ["Beard"];
+					 
+					 
+						 //Main exectuable array
+						 var EdPsych_Guide = [];
+						 
+							 //Place presented problem in executable array
+							 var QuestionOne = {
+								 type:'EdPsych-Guide',
+								 stimuli: [problem_assignment],
+								 theorists:problem_array,
+									 //question: [1],
+									 //distractors: [1,2,2],
+									 prompt:"Select the statement that best answers the question"
+							 };
+							 
+							 EdPsych_Guide.push(QuestionOne);
+							 
+								 //Prompt user for an ID
+								 //If students "try again" user name will be carried over.
+								 if(subject_id==""){
+									 
+									 swal({
+										 
+										 title: "Create or Enter Your Username",
+											 //text: "If you are sure, type in your password:",
+											 type: "input",
+											 showCancelButton: false,
+											 closeOnConfirm: false
+											 }, function(typedUsername) {
+												 if (typedUsername === "") {
+													 var peasantKnow = ["The Universe DEMANDS to know who you are...","Speak, friend, and enter", "Your shoes are untied"];
+													 var know = jsPsych.randomization.sample(peasantKnow,1);
+													 
+													 swal.showInputError(know);
+													 return false;
+												 }
+												 subject_id = typedUsername;
+												 swal.close();
+												 
+											 });
+									}
+								 
+								 /*if(subject_id == ""){
+									 //while(subject_id==""){subject_id = prompt("Please enter the subject ID");}
+								  }*/
+									 //Append the "try again" button
+									 $('#jspsych-target').append($('<button>', {
+										 "id": "tryAnother",
+										 "class": "tryAnother",
+										 "text":"Try Another?",
+										 "click": function(){
+											 $('#jspsych-target').html("");
+											 setTimeout(function(){
+													 //window.location = "file:///Users/fame/Documents/8.%20Seann%20Dikkers/EdPsych%20Guide.html";},1000);
+													 //alert(subject_id +"try again");
+												 startExperiment(subject_id);},1000);
+											 
+										 }
+										 }));
+									 $('#tryAnother').hide();
+									 
+									 jsPsych.init({
+										 display_element: $('#jspsych-target'),
+										 experiment_structure:EdPsych_Guide,
+										 on_finish: function(data) {
+											 
+												 //Add subject ID and problem assigned to data frame.
+												 //alert(subject_id+"on finsih");
+												 
+												 jsPsych.data.addProperties({subject: subject_id,});
+												 var today = new Date();
+												 
+													 //jsPsych.data.displayData("csv");
+													 
+														 //jsPsych.data.localSave(subject_id+ "_" +today.getMonth()+"/"+today.getDate()+"/"+today.getFullYear()+ ".csv", "csv");
+														 
+														 saveData("EdPsy_" +subject_id+ today.getTime()+".csv", jsPsych.data.dataAsCSV());
+														 $('#tryAnother').delay(1500).show(0);
+														 
+										 }
+										 });
+	 }
+	
+		//alert(subject_id+"before start");
+		startExperiment(subject_id);
+		
+			//612-626-0959
+			//
+			//9/9 11 am allegry
+			
+  </script>
+ 
+ 
+</html>

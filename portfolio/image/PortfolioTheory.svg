@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="393px" height="259px" viewBox="0 0 393 259" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.7.2 (28276) - http://www.bohemiancoding.com/sketch -->
+    <title>Text</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD" transform="translate(-137.000000, -577.000000)">
+            <g id="Text" transform="translate(98.000000, 525.000000)">
+                <rect id="Rectangle-10" x="0.370364064" y="0" width="476" height="362"></rect>
+                <text id="The-first-in-a-serie" font-family="CenturyGothic, Century Gothic" font-size="24.3069544" font-weight="normal" line-spacing="35" letter-spacing="1.48000002" fill="#333333">
+                    <tspan x="39" y="127">The first in a series of two </tspan>
+                    <tspan x="39" y="162">learning tools for Bethel </tspan>
+                    <tspan x="39" y="197">Univeristy, Minnesota. This tool </tspan>
+                    <tspan x="39" y="232">help students memorize </tspan>
+                    <tspan x="39" y="267">important theories and </tspan>
+                    <tspan x="39" y="302">theorists in psychology</tspan>
+                    <tspan x="335.930157" y="302">.</tspan>
+                </text>
+                <text id="FREELANCE" font-family="PlantagenetCherokee, Plantagenet Cherokee" font-size="28.647482" font-weight="normal" letter-spacing="0.512068927" fill="#262626">
+                    <tspan x="145.634497" y="72">FREELANCE</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

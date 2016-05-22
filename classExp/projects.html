@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Nicholas'Projects &amp; Interests</title>
+		<meta name="description" content="The collection of web developments and projects by Nicholas Baird. Here, I have posted my projects and thoughts about game and virtual development.">
+		<meta name="author" content="Nicholas Baird">
+		<meta name="viewport" content="width=device-width, initial-scale=.5, user-scalable=yes">
+
+					
+					
+		<link rel="stylesheet" href="css/Nicholas.css">
+		<link rel="stylesheet" href="css/NicholasFont.css">
+		<link rel="shortcut icon" href="favicon.png" type="image/png">
+			
+		<link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel='stylesheet' type='text/css'>
+		<link href="https://fonts.googleapis.com/css?family=Comfortaa" rel='stylesheet' type='text/css'>
+		<link href="https://fonts.googleapis.com/css?family=Archivo+Narrow" rel='stylesheet' type='text/css'>
+		<link href="https://fonts.googleapis.com/css?family=Old+Standard+TT" rel='stylesheet' type='text/css'>
+		<link href="https://fonts.googleapis.com/css?family=Poiret+One" rel='stylesheet' type='text/css'>
+		<link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel='stylesheet' type='text/css'>
+		<link href="https://fonts.googleapis.com/css?family=EB+Garamond" rel='stylesheet' type='text/css'>
+		<link href="https://fonts.googleapis.com/css?family=Cinzel:700" rel='stylesheet' type='text/css'>
+		<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300" rel='stylesheet' type='text/css'>
+		<link href="https://fonts.googleapis.com/css?family=Bangers" rel='stylesheet' type='text/css'>
+			
+		<script src="js/modernizr-2.5.3.min.js"></script>
+		<script src="js/jquery-2.1.4.min.js"></script>
+		<script src="js/script_proj.js"></script>
+
+
+	</head>
+	
+	<body class="diamond">
+		<header id="navigationBar">
+			<h1 id="nameLogo" class="letterWidth">
+				<a href="index.html" id="rainName" title="Home">
+					<span class="N Name">N</span>
+					<span class="I Name">i</span>
+					<span class="C Name">c</span>
+					<span class="H Name">h</span>
+					<span class="O Name">o</span>
+					<span class="L Name">l</span>
+					<span class="A Name">a</span>
+					<span class="S Name">s</span>
+					<span id="go2Home" class="S Name">go2home</span>
+				</a>
+			</h1>
+			<nav id="navBlock">
+				<ul id="navList">
+					<li class="etsy">
+						<a href="https://www.etsy.com/shop/NeptunesPottery" target="_blank"><span></span>
+						</a>
+					</li>
+					<li class="projects">
+						<a href="projects.html"><span id="projectsLink" class="active-projects">projects</span>
+						</a>
+					</li>
+					<li class="journal">
+						<a href="journal.html"><span id="journalLink">journal</span>
+						</a>
+					</li>
+					<li class="about">
+						<a href="about.html"><span id="aboutLink">about</span>
+						</a>
+					</li>
+				</ul>
+			</nav>
+			<!--<div class="clearfix"></div>-->
+			
+		</header>
+		
+			<div id="projectSelect">
+				<ul id="sortProjects">
+					<li id="all" onClick="sortProjects('all')">All Projects</li>
+					<li id="mine" onClick="sortProjects('mine')">My Projects</li>
+					<li id="inspire" onClick="sortProjects('inspire')">Inspirations</li>
+					<li id="future" onClick="sortProjects('future')">Future Ideas</li>
+				</ul>
+				
+				<script>
+					function sortProjects(TYPE) {
+						if(TYPE == 'all'){
+							$('.item.projects').removeClass("no-display");
+						}
+						else if(TYPE == 'mine'){
+							$('.inspire').addClass("no-display");
+							$('.future').addClass("no-display");
+							$('.mine').removeClass("no-display");
+						}
+						else if(TYPE == 'inspire'){
+							$('.mine').addClass("no-display");
+							$('.future').addClass("no-display");
+							$('.inspire').removeClass("no-display");
+						
+						}
+						else{
+							$('.mine').addClass("no-display");
+							$('.inspire').addClass("no-display");
+							$('.future').removeClass("no-display");
+							
+							//$(document).ready(function(){
+							//$('#content').load('content/projectTest.html');
+							//});
+						}
+					}
+				</script>
+				
+			</div>
+				
+		
+			<!-- CONTENT -->
+			<div id="content" class="container clearfix projectContent masonry">
+			
+			<div id="_projects">
+				
+				<article id="T&T" class="item featured projects mine">
+					<h2>web Learning tool</h2>
+					<a href="http://www.goodquestiongames.com" target="_blank" class="image-link caption" title>
+						<img src="image/theory&2.png" width="100%" height="auto" alt="Theory & Theorist" />
+						<p>visit the learning tool</p>
+					</a>
+					
+					<h3>Overview</h3>
+					<p>
+					A study guide designed for a graduate seminar to practice rote memorization of important
+					theorists and theories in educational psychology.
+					</p>
+					
+					<h3>Goals</h3>
+					<ul>
+						<li>Convenient</li>
+						<li>Coding Practice</li>
+					</ul>
+					
+					<h3>Summary</h3>
+					<p>While in Madison WI over the summer, I meet Seann Dikkers at the Games+Learning+Society conference. Seann is a professor of educationcal psychology and the department chair at Bethel University. Natural energy lead us to collaborate on this project. Together we developed an idea to implement in his classes. I programmed and designed the project.</p>
+					<div class="launch-dock">
+						<a class="button projectButton" href="http://www.goodquestiongames.com" target="_blank">check it out live</a>
+					</div>
+					<hr/>
+					<footer>
+						<time datetime="2015-09-22">2015-09-22</time>
+					</footer>
+				</article>
+				
+				<article id="etsy" class="item featured projects mine">
+					<h2>Hand Thrown Pottery</h2>
+					<a href="https://www.etsy.com/shop/NeptunesPottery" target="_blank" class="image-link caption" title>
+						<img src="image/pottery.jpg" width="320" height="320" alt="Hand Thrown Pottery" />
+						<p>more work at Etsy</p>
+					</a>
+					<p>
+					I make pottery on the side as a hobby. I find working with clay very relaxing and enjoy creating functional pieces designed for light snacking and small meals.
+					</p>
+					<div class="launch-dock">
+						<a class="button projectButton" href="https://www.etsy.com/shop/NeptunesPottery" target="_blank">go to Etsy</a>
+					</div>
+					<hr/>
+					<footer>
+						<time datetime="2015-09-22">Updated 2015</time>
+					</footer>
+				</article>
+				
+				<article id="Idea" class="item featured projects inspire">
+					<h2>826 Valencia</h2>
+					<a href="http://826valencia.org/" target="_blank" class="image-link caption" title>
+						<img src="image/valencia.jpg" width="320" height="320" alt="Corporation of Interest" />
+						<p>corporation of interest</p>
+					</a>
+					<p>
+					A business model that I am interested in learning more about. Maybe I can do a game design like mimic of this style of community thing.
+					</p>
+					<div class="launch-dock">
+						<a class="button projectButton" href="http://826valencia.org/" target="_blank">go to website</a>
+					</div>
+					<hr/>
+					<footer>
+						<time datetime="2015-09-22">2015-09-29</time>
+					</footer>
+				</article>
+				
+			</div>
+					
+			</div><!-- CONTENT -->
+
+			
+			<script src="js/masonry.min.js"></script>
+			<script src="js/imagesloaded.min.js"></script>
+			<script src="js/header.js"></script>
+
+			
+			<footer>
+				<small>
+					<span>&copy; Designed and Programmed by Nicholas Baird 2015</span>
+				</small>
+			</footer>
+		
+	</body>
+</html>
+
+
+
+
+
+
+
+
+

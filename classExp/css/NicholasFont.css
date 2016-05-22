@@ -1,0 +1,163 @@
+body {
+	font-family: "Roboto Slab", Times, 'Times New Roman', serif;
+	font-weight: bold;
+}
+
+h1, h2, h3 {
+	font-family: "Cinzel", Arial, Helvetica, sans-serif;
+}
+
+#rainName {
+	font-family: "Bangers";
+	letter-spacing:-4px;
+}
+
+#navList a {
+	font-family: "Cinzel", Arial, Helvetica, sans-serif;
+	text-transform: lowercase !important;
+}
+
+article {
+    font-family: "Roboto Slab", serif;
+}
+
+article h1, article h2, article h3 {
+    font-family: 'Cinzel', serif;
+	text-transform: capitalize;
+}
+
+article h3 {
+	text-transform: uppercase;
+}
+
+article p, article ul {
+    font-family: "Roboto Slab", serif;
+}
+
+/********************** HOME **********************/
+
+#helloWorld h2 {
+	font-family:'Cinzel',cursive;
+}
+
+#helloWorld p {
+	font-size:.95em;
+}
+
+#title_1 {
+	font-family:'Cinzel',cursive;
+	text-transform: uppercase !important;
+	color: #fff !important;
+}
+
+#title_2 {
+	font-family:'Cinzel', arial;
+}
+
+#title_3 {
+	font-family:'Cinzel',cursive;
+	text-transform: uppercase !important;
+	color: #fff !important;
+}
+
+#title_4 {
+	font-family:'Cinzel', arial;
+}
+
+#news2, #project2, #journal2 {
+	font-family: 'Cinzel', cursive;
+	font-size:1.5em;
+}
+
+#news3, #project3, #journal3 {
+	font-family:'Cinzel', arial;
+	font-size:1.5em;
+}
+
+/********************** PROJECT **********************/
+
+#projectSelect {
+    font-family: 'Cinzel', serif;
+	text-transform:capitalize;
+}
+
+/********************** JOURNAL **********************/
+
+#dynamicAdd h3 {
+	font-family: 'Cinzel', cursive !important;
+}
+
+::-webkit-input-placeholder {
+	color:#333;
+    font-family: "Roboto Slab", serif;
+	text-transform:lowercase;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+	color:#333;
+    font-family: "Roboto Slab", serif;
+	text-transform:lowercase;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+	color:#333;
+    font-family: "Roboto Slab", serif;
+	text-transform:lowercase;
+}
+
+:-ms-input-placeholder {  
+	color:#333;
+    font-family: "Roboto Slab", serif;
+	text-transform:lowercase;
+}
+
+#submitButton {
+	font-family:'Cinzel',cursive;
+	text-align:center;
+}
+
+.journalButton {
+	font-family:'Cinzel,cursive;
+}
+
+/********************** ABOUT **********************/
+
+#about1 {
+}
+
+#about2 {
+	color:#fff !important;
+	font-family:'Cinzel',cursive;
+}
+
+#about3 {
+	font-family:'Cinzel',cursive;
+}
+
+#me1 {
+	font-family:'Cinzel',cursive;
+}
+
+#me2, #me3, .contactMe {
+    font-family: "Roboto Slab", serif !important;
+}
+
+#connect1, #connect2, #connect3, #CV2, #CV3, #CV4, #CV5 {
+	font-family:'Cinzel',cursive;
+
+#CV1 {
+    font-family: "Roboto Slab", serif !important;
+}
+
+/********************** Mobile **********************/
+
+
+@media all and (max-width: 500px) {
+
+	#helloWorld p {
+		font-size:10px !important;
+	}
+
+}
+
+

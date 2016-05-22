@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="393px" height="195px" viewBox="0 0 393 195" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.7.2 (28276) - http://www.bohemiancoding.com/sketch -->
+    <title>Text</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD" transform="translate(-136.000000, -1026.000000)">
+            <g id="Text" transform="translate(98.000000, 981.000000)">
+                <rect id="Rectangle-10" x="0.370364064" y="0" width="476" height="362"></rect>
+                <text id="Homepage-to-provide-" font-family="CenturyGothic, Century Gothic" font-size="24.3069544" font-weight="normal" line-spacing="35" letter-spacing="1.48000002" fill="#333333">
+                    <tspan x="37.9631902" y="131">Homepage to provide </tspan>
+                    <tspan x="37.9631902" y="166">navigation to learning tools </tspan>
+                    <tspan x="37.9631902" y="201">designed for Bethel University, </tspan>
+                    <tspan x="37.9631902" y="236">Minnesota</tspan>
+                    <tspan x="174.123512" y="236">.</tspan>
+                </text>
+                <text id="FREELANCE" font-family="PlantagenetCherokee, Plantagenet Cherokee" font-size="28.647482" font-weight="normal" letter-spacing="0.512068927" fill="#262626">
+                    <tspan x="146.01227" y="65">FREELANCE</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

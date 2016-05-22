@@ -1,0 +1,60 @@
+<div id="dynamicAdd">
+
+	<ul id="contentManipulation">
+		<li></li>
+		<li class="write"><span onclick="writeNoto()"><strong>noto</strong></span></li>
+		<li class="search"><span onclick="searchIndago()"><strong>indago</strong></span></li>
+	</ul>
+
+	<form id="innerForm">
+		
+		<h3>Noto
+			<span>collect some tid-bits from the web</span>
+		</h3>
+		
+		<fieldset class="fieldForm topField">
+			<input id="name" type="text" name="username" placeholder="Title" required>
+				
+			<input id="subject" type="text" name="videoLink" placeholder="Link" required>
+					
+			<input id="subject" type="text" name="subject" placeholder="Tags">
+						
+		</fieldset>
+		
+		<fieldset class="fieldForm messageField">
+			
+			<textarea id="message" type="text" name="message" placeholder="Type a noto here"></textarea>
+			
+		</fieldset>
+		
+		<fieldset class="fieldForm submitField">
+			
+			<input id="submitButton" type="submit" name="submit" value="publish">
+				
+		</fieldset>
+	
+	</form>
+
+
+<script>
+
+	function searchIndago() {
+	
+		document.getElementById("innerForm").innerHTML = "<h3>Indago <span>search through what you have collected</span> </h3> <fieldset class='fieldForm topField'> <input id='name' type='text' name='username' placeholder='Title'> <input id='subject' type='text' name='videoLink' placeholder='keywords'> <input id='subject' type='text' name='subject' placeholder='Tags'></fieldset> <fieldset class='fieldForm submitField'> <input id='submitButton' type='submit' name='submit' value='search'> </fieldset>";
+
+	};
+	
+	function writeNoto() {
+		
+		document.getElementById("innerForm").innerHTML = "<h3>Noto <span>collect some tid-bits from the web</span> </h3> <fieldset class='fieldForm topField'> <input id='name' type='text' name='username' placeholder='Title' required> <input id='subject' type='text' name='videoLink' placeholder='Link' required> <input id='subject' type='text' name='subject' placeholder='Tags'> </fieldset> <fieldset class='fieldForm messageField'> <textarea id='message' type='text' name='message' placeholder='Type a noto here'></textarea> </fieldset> <fieldset class='fieldForm submitField'> <input id='submitButton' type='submit' name='submit' value='publish'> </fieldset>";
+		
+	};
+
+</script>
+
+
+
+
+
+
+

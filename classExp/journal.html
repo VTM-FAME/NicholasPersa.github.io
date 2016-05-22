@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Nicholas' Journal &amp; Demi-blog</title>
+		<meta name="description" content="The collection of music, thoughts, images, or cool stuff that I like.">
+		<meta name="author" content="Nicholas Baird">
+		<meta name="viewport" content="width=device-width, initial-scale=.5, user-scalable=yes">
+
+					
+					
+					<link rel="stylesheet" href="css/Nicholas.css">
+					<link rel="stylesheet" href="css/NicholasFont.css">
+					<link rel="shortcut icon" href="favicon.png" type="image/png">
+							
+		<link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel='stylesheet' type='text/css'>
+		<link href="https://fonts.googleapis.com/css?family=Comfortaa" rel='stylesheet' type='text/css'>
+		<link href="https://fonts.googleapis.com/css?family=Old+Standard+TT" rel='stylesheet' type='text/css'>
+		<link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel='stylesheet' type='text/css'>
+		<link href="https://fonts.googleapis.com/css?family=EB+Garamond" rel='stylesheet' type='text/css'>
+		<link href="https://fonts.googleapis.com/css?family=Cinzel:700" rel='stylesheet' type='text/css'>
+		<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300" rel='stylesheet' type='text/css'>
+		<link href="https://fonts.googleapis.com/css?family=Bangers" rel='stylesheet' type='text/css'>
+		
+		<script src="js/modernizr-2.5.3.min.js"></script>
+		<script src="js/jquery-2.1.4.min.js"></script>
+
+	</head>
+	
+	<body class="diamond">
+		
+		<header id="navigationBar">
+			<h1 id="nameLogo" class="letterWidth">
+				<a href="index.html" id="rainName" title="Home">
+					<span class="N Name">N</span>
+					<span class="I Name">i</span>
+					<span class="C Name">c</span>
+					<span class="H Name">h</span>
+					<span class="O Name">o</span>
+					<span class="L Name">l</span>
+					<span class="A Name">a</span>
+					<span class="S Name">s</span>
+					<span id="go2Home" class="S Name">go2home</span>
+				</a>
+			</h1>
+			<nav id="navBlock">
+				<ul id="navList">
+					<li class="etsy">
+						<a href="https://www.etsy.com/shop/NeptunesPottery" target="_blank"><span></span>
+						</a>
+					</li>
+					<li class="projects">
+						<a href="projects.html"><span id="projectsLink">projects</span>
+						</a>
+					</li>
+					<li class="journal">
+						<a href="journal.html"><span id="journalLink" class="active-journal">journal</span>
+						</a>
+					</li>
+					<li class="about">
+						<a href="about.html"><span id="aboutLink">about</span>
+						</a>
+					</li>
+				</ul>
+			</nav>
+			<!--<div class="clearfix"></div>-->
+			
+		</header>
+		
+		<div id="featurette">
+			<iframe width="100%" height="auto" src="https://www.youtube.com/embed/ZXsQAXx_ao0?loop=1&playlist=ZXsQAXx_ao0&rel=0&amp;showinfo=0&autoplay=0" frameborder="0" allowfullscreen></iframe>
+		</div>
+		
+		<div id="dynamicAdd">
+		
+			
+			<form id="innerForm" method="post" action="myForm.php">
+				
+				<h3>Noto
+					<span>collect some tid-bits from the web</span>
+					
+					<ul id="contentManipulation">
+						<li></li>
+						<li class="write"><span onclick="writeNoto()"><strong>noto</strong></span></li>
+						<li class="search"><span onclick="searchIndago()"><strong>indago</strong></span></li>
+					</ul>
+					
+					<fieldset class="fieldForm submitField">
+					
+						<input id="submitButton" type="submit" name="submit" value=" " title="UPLOAD NOTO">
+						
+					</fieldset>
+					
+				</h3>
+				
+				<fieldset class="fieldForm topField">
+					<input id="name" type="text" name="username" placeholder="Title" value="" required><input id="link" type="text" name="videoLink" placeholder="Link" value=""><input id="subject" type="text" name="tags" placeholder="Tags" value"">
+								
+				</fieldset>
+				
+				<fieldset class="fieldForm messageField">
+					
+					<textarea id="message" type="text" name="message" placeholder="Type a noto here..." value="<?=$varMessage;?>" required></textarea>
+					
+				</fieldset>
+				
+			</form>
+			
+			<script>
+				
+				function searchIndago() {
+					
+					document.getElementById("innerForm").innerHTML = "<h3>INDAGO<span>search through your collection</span><ul id='contentManipulation'><li></li><li class='write'><span onclick='writeNoto()'><strong>noto</strong></span></li><li class='search'><span onclick='searchIndago()'><strong>indago</strong></span></li></ul><fieldset class='fieldForm submitField'><input id='searchButton' type='button' name='submit' value='' title='SEARCH' onclick='searchJournal()'></fieldset></h3><fieldset id='tagField' class='fieldForm topField'><input id='subject' type='text' name='tagNames' placeholder='Tags' required></fieldset>";
+					
+					document.getElementById("dynamicAdd").style.height = "15vh";
+					document.getElementById("dynamicAdd").style.minHeight = "180px";
+					document.getElementById("subject").style.cssFloat = "none";
+					document.getElementById("tagField").style.textAlign = "center";
+					document.getElementById("tagField").style.left = "-20px";
+					
+
+					
+				};
+			
+			function writeNoto() {
+				
+				document.getElementById("innerForm").innerHTML = "<h3>Noto<span>collect some tid-bits from the web</span><ul id='contentManipulation'><li></li><li class='write'><span onclick='writeNoto()'><strong>noto</strong></span></li><li class='search'><span onclick='searchIndago()'><strong>indago</strong></span></li></ul><fieldset class='fieldForm submitField'><input id='submitButton' type='submit' name='submit' value='' title='UPLOAD NOTO'></fieldset></h3><fieldset class='fieldForm topField'><input id='name' type='text' name='username' placeholder='Title' required><input id='link' type='text' name='videoLink' placeholder='Link' required><input id='subject' type='text' name='subject' placeholder='Tags'></fieldset><fieldset class='fieldForm messageField'><textarea id='message' type='text' name='message' placeholder='Type a noto here...' value='<?=$varMessage;?>'></textarea></fieldset>";
+				
+				document.getElementById("dynamicAdd").style.height = "45vh";
+				document.getElementById("dynamicAdd").style.minHeight = "250px";
+				document.getElementById("subject").style.cssFloat = "right";
+				document.getElementById("tagField").style.textAlign = "initial";
+				document.getElementById("tagField").style.left = "-5px";
+				
+			};
+			
+			function searchJournal() {
+					var search4 = document.getElementById("subject").value;
+					
+					if(search4 == 'all'){
+						$('.item.journal').removeClass("no-display");
+					}
+					
+					else if(search4 != ""){
+						search4 = "."+search4;
+						$('.item.journal').addClass("no-display");
+						$('.item.journal'+search4).removeClass("no-display");
+					}
+					
+					else{}
+
+					
+			};
+			
+		</script>
+			
+		</div>
+		
+		
+		
+			<!-- Box for the content -->
+			<div id="content" class="container clearfix masonry">
+				
+				<div id="_journal">
+					<script>
+						$('#_journal').load('mydata.html');
+					</script>
+				</div>
+
+			</div>
+			
+			<script src="js/masonry.min.js"></script>
+			<script src="js/imagesloaded.min.js"></script>
+			<script src="js/script.js"></script>
+			<script src="js/header.js"></script>
+			
+			<script>
+				
+				var $grid = $('#content').imagesLoaded( function () {
+					$grid.masonry({
+						columnWidth: 370,
+						itemSelector: '.item',
+						isFitWidth: true,
+						transitionDuration: 0,
+						isAnimated: !Modernizr.csstransitions
+						});
+				});
+			</script>
+
+	</body>
+</html>
+
+
+
+
+
+
+
+
+

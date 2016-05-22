@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="387px" height="212px" viewBox="0 0 387 212" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.7.2 (28276) - http://www.bohemiancoding.com/sketch -->
+    <title>navigation</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Home" transform="translate(-1053.000000, -763.000000)">
+            <g id="navigation" transform="translate(1053.000000, 763.000000)">
+                <path d="M387,25 L0,25 L0,40 L387,40 L387,25 Z" id="Combined-Shape" fill="#AAAAAA"></path>
+                <path d="M387,111 L0,111 L0,126 L387,126 L387,111 Z" id="Combined-Shape" fill="#AAAAAA"></path>
+                <path d="M387,197 L0,197 L0,212 L387,212 L387,197 Z" id="Combined-Shape" fill="#AAAAAA"></path>
+                <text id="WORK" font-family="PlantagenetCherokee, Plantagenet Cherokee" font-size="31" font-weight="normal" letter-spacing="0.528184175" fill="#333333">
+                    <tspan x="3" y="22">WORK</tspan>
+                </text>
+                <text id="EXPERIENCE" font-family="PlantagenetCherokee, Plantagenet Cherokee" font-size="31" font-weight="normal" letter-spacing="0.528184056" fill="#333333">
+                    <tspan x="3" y="106">EXPERIENCE</tspan>
+                </text>
+                <text id="CONNECT" font-family="PlantagenetCherokee, Plantagenet Cherokee" font-size="31" font-weight="normal" letter-spacing="0.528184056" fill="#333333">
+                    <tspan x="3" y="193">CONNECT</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

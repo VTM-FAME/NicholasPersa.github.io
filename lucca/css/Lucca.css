@@ -1,0 +1,615 @@
+
+/*GENERAL SPECIFICATIONS*/
+
+p, h1, h2, h3, h4, h6 {
+	font-family: 'Vollkorn', serif;
+	color:white;
+}
+
+body {
+	margin:0;
+	background:#222;
+	padding:0px;
+	height:100%;
+	width:100%;
+	min-width:620px;
+	font-family: 'Vollkorn', serif;
+	overflow-x:hidden;
+}
+
+
+a {
+	color: #fff;
+	z-index:120;
+	text-decoration: none;
+	-webkit-transition: all .11s linear;
+	-moz-transition: all .11s linear;
+	-o-transition: all .11s linear;
+	transition: all .11s linear;
+}
+
+a:hover {
+	color: goldenrod;
+}
+
+a p:hover {
+	color: goldenrod;
+}
+
+
+header nav li:hover {
+	box-shadow: inset 0px 5px goldenrod;
+}
+
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+
+header {
+	display:block;
+	position: fixed;
+	width: 100%;
+	min-width:620px;
+	height: 110px;
+	right:0px;
+	top: 0px;
+	font-size:20px;
+	z-index: 100;
+	background-color: black;
+}
+
+header nav {
+	position: absolute;
+	right: 0;
+	height: 100%;
+	min-width:626px;
+}
+
+header nav ul {
+	height:100%;
+}
+
+header nav li {
+	display: block;
+	height: 100%;
+	float: left;
+	background: #222;
+	padding:0% 20px 0% 20px;
+	line-height:175%;
+	-webkit-transition: all .35s linear;
+	-moz-transition: all .35s linear;
+	-o-transition: all .35s linear;
+	transition: all .35s linear;
+}
+
+header nav a {
+	display:table;
+	height:100%;
+}
+
+header nav a span {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+#logo {
+	position:relative;
+	height:100%;
+	width:118.5px;
+	float:left;
+	z-index: 110;
+}
+
+#banner {
+	margin-top:110px;
+	height:40px;
+	width:100%;
+	background:gray;
+}
+
+#banner h3 {
+	line-height:225%;
+	width:651;
+	margin:auto;
+	font-family:cursive;
+}
+
+#hours {
+	font-size:22px;
+	width:651px;
+	margin: 0 auto;
+}
+
+#topContain {
+	width:100%;
+}
+
+#midContain {
+	width:100%;
+}
+
+#loContain {
+	width:100%;
+}
+
+#footerBar {
+	margin-top:120px;
+	width:100%;
+	background:gray;
+	height:20px;
+}
+
+#businessInfo {
+	display:inline-block;
+	width:30%;
+	vertical-align:top;
+}
+
+#businessInfo p, #businessInfo h6 {
+	margin-left:10px;
+}
+
+#miniNav {
+	display:inline-block;
+	margin-left:20px;
+	width:20%;
+	vertical-align:top;
+}
+
+#miniNav h4, #miniNav h6 {
+	margin-left:10px;
+}
+
+#miniNav h4 {
+	margin-top:42px;
+}
+
+#twitter {
+	float:right;
+}
+
+/*HOME PAGE*/
+
+#city {
+	display:inline;
+}
+
+#diamond {
+	margin-top:-22.25%;
+	margin-left: 25%;
+}
+
+.midHomeContent {
+	padding-top:30px;
+	width:50%;
+	margin: auto;
+	text-align:center;
+}
+
+#number {
+	color:goldenrod;
+}
+
+#address {
+	padding-top:15px;
+}
+
+#gameDay {
+	width:55%;
+}
+
+#bucky {
+	margin-left:40%;
+}
+
+#slogan {
+	color:goldenrod;
+	padding-top:5px;
+	width:50%;
+	margin: auto;
+	text-align:center;
+	padding-bottom:30px;
+}
+
+#vote {
+	float:right;
+}
+
+#loContain h3 {
+	margin-left:10px;
+}
+
+#loContain p {
+	margin-left:10px;
+	width:550px;
+}
+
+/*ABOUT PAGE*/
+
+#midContain.about {
+	position:relative;
+	width:620px;
+	margin: auto;
+	margin-top:55px;
+}
+
+.about h1 {
+	margin-left:10px;
+	margin-bottom:0px;
+	font-family:cursive;
+}
+
+.about p {
+	line-height:1.5em;
+	text-indent:1em;
+	width:295;
+	display:inline-block;
+}
+
+.about #innerPara {
+	display:inline-block;
+	text-indent:1em;
+}
+
+.about #upperPara {
+	height:290;
+	padding-right:60px;
+}
+
+.about #lowerPara {
+	height:352;
+	padding-left:45px;
+}
+
+#painting {
+	vertical-align:top;
+	margin-top:17px;
+}
+
+#scene {
+	margin-left:5px;
+	float:left;
+	margin-top:60px;
+}
+
+
+/*CLOTHING PAGE*/
+
+#clothingHead {
+	position:relative;
+	left:-115px;
+}
+
+#paraHead {
+	padding-top:40px;
+	width:880px;
+	margin: 0 auto;
+}
+
+#midContain.clothing {
+	width:880px;
+	margin:auto;
+}
+
+#leftContain {
+	display:inline-block;
+	width:25%;
+	height:800px;
+	overflow:hidden;
+	overflow-y:scroll;
+	color:#fff;
+	border-left:6px solid gray;
+	margin-top:40px;
+}
+
+#makersList{
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+ul li.bullet {
+	background:url('../image/bulletSm.png')no-repeat left top;
+	position:relative;
+	left:13px;
+	height:35px;
+	width:160px;
+	padding-left:25px;
+}
+
+ul li p {
+	display:inline;
+	position:relative;
+}
+
+#rightContain {
+	margin-top:40px;
+	width:650px;
+	height:800px;
+	display:inline-block;
+}
+
+#makerWindow {
+	border-left: 6px #585858 solid; border-right: 6px #585858 solid;
+}
+
+#blocker {
+	position:relative;
+	background:#fff;
+	top:-800px;
+	left:75px;
+	opacity:0;
+	width:500px;
+	height:800px;
+}
+
+body::-webkit-scrollbar {
+    display: none; 
+}
+
+::-webkit-scrollbar {
+    background-color:#333;
+}
+::-webkit-scrollbar-thumb {
+	background-color:goldenrod;
+}
+
+/*SERVICES PAGE*/
+
+#midContain.services {
+	position:relative;
+	width:750px;
+	margin: auto;
+	margin-top:50px;
+}
+
+#makersList.smList {
+	position:absolute;
+	top:195px;
+	left:335px;
+}
+
+/* bullet CSS is in the clothing CSS section */
+
+.services > p {
+	text-indent:1em;
+	display:inline-block;
+}
+
+.services #innerPara {
+	display:inline-block;
+	text-indent:1em;
+}
+
+.services #upperPara {
+	width:750;
+	margin-bottom:5px;
+}
+
+.services #midPara {
+	width:290;
+	padding-right:10px;
+}
+
+.services #lowerPara {
+	width:750;
+	margin-top:5px;
+}
+
+#tools {
+	vertical-align:bottom;
+	padding-bottom:40px;
+}
+
+#tailor {
+	vertical-align:bottom;
+	padding-left:20px;
+	padding-bottom:40px;
+}
+
+/*EVENT PAGE*/
+
+#eventHead {
+	position:relative;
+	left:5px;
+}
+
+#midContain.events {
+	position:relative;
+	padding:0;
+	width:635px;
+	margin:0 auto;
+	margin-top:60
+}
+
+.event {
+	display:inline-block;
+	margin-bottom:60px;
+	width:45%;
+	border-top:2px solid gray;
+}
+
+.event h1 {
+	width:185px;
+	text-align:center;
+	margin: auto;
+	margin-bottom:0px;
+	font-family:cursive;
+}
+
+.event .readMore {
+	display:inline-block;
+	position:relative;
+	left:60%;
+	font-size:.7em;
+	color: #333;
+	padding:5 6 2 6;
+	margin-top:20px;
+	margin-bottom:15px;
+	border-radius:25px;
+	background-color:goldenrod;
+	border:1px solid goldenrod;
+}
+
+.readMore:active {
+	background-color:#99CCCC;
+	border:1px solid #99CCCC;
+}
+
+.event .social {
+	display:block;
+	margin: auto;
+	border-top:2px solid gray;
+	border-bottom:2px solid gray;
+}
+
+.event .description {
+	display:block;
+	padding-bottom:15px;
+	line-height:1.5em;
+	height:70px;
+	width:295;
+	margin: auto;
+}
+
+.event .keywords {
+	color:#99CCCC;
+}
+
+#two.event {
+	margin-left:60px;
+}
+
+
+
+/*CONTACT PAGE*/
+
+#lowerMidContain {
+	width:995px;
+	margin:auto;
+}
+
+#contactForm {
+	position:relative;
+	display:inline-block;
+	margin-bottom:60px;
+	margin-top:50px;
+	width:477px;
+	border-top:2px solid gray;
+}
+
+#contactForm h3 {
+	display:inline-block;
+	margin:0;
+	margin-bottom:10px;
+	font-family:cursive;
+}
+
+#contactForm p {
+	display:block;
+	padding-top:10px;
+	line-height:1.5em;
+	width:295;
+	margin:0;
+	margin-bottom:18;
+}
+
+#innerForm {
+	width:100%;
+	margin-bottom:5px;
+}
+
+.fieldForm {
+	width:100%;
+	border:0px none;
+	padding-left:0px;
+	padding-bottom:10px;
+	padding-top:5px;
+	margin-bottom:0px;
+}
+
+.fieldForm #Name {
+	width:33%;
+	float:left;
+	background-color:gray;
+	border:0px none;
+	color:#fff;
+	padding:2px;
+}
+
+.fieldForm #email {
+	width:33%;
+	float:left;
+	background-color:gray;
+	border:0px none;
+	margin-left:.5%;
+	color:#fff;
+	padding:2px;
+}
+
+.fieldForm #subject {
+	width:33%;
+	float:left;
+	background-color:gray;
+	border:0px none;
+	margin-left:.5%;
+	color:#fff;
+	padding:2px;
+}
+
+.fieldForm #message {
+	width:100%;
+	height:150px;
+	resize:vertical;
+	background-color:gray;
+	color:#fff;
+	border:0px none;
+}
+
+.fieldForm #submitButton {
+	background-color:goldenrod;
+	padding:10px;
+	border-radius:5px;
+	border:0;
+}
+
+#contactForm #social {
+	margin:0px;
+	padding:0;
+}
+#contactForm #businessFace {
+	position: absolute;
+	left:102.25%;
+	top:-2px;
+}
+
+::-webkit-input-placeholder {
+   color: #fff;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: #fff;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #fff;
+}
+
+:-ms-input-placeholder {  
+   color: #fff;
+}
+
+input:focus, textarea:focus {
+	background-color:goldenrod !important;
+	color:#333 !important;
+	border:0;
+	outline:none;
+}
+
+
+
+
+

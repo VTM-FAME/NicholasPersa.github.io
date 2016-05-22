@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="561px" height="242px" viewBox="0 0 561 242" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.7.2 (28276) - http://www.bohemiancoding.com/sketch -->
+    <title>Research</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Education" transform="translate(-773.000000, -362.000000)">
+            <g id="Research" transform="translate(720.000000, 314.000000)">
+                <rect id="Rectangle-49-Copy-4" x="0" y="0" width="670" height="335"></rect>
+                <text id="Built-web-experiment" font-family="CenturyGothic, Century Gothic" font-size="24.3069544" font-weight="normal" line-spacing="32" letter-spacing="0.980000019" fill="#333333">
+                    <tspan x="53" y="122">Built web experiments in html and javascript </tspan>
+                    <tspan x="53" y="154">to test the influence of language in problem </tspan>
+                    <tspan x="53" y="186">solving tasks. Used MechanicalTurk to assess </tspan>
+                    <tspan x="53" y="218">experiment with high volume. Composed </tspan>
+                    <tspan x="53" y="250">analytical paper and presented results at </tspan>
+                    <tspan x="53" y="282">seminar. (Gary Lupyan, UW Madison)</tspan>
+                </text>
+                <text id="RESEARCH" font-family="CenturyGothic, Century Gothic" font-size="27.3099995" font-weight="normal" letter-spacing="1.10107589" fill="#333333">
+                    <tspan x="262" y="69">RESEARCH</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>
