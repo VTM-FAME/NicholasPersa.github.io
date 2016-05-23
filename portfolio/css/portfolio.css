@@ -477,7 +477,7 @@ a {
 }
 
 /** Media screen size **/
-@media only screen and (max-width: 650px), screen and (orientation:landscape) {
+@media only screen and (max-width: 650px) {
 	/** Main page **/
 	#nicholasPersa {
 		width:50%;
@@ -590,6 +590,118 @@ a {
 	}
 }
 
+@media only screen and (orientation:landscape) {
+	/** Main page **/
+	#nicholasPersa {
+		width:30%;
+	}
+	#rocket {
+		width:60%;
+		top:40%;
+	}
+	#navigation {
+		width:30%;
+	}
+	
+	/** Work example page **/
+	#workTitle {
+		width:50%;
+	}
+	
+	.workPanel {
+		height:80vw;
+		border:0;
+	}
+	
+	.workText {
+		vertical-align:top;
+		width:50%;
+		height:40vw;
+		border:2px solid #444;
+		border-width:2px 0 0 0;
+		box-sizing:border-box;
+	}
+	.workTextSecond {
+		position:relative;
+		vertical-align:top;
+		left:0%;
+		width:50%;
+		height:40vw;
+		border:2px solid #444;
+		border-width:2px 0 0 0;
+		box-sizing:border-box;
+	}
+	.workImage {
+		vertical-align:top;
+		width:50%;
+		height:40vw;
+		border:2px solid #444;
+		border-width:2px 0 0 0;
+		box-sizing:border-box;
+	}
+	.workImageSecond {
+		vertical-align:top;
+		width:50%;
+		height:40vw;
+		border:2px solid #444;
+		border-width:2px 0 0 0;
+		box-sizing:border-box;
+	}
+	
+	.inactive {
+		-webkit-filter: grayscale(0%) !important; /* Chrome, Safari, Opera */
+		filter: grayscale(0%) !important;
+	}
+	
+	.selected {
+		-webkit-filter: grayscale(0%) !important; /* Chrome, Safari, Opera */
+		filter: grayscale(0%) !important;
+	}
+	
+	/** Experience section **/
+	#experienceTitle {
+		width:50%;
+	}
+	
+	/** info page nav button change **/
+	.buttonWrap {
+		width:20vw;
+	}
+	
+	.buttonWrap:nth-of-type(2){
+		left:20vw;
+		border-left:0;
+	}
+	.buttonWrap:nth-of-type(3){
+		left:40vw;
+		border-left:0;
+	}
+	
+	/** info resize **/
+	#jobs img {
+		width:100%;
+	}
+	
+	#bs img {
+		width:100%;
+	}
+
+	#phd img {
+		width:100%;
+	}
+	
+	/** Connect page **/
+	#connectPage {
+		padding-bottom:100px;
+	}
+	
+	#connectTitle {
+		width:50%;
+	}
+	#iconBox {
+		width:50%;
+	}
+}
 
 /** Grid system **/
 
