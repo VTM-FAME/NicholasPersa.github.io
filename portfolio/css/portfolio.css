@@ -477,7 +477,7 @@ a {
 }
 
 /** Media screen size **/
-@media only screen and (max-width: 650px){
+@media only screen and (max-width: 650px), screen and (orientation:landscape) {
 	/** Main page **/
 	#nicholasPersa {
 		width:50%;
