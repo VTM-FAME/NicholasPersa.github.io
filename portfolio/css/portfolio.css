@@ -590,7 +590,7 @@ a {
 	}
 }
 
-@media only screen and (orientation:landscape) {
+@media only screen and(max-height:650px) and (orientation:landscape) {
 	/** Main page **/
 	#nicholasPersa {
 		width:30%;
