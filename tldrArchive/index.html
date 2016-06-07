@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link rel="stylesheet" type="text/css" href="css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="css/tldr.css">
+	<link href="https://fonts.googleapis.com/css?family=Muli:400,300" rel='stylesheet' type='text/css'>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/touch.js"></script>
+	<script src="js/velocity.js"></script>
+	<script src="js/tldr.js"></script>
+	
+	
+	<title>Persa Journal of Things</title>
+	<meta name="author" content="Nicholas Persa">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body class="Red">
+	
+	<div id="logoContain">
+		<div class="logo"><h2>TLDR Archive</h2></div><div class="logo"><a href="https://www.patreon.com/persa"><h2>support Patreon</h2></a></div><a href="https://www.twitter.com/nicholaspersa"><img id="twitter" src="image/twitter.png"></a><img id="settings" src="image/gear.png">
+			<div id="settingsMenu">
+				<p id="close">Close</p>
+				<div id="backgroundOptions"><p>Background</p>
+					<ul>
+						<li data-option="Red">Red</li>
+						<li data-option="Green">Green</li>
+						<li data-option="Purple">Purple</li>
+						<li data-option="Pink">Pink</li>
+					</ul>
+				</div>
+				
+				<div id="articleOptions"><p>Articles</p>
+					<ul>
+						<li data-option="darkBox">Dark Theme</li>
+						<li data-option="lightBox">Light Theme</li>
+						<li data-option="tranBox">Transparent Theme</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div id="searchBar"><!--
+		--><div id="sectionSelect" class="tranBox">
+			<p>Sections</p>
+			<div id="sectionContain" class="tranBox"></div>
+		</div><!--
+	
+		--><div id="searchSelect" class="tranBox">
+			<p>Search</p>
+			<div id="searchContain" class="tranBox"></div>
+		</div><!--
+		
+		--><div id="sortBy" class="tranBox">
+			<p>Sort By</p>
+			<div id="sortContain" class="tranBox"></div>
+		</div><!--
+		
+		--><div id="tagSelect" class="tranBox">
+			<p>Tags</p>
+			<div id="tagContain" class="tranBox">
+				<div id="tagInfo" class="tranBox" data-section="tagInfo"></div>
+			</div>
+		</div><!--
+		
+	--></div>
+	
+	<div id="itemContainer">
+		<!--<a href="http://link.com"><div id="box" class="linkArticle">
+			<p class="tags">tags, tags, tags</p><h6>number</h6>
+			<h4>Section</h4><h5>title of article</h5>
+		</div></a>-->
+	
+	</div>
+</body>
+
+</html>

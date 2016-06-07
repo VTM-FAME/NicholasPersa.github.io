@@ -1,0 +1,756 @@
+
+
+/*BACKGROUND AND VIEWPORT*/
+body {
+	position:relative;
+	height:100vh;
+	overflow:scroll;
+}
+
+.Red {
+	background: url("../image/background/waveBackgroundRed.svg") no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+.Green {
+	background: url("../image/background/waveBackgroundGreen.svg") no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+.Purple {
+	background: url("../image/background/waveBackgroundPurple.svg") no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+.Pink {
+	background: url("../image/background/waveBackgroundPink.svg") no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+/*GLOBAL SETTINGS*/
+a {
+	color:black;
+    text-decoration:none;
+}
+
+p {
+	margin:0;
+}
+
+ul {
+	list-style-type: none;
+}
+
+html {
+	font-family:"Muli";
+}
+
+/*Z LAYERS*/
+.logo {z-index:150;}
+h2 {z-index:150;}
+#settings{z-index:150;}
+#settingsMenu {z-index:150;}
+#twitter{z-index:150;}
+
+#searchBar{z-index:102;}
+#sectionSelect {z-index:102;}
+#sectionContain > div {z-index:102;}
+#searchContain > div {z-index:102;}
+#sortContain  > div {z-index:102;}
+#tagContain > div {z-index:102;}
+
+#searchSelect, #sortBy, #tagSelect {z-index:101;}
+.linkArticle:hover {z-index:101;}
+
+.linkArticle{z-index:100;}
+
+#itemContainer {z-index:99;}
+
+
+/*MAIN BANNER*/
+#logoContain {
+	position:relative;
+}
+
+/*TLDR ARCHIVE*/
+.logo {
+	position:relative;
+	display:inline-block;
+	left:0;
+	width:50vw;
+	background:rgba(255,255,255,.85);
+	box-sizing:border-box;
+}
+
+h2 {
+	position:relative;
+	display:inline-block;
+	text-align:center;
+	margin:0;
+	padding:15px 15px;
+	color:rgba(0,0,0,.55);
+	white-space: nowrap;
+}
+
+/*PATREON*/
+#logoContain .logo:nth-child(2) {
+	text-align:right;
+	background:rgba(0,0,0,.85);
+}
+#logoContain .logo:nth-child(2) h2 {
+	color:rgba(255,127,80,1);
+	transition:all .5s;
+}
+
+#logoContain .logo:nth-child(2) h2:hover   {
+	opacity:.3;
+    -webkit-filter: sepia(100%); /* Chrome, Safari, Opera */
+    filter: sepia(100%);
+	transition:all 1s;
+}
+
+#twitter {
+	position:absolute;
+	left:50%;
+	top:50%;
+	-webkit-transform:translateX(-50%) translateY(-50%);
+	transform:translateX(-50%) translateY(-50%);
+	height:75%;
+	opacity:1;
+	transition:all .5s;
+}
+
+#twitter:hover {
+	opacity:.3;
+    -webkit-filter: sepia(100%); /* Chrome, Safari, Opera */
+    filter: sepia(100%);
+	transition:all 1s;
+}
+
+/*SCHEME CHANGING COGWHEEL*/
+#settings {
+	position:absolute;
+	right:0%;
+	top:100%;
+	height:40%;
+	margin-top:1vh;
+	margin-right:1vh;
+	opacity:.5;
+	transition: all .5s;
+	cursor:pointer;
+}
+
+#settings:hover {
+	-webkit-transform:rotate(180deg);
+	transform:rotate(180deg);
+	transition: all 1s;
+}
+
+#settingsMenu {
+	position:absolute;
+	display:none;
+	right:10vw;
+	top:100%;
+	width:20vw;
+	margin: 1vh 0 0 0;
+}
+
+#settingsMenu > p {
+	position:absolute;
+	left:107%;
+	top:0;
+	font-size:2.4vh;
+	margin: 0 0 0 1vh;
+	color:black;
+	border-bottom:1px solid black;
+	cursor:pointer;
+}
+
+#backgroundOptions {
+	position:relative;
+	display:block;
+	width:100%;
+	padding:10px;
+	background:rgba(0,0,0,.3);
+	backdrop-filter: blur(.65vh);
+}
+
+#backgroundOptions p {
+	color:rgba(255,255,255,.7);
+	font-size:2vw;
+}
+
+#backgroundOptions {
+	text-align:center;
+}
+
+#backgroundOptions ul{
+	padding:0;
+	margin:0;
+	text-align:left;
+}
+
+#backgroundOptions li {
+	padding-left:10px;
+	color:rgba(255,255,255,.7);
+	cursor:pointer;
+}
+
+#backgroundOptions li:hover  {
+	color:rgba(255,255,255,1)
+}
+
+#articleOptions {
+	position:relative;
+	display:block;
+	width:100%;
+	padding:10px;
+	background:rgba(0,0,0,.3);
+	padding-bottom:20px;
+	backdrop-filter: blur(.65vh);
+}
+
+#articleOptions p {
+	color:rgba(255,255,255,.7);
+	font-size:2vw;
+}
+
+#articleOptions {
+	text-align:center;
+}
+
+#articleOptions ul{
+	padding:0;
+	margin:0;
+	text-align:left;
+}
+
+#articleOptions li {
+	padding-left:10px;
+	color:rgba(255,255,255,.7);
+	cursor:pointer;
+}
+
+#articleOptions li:hover  {
+	color:rgba(255,255,255,1)
+}
+
+/*MAIN NAVIGATION BAR*/
+#searchBar {
+	position:relative;
+	left:50%;
+	width:80vw;
+	height:5vh;
+	margin-top:3vh;
+	-webkit-transform:translateX(-50%);
+	transform:translateX(-50%);
+}
+
+#sectionSelect, #searchSelect, #sortBy, #tagSelect {
+	position:relative;
+	display:inline-block;
+	height:100%;
+	width:25%;
+	text-transform:uppercase;
+	box-sizing:border-box;
+	cursor:pointer;
+}
+
+#sectionSelect {
+	border:0;
+}
+
+#sectionSelect > div, #searchSelect > div, #sortBy > div, #tagSelect > div {
+	backdrop-filter: blur(.25vh);
+}
+
+/*#searchBar > div:hover {
+	background:rgba(255,255,255,.15);
+}
+
+#searchBar > div:hover > p {
+	color:rgba(255,255,255,1);
+}*/
+
+#sectionSelect > p, #searchSelect > p, #sortBy > p, #tagSelect > p {
+	position:relative;
+	top:50%;
+	font-size:1.6vw;
+	color:rgba(255,255,255,.5);
+	text-align:center;
+	-webkit-transform:translateY(-50%);
+	transform:translateY(-50%);
+}
+
+/*SECTION DROP DOWN MENMU*/
+#sectionSelect:hover #sectionContain {
+	display:block;
+}
+
+#sectionContain {
+	position:absolute;
+	display:none;
+	top:100%;
+	width:100%;
+}
+
+#sectionContain > div {
+	position:relative;
+	display:block;
+	padding:5px;
+}
+
+/*SEARCH FIELD MENU*/
+#searchSelect:hover #searchContain {
+	display:block;
+}
+
+#searchContain {
+	position:absolute;
+	display:none;
+	top:100%;
+	width:100%;
+}
+
+#searchContain > div {
+	position:relative;
+	display:block;
+	padding:5px;
+}
+
+/*SORT ITEMS BY DROP DOWN MENU*/
+#sortBy:hover #sortContain {
+	display:block;
+}
+
+#sortContain {
+	position:absolute;
+	display:none;
+	top:100%;
+	width:100%;
+}
+
+#sortContain  > div {
+	position:relative;
+	display:block;
+	padding:5px;
+}
+
+/*TAG DROP DOWN MENU*/
+#tagContain {
+	position:absolute;
+	display:none;
+	top:100%;
+	width:100%;
+}
+
+#tagContain > div {
+	position:relative;
+	display:block;
+	padding:5px;
+}
+
+#tagInfo > div {
+	position:relative;
+	display:inline-block;
+	width:100%;
+	padding:5px;
+	box-sizing:border-box;
+}
+
+#tagSelect:hover #tagContain {
+	display:block;
+}
+
+/*FILTER BUTTONS IN DROP DOWNS*/
+.visToggle, .tagToggle {
+	position:absolute;
+	top:25%;
+	right:5%;
+	height:50%;
+	width:10%;
+	/*background: rgba(46, 177, 119, 1);*/
+	cursor:pointer;
+}
+
+.visToggle img, .tagToggle img {
+	height:100%;
+}
+
+/*CONTAINER FOR ARTICLES*/
+#itemContainer {
+	position:relative;
+	left:50%;
+	width:90vw;
+	margin:0;
+	margin-top:3vh;
+	-webkit-transform:translateX(-50%);
+	transform:translateX(-50%);
+}
+
+.linkArticle {
+	position:relative;
+	display:inline-block;
+	height:15vw;
+	width:15vw;
+	vertical-align:top;
+	box-sizing:border-box;
+	overflow:hidden;
+}
+
+.linkArticle:hover {
+	-webkit-transform: scale(1.03);
+	transform: scale(1.03);
+	border-radius:2px;
+	-webkit-transition:.25s;
+	transition:.25s;
+}
+
+.tags {
+	position:relative;
+	display:inline-block;
+	float:left;
+	text-align:left;
+	width:8.4vw;
+    word-spacing:8.4vw;
+	font-size:1.2vw;
+	font-weight:300;
+	letter-spacing:.06em;
+	line-height:1.2em;
+	margin:.3vh 0 0 .3vh;
+}
+
+h6 {/*number*/
+	display:inline-block;
+	float:right;
+	font-size:1.7vw;
+	letter-spacing:.09em;
+	margin:0;
+	padding:.3vh .3vh 0 0;
+}
+
+h4 {/*section*/
+	position:relative;
+	top:38%;
+	display:inline-block;
+	font-size:2vw;
+	letter-spacing:.09em;
+	margin:0;
+	margin-left:.5vh;
+	float:left;
+	clear:both;
+	text-transform:uppercase;
+}
+
+h5 {/*title*/
+	position:relative;
+	top:38%;
+	display:inline-block;
+	font-size:1.55vw;
+	font-weight:300;
+	letter-spacing:.06em;
+	line-height:1em;
+	margin:0;
+	margin-left:.5vh;
+	margin-top:.1vh;
+	float:left;
+	clear:both;
+}
+
+/*BACKGROUND COLOR FOR ARTICLES*/
+.games, .education, .business {
+}
+
+/*MOBILE CSS*/
+@media screen and (max-width:780px){
+	
+	.logo {
+		width:100vw;
+	}
+	
+	#twitter {
+		opacity:1;
+		height:40%;
+	}
+	
+	#settings {
+		top:5%;
+		height:30%;
+		opacity:.55;
+		-webkit-filter: brightness(0%); /* Chrome, Safari, Opera */
+		filter: brightness(0%);
+	}
+	
+	#searchBar {
+		width:60vw;
+		height:10vh;
+	}
+	
+	#sectionSelect, #searchSelect, #sortBy, #tagSelect {
+		display:block;
+		float:left;
+		height:50%;
+		width:50%;
+	}
+	
+	#sortBy {
+		border:0;
+	}
+		
+	#sectionSelect > p, #searchSelect > p, #sortBy > p, #tagSelect > p {
+		font-size:2.5vw;
+	}
+
+	#itemContainer {
+		width:81vw;
+	}
+	
+	.linkArticle {
+		height:27vw;
+		width:27vw;
+	}
+	
+	.tags {
+		font-size:2.5vw;
+	}
+	
+	h6 {/*number*/
+		font-size:3vw;
+	}
+	
+	h4 {/*section*/
+		font-size:3.5vw;
+	}
+	
+	h5 {/*title*/
+		font-size:2.7vw;
+	}
+
+}
+
+@media screen and (max-width:760px) and (orientation: landscape){
+	#searchBar {
+		width:60vw;
+		height:20vh;
+	}
+}
+
+
+/*COLOR SCHEMES FOR SETTINGS COGWHEEL*/
+
+	/*DEFAULT TRANSPARENT UI*/
+#searchBar > .tranBox {
+	background:rgba(255,255,255,.2);
+	border: 1px solid rgba(255,255,255,.2);
+	border-width:0px 0px 0px 1px;
+}
+#searchBar > .tranBox:hover {
+	background:rgba(255,255,255,.15);
+}
+#searchBar > .tranBox:hover > p {
+	color:rgba(255,255,255,1);
+}
+#searchBar > .tranBox > p {
+	color:rgba(255,255,255,.5);
+}
+
+
+#sectionContain.tranBox {
+	background:rgba(0,0,0,.17);
+}
+#sectionContain.tranBox > div {
+	color:rgba(255,255,255,.5);
+}
+#sectionContain.tranBox > div:hover {
+	color:white;
+}
+
+
+#searchContain.tranBox {
+	background:rgba(0,0,0,.17);
+}
+#searchContain.tranBox > div {
+	color:rgba(255,255,255,.5);
+}
+#searchContain.tranBox  > div:hover {
+	color:white;
+}
+
+#sortContain.tranBox {
+	background:rgba(0,0,0,.17);
+}
+#sortContain.tranBox > div {
+	color:rgba(255,255,255,.5);
+}
+#sortContain.tranBox > div:hover p {
+	color:white;
+}
+
+#tagContain.tranBox {
+	background:rgba(0,0,0,.17);
+}
+#tagContain.tranBox > div {
+	color:rgba(255,255,255,.5);
+}
+#tagInfo.tranBox > div:hover {
+	color:white;
+}
+
+.linkArticle.tranBox {
+	color:rgba(255,255,255,.68);
+	background:rgba(255,255,255,.09);
+	border:1px solid rgba(255,255,255,.1);
+}
+
+	/*LIGHT THEME UI*/
+#searchBar > .lightBox {
+	background:rgba(255,255,255,.7);
+	border: 1px solid rgba(0,0,0,.2);
+	border-width:0px 0px 0px 1px;
+}
+#searchBar > .lightBox:hover {
+	background:rgba(255,255,255,.55);
+}
+#searchBar > .lightBox:hover > p {
+	color:rgba(0,0,0,1);
+}
+#searchBar > .lightBox > p {
+	color:rgba(0,0,0,.5);
+}
+
+
+#sectionContain.lightBox {
+	background:rgba(0,0,0,.27);
+}
+#sectionContain.lightBox > div {
+	color:rgba(255,255,255,.7);
+}
+#sectionContain.lightBox > div:hover {
+	color:white;
+}
+
+
+#searchContain.lightBox {
+	background:rgba(0,0,0,.27);
+}
+#searchContain.lightBox > div {
+	color:rgba(255,255,255,.7);
+}
+#searchContain.lightBox  > div:hover {
+	color:white;
+}
+
+#sortContain.lightBox {
+	background:rgba(0,0,0,.27);
+}
+#sortContain.lightBox > div {
+	color:rgba(255,255,255,.7);
+}
+#sortContain.lightBox > div:hover p {
+	color:white;
+}
+
+#tagContain.lightBox {
+	background:rgba(0,0,0,.27);
+}
+#tagContain.lightBox > div {
+	color:rgba(255,255,255,.7);
+}
+#tagInfo.lightBox > div:hover {
+	color:white;
+}
+
+.linkArticle.lightBox {
+	color:rgba(0,0,0.5);
+	background:rgba(255,255,255,.53);
+	border:1px solid rgba(0,0,0,.1);
+}
+
+	/*DARK THEME UI*/
+#searchBar > .darkBox {
+	background:rgba(0,0,0,.35);
+	border: 1px solid rgba(255,255,255,.2);
+	border-width:0px 0px 0px 1px;
+}
+#searchBar > .darkBox:hover {
+	background:rgba(0,0,0,.2);
+}
+#searchBar > .darkBox:hover > p {
+	color:rgba(255,255,255,1);
+}
+#searchBar > .darkBox > p {
+	color:rgba(255,255,255,.5);
+}
+
+
+#sectionContain.darkBox {
+	background:rgba(255,255,255,.37);
+}
+#sectionContain.darkBox > div {
+	color:rgba(0,0,0,.5);
+}
+#sectionContain.darkBox > div:hover {
+	color:black;
+}
+
+
+#searchContain.darkBox {
+	background:rgba(255,255,255,.37);
+}
+#searchContain.darkBox > div {
+	color:rgba(0,0,0,.5);
+}
+#searchContain.darkBox  > div:hover {
+	color:black;
+}
+
+#sortContain.darkBox {
+	background:rgba(255,255,255,.37);
+}
+#sortContain.darkBox > div {
+	color:rgba(0,0,0,.5);
+}
+#sortContain.darkBox > div:hover p {
+	color:black;
+}
+
+#tagContain.darkBox {
+	background:rgba(255,255,255,.37);
+}
+#tagContain.darkBox > div {
+	color:rgba(0,0,0,.5);
+}
+#tagInfo.darkBox > div:hover {
+	color:black;
+}
+
+.linkArticle.darkBox {
+	color:rgba(255,255,255,.75);
+	background:rgba(0,0,0,.29);
+	border:1px solid rgba(255,255,255,.2);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
