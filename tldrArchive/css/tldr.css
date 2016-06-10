@@ -161,7 +161,7 @@ h2 {
 #settingsMenu {
 	position:absolute;
 	display:none;
-	right:10vw;
+	right:13vw;
 	top:100%;
 	width:20vw;
 	margin: 1vh 0 0 0;
@@ -258,6 +258,24 @@ h2 {
 	transform:translateX(-50%);
 }
 
+/* Tooltip text */
+.sectionTooltip {
+    position: absolute;
+	right:100%;
+    background-color: rgba(0,0,0,.7);
+	font-size:1vh;
+    color: #fff;
+    text-align: center;
+    padding: 5px 10px;
+    border-radius: 6px;
+    visibility: hidden;
+	z-index: 150;
+}
+
+#sectionContain p:hover .sectionTooltip {
+    visibility: visible;
+}
+
 #sectionSelect, #searchSelect, #sortBy, #tagSelect {
 	position:relative;
 	display:inline-block;
@@ -333,6 +351,10 @@ h2 {
 /*SORT ITEMS BY DROP DOWN MENU*/
 #sortBy:hover #sortContain {
 	display:block;
+}
+
+#sortBy img {
+	height:100%;
 }
 
 #sortContain {
@@ -416,6 +438,8 @@ h2 {
 	border-radius:2px;
 	-webkit-transition:.25s;
 	transition:.25s;
+	backdrop-filter: blur(.4vh);
+
 }
 
 .tags {
@@ -505,8 +529,8 @@ h5 {/*title*/
 		width:50%;
 	}
 	
-	#sortBy {
-		border:0;
+	#sortBy, #sectionSelect {
+		border:0 !important;
 	}
 		
 	#sectionSelect > p, #searchSelect > p, #sortBy > p, #tagSelect > p {
@@ -742,7 +766,39 @@ h5 {/*title*/
 	border:1px solid rgba(255,255,255,.2);
 }
 
+/*TAG HUES*/
 
+.gamesHue::before {
+	position:absolute;
+	content:" ";
+	top: 0; right: 0; bottom: 0; left: 0;
+	background-color:white;
+	opacity:.2;
+}
+
+.businessHue::before {
+	position:absolute;
+	content:" ";
+	top: 0; right: 0; bottom: 0; left: 0;
+	background-color:black;
+	opacity:.2;
+}
+
+.developmentHue::before {
+	position:absolute;
+	content:" ";
+	top: 0; right: 0; bottom: 0; left: 0;
+	background-color:white;
+	opacity:.4;
+}
+
+.educationHue::before {
+	position:absolute;
+	content:" ";
+	top: 0; right: 0; bottom: 0; left: 0;
+	background-color:black;
+	opacity:.4;
+}
 
 
 

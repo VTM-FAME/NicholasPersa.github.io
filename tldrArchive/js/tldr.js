@@ -48,18 +48,23 @@ $(document).ready(function(){
 	//console.log(articleItems[0].getInfo());
 	//console.log(articleItems[1].getInfo());
 	
+	
+	//POPULATE THE ARTICLES INTO THE CONTAINER
 	function LoadContainer (items) {
 		
 		for(var i = 0; i < items.length; i++){
 			
+			//APPEND EACH ARTICLE IN ARRAY INTO CONTAINER
 			if(items[i].getSection() != null){
-					//console.log(items[i].getSection());
-				$("#itemContainer").append('<a href="'+ items[i].getLink() +'" target="_blank"><div class="linkArticle tranBox '+ items[i].getSection() +'"><p class="tags">'+ items[i].getTags().join(" ") +'</p><h6>'+ (i+1) +'</h6><h4>'+ items[i].getSection().substring(0,2) +'</h4><h5>'+ items[i].getTitle() +'</h5></div></a>');
+				$("#itemContainer").append('<a href="'+ items[i].getLink() +'" target="_blank"><div class="linkArticle tranBox '+ items[i].getSection() +'" data-tags="'+items[i].getTags().join(" ")+'"><p class="tags">'+ items[i].getTags().join(" ") +'</p><h6>'+ (i+1) +'</h6><h4>'+ items[i].getSection().substring(0,2) +'</h4><h5>'+ items[i].getTitle() +'</h5></div></a>');
 				
+				//GET SECTIONS NAMES FOR BUILDING SECTION DROPDOWN MENU
 				if( !($.inArray(items[i].getSection(), sectionNames) > -1) )
 				{
 					sectionNames.push(items[i].getSection());
 				}
+				
+				//GET TAG NAMES FOR BUILDING TAGS DROPDOWN MENU
 				for(var j = 0; j < items[i].getTags().length; j++){
 					if( !($.inArray(items[i].getTags()[j], tagNames) > -1) )
 					{
@@ -72,31 +77,29 @@ $(document).ready(function(){
 		}
 	}
 	
-	var sectionNames = [];
-	var tagNames = [];
+	//POPULATE THE SEARCH BAR WITH SECTION AND TAG NAMES
 	function LoadSearch(sections, tags)
 	{
+		//SECTION NAMES ARE POPULATED ON ARTICLE LOAD
+		//<span class="sectionTooltip">View only</span>
 		for(var i = 0; i < sections.length; i++){
 			if(sections[i] != null){
-				$("#sectionContain").append('<div id="'+ sections[i] +'" data-section="'+ sections[i] +'"><p>'+ sections[i] +'</p><div class="visToggle" data-section="'+ sections[i] +'"><img class="button" src="image/greenButton.png"></div></div>');
+				$("#sectionContain").append('<div id="'+ sections[i] +'"><p class="genreToggle" data-type="genre" data-section="'+ sections[i] +'">'+ sections[i] +'</p><div class="visToggle"  data-type="section" data-section="'+ sections[i] +'"><img class="button" src="image/greenButton.png"></div></div>');
 			}
 		}
 		
 		//$("#searchContain").append('<div class="titleInfo" data-section="titleInfo"><p>Title</p><div class="visToggle" data-section="null"></div></div><div class="weightInfo" data-section="weightInfo"><p>Weight</p><div class="visToggle" data-section="null"></div></div>')
 		
-		$("#sortContain").append('<div class="titleInfo" data-section="titleInfo"><p>Title</p><div class="visToggle" data-section="null"><img class="button" src="image/greenButton.png"></div></div><div class="weightInfo" data-section="weightInfo"><p>Weight</p><div class="visToggle" data-section="null"><img class="button" src="image/greenButton.png"></div></div>')
+		//SORT BY IS A STATIC SEARCH FIELD, NO
+//		$("#sortContain").append('<div class="titleInfo" data-type="titleInfo"><p>Title</p><div class="visToggle" data-type="sort" data-section="titleInfo"><img class="button" src="image/grayButton.png"></div></div><div class="weightInfo" data-type="weightInfo"><p>Weight</p><div class="visToggle" data-section="weightInfo"><img class="button" src="image/grayButton.png"></div></div>')
 		
+		//TAG NAMES ARE POPULATED ON ARTICLE LOAD
 		for(var i = 0; i < tags.length; i ++){
 			if(tags[i] != null){
-				$("#tagInfo").append('<div data-tag="'+tags[i]+'"><p>'+tags[i]+'</p><div class="tagToggle" data-section="null"><img class="button" src="image/greenButton.png"></div></div>');
+				$("#tagInfo").append('<div data-tag="'+tags[i]+'"><p>'+tags[i]+'</p><div class="tagToggle" data-type="tag" data-tag="'+tags[i]+'"><img class="button" src="image/grayButton.png"></div></div>');
 			}
 		}
 	}
-	
-	//sorts by weight
-	articleItems.sort(function(a, b){
-		return b.weight - a.weight
-	});
 	
 	//sorts by section
 	articleItems.sort(function(a, b){
@@ -109,6 +112,7 @@ $(document).ready(function(){
 		}
 		return 0; //default return value (no sorting)
 	});
+	
 	//sorts by title
 	articleItems.sort(function(a, b){
 		var titleA = a.title.toLowerCase(), titleB = b.title.toLowerCase();
@@ -121,17 +125,10 @@ $(document).ready(function(){
 		return 0; //default return value (no sorting)
 	});
 	
+	//sorts by weight
 	articleItems.sort(function(a, b){
-		var tagsA = a.tags[1].toLowerCase(), tagsB = b.tags[1].toLowerCase();
-		if(tagsA < tagsB){ //sort string ascending
-			return -1;
-		}
-		if(tagsA > tagsB){
-			return 1;
-		}
-		return 0; //default return value (no sorting)
+		return b.weight - a.weight
 	});
-	
 	
 	/*var sort_by = function(field, reverse, primer){
 		var key = primer ?
@@ -145,6 +142,9 @@ $(document).ready(function(){
 			}
 	};*/
 	
+	var sectionNames = [];
+	var tagNames = [];
+	
 	LoadContainer(articleItems);
 	$("#itemContainer").empty();
 	LoadContainer(articleItems);
@@ -152,65 +152,178 @@ $(document).ready(function(){
 	LoadContainer(articleItems);
 
 	LoadSearch(sectionNames, tagNames);
-	console.log([sectionNames,tagNames]);
+	//console.log([sectionNames,tagNames]);
 	
+	//OPERATE CONTEXT OPTIONS FOR SECTION DOWN MENU
 	$(".visToggle").click(function(){
 	
+		//IF THE BUTTON HASNT BEEN CLICKED YET
 		if(!$(this).hasClass("clicked")){
-			var type = $(this).data("section");
-			var hideSection = document.getElementsByClassName(type);
-			for(var i = 0; i < hideSection.length; i++){
-				hideSection[i].style.display = "none"
+		
+			var type = $(this).data("type");
+			
+			//CONTEXT OPTION FOR SECTION DROPDOWN
+			if(type == "section")
+			{
+				var section = $(this).data("section");
+				var hideSection = document.getElementsByClassName(section);
+				for(var i = 0; i < hideSection.length; i++){
+					hideSection[i].style.display = "none";
+				}
+			
 			}
 			
 			$(this).addClass("clicked");
-			
-			//$(this).css({"background":"rgba(230, 55, 71, 1)"});
 			$(this).find("img").attr("src", "image/redButton.png");
+			
 		}
+		//IF THE BUTTON HAS BEEN CLICKED
 		else{
-			var type = $(this).data("section");
-			var showSection = document.getElementsByClassName(type);
-			for(var i = 0; i < showSection.length; i++){
-				showSection[i].style.display = "inline-block"
+			var type = $(this).data("type");
+			
+			//CONTEXT OPTION FOR SECTION DROPDOWN
+			if(type == "section")
+			{
+				var section = $(this).data("section");
+				var showSection = document.getElementsByClassName(section);
+				for(var i = 0; i < showSection.length; i++){
+					showSection[i].style.display = "inline-block";
+				}
 			}
 			
 			$(this).removeClass("clicked");
-			
-			//$(this).css({"background":"rgba(46, 177, 119, 1)"});
 			$(this).find("img").attr("src", "image/greenButton.png");
 		}
 		
 	});
 	
-	$(".tagToggle").click(function(){
+	//OPERATE CONTEXT OPTIONS FOR GENRE OF SECTION DROPDOWN MENU
+	$(".genreToggle").click(function(){
 		
-		if(!$(this).hasClass("clicked")){
-			var type = $(this).data("tag");
-			var hideSection = document.getElementsByClassName(type);
-			for(var i = 0; i < hideSection.length; i++){
-				hideSection[i].style.display = "none"
+		var section = $(this).data("section");
+		
+		//IF THE CLICKED GENRE IS NOT ACTIVE
+		if(!$("#"+section).hasClass("currentGenre"))
+		{
+			//REMOVE ALL OTHER CURRENTGENRE FROM FOCUS
+			var removeFocus = document.getElementsByClassName("currentGenre");
+			
+			for(var i = 0; i < removeFocus.length; i++)
+			{
+				$(removeFocus[i]).removeClass("currentGenre");
 			}
 			
-			$(this).addClass("clicked");
+			//HIDE ALL ARTICLES AND PRIME THE SPACE
+			var hideSection = document.getElementsByClassName("linkArticle");
+			for(var i = 0; i < hideSection.length; i++){
+				hideSection[i].style.display = "none";
+			}
 			
-			$(this).find("img").attr("src", "image/redButton.png");
+			for(var i = 0; i < sectionNames.length; i++)
+			{
+				if(sectionNames[i] != section)
+				{
+					$("#"+sectionNames[i]).find("img").attr("src", "image/redButton.png");
+					$("#"+sectionNames[i]).find(".visToggle").addClass("clicked");
+				}
+			}
+			
+			//SHOW ONLY THE GENRE OF CHOICE
+			var showSection = document.getElementsByClassName(section);
+			
+			for(var i = 0; i < showSection.length; i++){
+				showSection[i].style.display = "inline-block";
+			}
+			
+			$("#"+section).addClass("currentGenre");
+			$("#"+section).find(".visToggle").removeClass("clicked");
+			$("#"+section).find("img").attr("src", "image/greenButton.png");
+		}
+		
+		//IF THE GENRE HAS BEEN CLICKED BEFORE
+		//REVERT THE SPACE SO ALL ARTICLES ARE SHOWN
+		else {
+			var showSection = document.getElementsByClassName("linkArticle");
+			for(var i = 0; i < showSection.length; i++){
+				showSection[i].style.display = "inline-block";
+			}
+			
+			for(var i = 0; i < sectionNames.length; i++)
+			{
+				$("#"+sectionNames[i]).removeClass("currentGenre");
+				$("#"+sectionNames[i]).find("img").attr("src", "image/greenButton.png");
+				$("#"+sectionNames[i]).find(".visToggle").removeClass("clicked");
+			}
+		}
+		
+	});
+	
+	//OPERATE CONTEXT OPTIONS FOR TAG DROPDOWN MENU
+	$(".tagToggle").click(function(){
+		
+		var tagHues = document.getElementsByClassName("linkArticle");
+
+		if(!$(this).hasClass("clicked")){
+		
+			var tag = $(this).data("tag");
+			
+			$(this).addClass("clicked");
+			$(this).find("img").attr("src", "image/greenButton.png");
+			
+			for(var i = 0; i < tagHues.length; i++){
+				var tagArray = $(tagHues[i]).data("tags").split(" ");
+				
+				if( ($.inArray(tag, tagArray) > -1) )
+				{
+					$(tagHues[i]).addClass(tag+"Hue");
+				}
+			}
 
 		}
 		else{
-			var type = $(this).data("tag");
-			var showSection = document.getElementsByClassName(type);
-			for(var i = 0; i < showSection.length; i++){
-				showSection[i].style.display = "inline-block"
-			}
+		
+			var tag = $(this).data("tag");
 			
 			$(this).removeClass("clicked");
+			$(this).find("img").attr("src", "image/grayButton.png");
 			
-			$(this).find("img").attr("src", "image/greenButton.png");
+			for(var i = 0; i < tagHues.length; i++){
+				var tagArray = $(tagHues[i]).data("tags").split(" ");
+				
+				if( ($.inArray(tag, tagArray) > -1))
+				{
+					$(tagHues[i]).removeClass(tag+"Hue");
+				}
+			}
+			
 		}
 		
 	});
 	
+	//DISABLE OR ENABLE ALL TAGS
+	$("#tagAll").click(function(){
+		
+		var enabledTags = document.getElementsByClassName("tagToggle");
+		var tagHues = document.getElementsByClassName("linkArticle");
+		var tagArray = tagNames.map(function(e) {return e + "Hue"});
+
+		if($(enabledTags).filter(".clicked").length > 0)
+		{
+			for(var i = 0; i < tagHues.length; i++)
+			{
+				$(tagHues[i]).removeClass(tagArray.join(" "));
+			}
+			
+			$(enabledTags).removeClass("clicked");
+			$(enabledTags).find("img").attr("src", "image/grayButton.png");
+		}
+		else
+		{
+			$(".tagToggle").click();
+		}
+	});
+	
+	//TURN OFF/ON THE SETTINGS MENU
 	$('#settings').click(function(){
 		$('#settingsMenu').toggle();
 	});
@@ -218,11 +331,13 @@ $(document).ready(function(){
 		$('#settingsMenu').toggle();
 	});
 
+	//SETS CURRENT THEME
 	var currentTheme = "tranBox";
 	
+	//CONTROLLER FOR THEMES
 	$("li").click(function(){
 		var option = $(this).data("option");
-		
+		console
 		if(option == "Red" || option == "Green" || option == "Purple" || option == "Pink"){
 			$("body").removeClass("Red Green Purple Pink");
 			$("body").addClass(option);
@@ -274,6 +389,7 @@ $(document).ready(function(){
 				$(this).removeClass("tranBox");
 				$(this).addClass(flexSelect);
 			});
+			currentTheme = flexSelect;
 		}
 		
 		else if(bkSelect == "Red")
@@ -285,14 +401,22 @@ $(document).ready(function(){
 				$(this).removeClass("tranBox");
 				$(this).addClass(allSelect);
 			});
+			currentTheme = allSelect;
 		}
-	
+		
 	}
+	//RANDOMIZE THE SCENE ON LOAD
 	RandomizeTheme();
 	
-	//console.log(articleItems[]);
-	//console.log(articleItems.sort(sort_by("weight", true, parseInt)));
-	//console.log(articleItems.sort(sort_by("weight", false, parseInt)));
+	$(".genreToggle").hover(function(){
+	
+		$(this).siblings(".sectionTooltip").css({"visibility":"visible"});
+		
+	}, function(){
+	
+		$(this).siblings(".sectionTooltip").css({"visibility":"hidden"});
+		
+	});
 	
 	
 });
