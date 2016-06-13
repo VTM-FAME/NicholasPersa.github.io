@@ -443,7 +443,7 @@ h2 {
 }
 
 .tags {
-	position:relative;
+	position:absolute;
 	display:inline-block;
 	float:left;
 	text-align:left;
@@ -767,38 +767,14 @@ h5 {/*title*/
 }
 
 /*TAG HUES*/
-
-.gamesHue::before {
-	position:absolute;
-	content:" ";
-	top: 0; right: 0; bottom: 0; left: 0;
-	background-color:white;
-	opacity:.2;
-}
-
-.businessHue::before {
+/*
+.tagHue::before {
 	position:absolute;
 	content:" ";
 	top: 0; right: 0; bottom: 0; left: 0;
 	background-color:black;
 	opacity:.2;
-}
-
-.developmentHue::before {
-	position:absolute;
-	content:" ";
-	top: 0; right: 0; bottom: 0; left: 0;
-	background-color:white;
-	opacity:.4;
-}
-
-.educationHue::before {
-	position:absolute;
-	content:" ";
-	top: 0; right: 0; bottom: 0; left: 0;
-	background-color:black;
-	opacity:.4;
-}
+}*/
 
 
 

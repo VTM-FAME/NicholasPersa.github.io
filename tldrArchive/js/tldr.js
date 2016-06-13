@@ -39,16 +39,33 @@ $(document).ready(function(){
 	
 	var articleItems = []
 	
+	
+	//GAMES
+	articleItems.push(new Article("Arrowhead: Magicka","https://quip.com/4T9fAuWAeWx0",600,["games","development"],"games"));
+	articleItems.push(new Article("M Herman: Rules","https://quip.com/7PuuA7Yl7ufc",800,["games","development"],"games"));
+	articleItems.push(new Article("Ludwig Game Art","https://quip.com/QWw2AaVe90Kl",500,["games","design"],"games"));
+	
+	//EDUCATION
 	articleItems.push(new Article("Good Question Game","https://quip.com/iUDRAFpLiDT5",500,["games","education"],"education"));
+	
+	//DESGIN
+	articleItems.push(new Article("Transparency","https://quip.com/qXCpAojvaNs4",700,["design"],"design"));
+	articleItems.push(new Article("Creative Spaces","https://quip.com/svxFApDVhrkw",500,["design"],"design"));
+	
+	//BUSINESS
 	articleItems.push(new Article("TLDR Archive","https://quip.com/QDiJAu9KsTa7",1000,["games","business"],"business"));
 	articleItems.push(new Article("Job Description","https://quip.com/JN4LADIMxLuj",1000,["games","business"],"business"));
-	articleItems.push(new Article("Arrowhead: Magicka","https://quip.com/4T9fAuWAeWx0",600,["games","development"],"games"));
+	articleItems.push(new Article("Y Moon: Strengths","https://quip.com/E6m1AKQ4j93x",800,["business"],"business"));
 
+	//UXUI
+	articleItems.push(new Article("N Rosencranz: UXUI","https://quip.com/tuGHAxcuzvZB",500,["uxui"],"uxui"));
 	
-	//console.log(articleItems[0].getInfo());
-	//console.log(articleItems[1].getInfo());
-	
-	
+	//PSYCHOLOGY
+	articleItems.push(new Article("Memory in Design","https://quip.com/TcNoArb2Ktkp",500,["uxui","psychology"],"psychology"));
+	articleItems.push(new Article("Learning by Tests","https://quip.com/zRTIAb4zLUys",600,["psychology"],"psychology"));
+	articleItems.push(new Article("Learning with Animation","https://quip.com/a7LmAyHro4bL",600,["psychology"],"psychology"));
+	articleItems.push(new Article("Listen, then Talk","https://quip.com/M64BABTzXwTT",300,["psychology"],"psychology"));
+
 	//POPULATE THE ARTICLES INTO THE CONTAINER
 	function LoadContainer (items) {
 		
@@ -145,10 +162,7 @@ $(document).ready(function(){
 	var sectionNames = [];
 	var tagNames = [];
 	
-	LoadContainer(articleItems);
-	$("#itemContainer").empty();
-	LoadContainer(articleItems);
-	LoadContainer(articleItems);
+	//$("#itemContainer").empty();
 	LoadContainer(articleItems);
 
 	LoadSearch(sectionNames, tagNames);
@@ -259,6 +273,23 @@ $(document).ready(function(){
 	});
 	
 	//OPERATE CONTEXT OPTIONS FOR TAG DROPDOWN MENU
+	function AddClassTags () {
+	
+		var sheet = document.styleSheets[1];
+		console.log(sheet);
+		
+		for(var i = 0; i < tagNames.length; i++)
+		{
+			var color1 = Math.floor(Math.random() * 255);
+			var color2 = Math.floor(Math.random() * 255);
+			var color3 = Math.floor(Math.random() * 255);
+			var opacity = .5 * Math.random() + .2;
+			
+			sheet.insertRule("."+tagNames[i]+"Hue::before" + " {position:absolute;content:' ';top: 0; right: 0; bottom: 0; left: 0; background:rgba("+color1+","+color2+","+color3+","+opacity+");}", sheet.cssRules.length);
+		}
+	}
+	AddClassTags();
+	
 	$(".tagToggle").click(function(){
 		
 		var tagHues = document.getElementsByClassName("linkArticle");
