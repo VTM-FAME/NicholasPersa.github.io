@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="387px" height="218px" viewBox="0 0 387 218" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.8.2 (29753) - http://www.bohemiancoding.com/sketch -->
+    <title>Text Copy 4</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD" transform="translate(-1000.000000, -670.000000)">
+            <g id="Text-Copy-4" transform="translate(961.000000, 619.000000)">
+                <rect id="Rectangle-10" x="0.370364064" y="0" width="476" height="362"></rect>
+                <text id="Playing-around-in-C#" font-family="CenturyGothic, Century Gothic" font-size="24.3069544" font-weight="normal" line-spacing="33" letter-spacing="1.48000002" fill="#333333">
+                    <tspan x="39" y="134">Playing around in C# and </tspan>
+                    <tspan x="39" y="167">Unity3D. Developing the </tspan>
+                    <tspan x="39" y="200">elements for a procedural </tspan>
+                    <tspan x="39" y="233">2.5D side scroller. Please view </tspan>
+                    <tspan x="39" y="266">in Firefox or Safari</tspan>
+                </text>
+                <text id="STUDENT-PROJECT" font-family="PlantagenetCherokee, Plantagenet Cherokee" font-size="28.647482" font-weight="normal" letter-spacing="0.512068927" fill="#262626">
+                    <tspan x="90" y="71">STUDENT PROJECT</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -215,6 +215,19 @@ a {
     background-repeat: no-repeat;
     background-position: 50% 50%;
 }
+.toga{
+	background-image: url("../image/Toga.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+.TLDR{
+	background-image: url("../image/TLDR.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+
 
 .inactive {
 	-webkit-filter: grayscale(100%) !important; /* Chrome, Safari, Opera */
