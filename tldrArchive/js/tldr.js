@@ -48,6 +48,8 @@ $(document).ready(function(){
 	articleItems.push(new Article("Accomplishment","https://quip.com/QhhzAai1oAe8",800,["games","development"],"games"));
 	articleItems.push(new Article("Which Way to Win","https://quip.com/pg3cAKnl4OTb",800,["games","development"],"games"));
 	articleItems.push(new Article("Chou's Techniques","https://quip.com/PapOARw86ebe",800,["games","development"],"games"));
+	articleItems.push(new Article("Epic Purpose","https://quip.com/nuFuAeH8xBLw",800,["games","development"],"games"));
+	articleItems.push(new Article("Fit Investment","https://quip.com/bLWCA3nNGjFe",800,["games","development"],"games"));
 	
 	//EDUCATION
 	articleItems.push(new Article("Good Question Game","https://quip.com/iUDRAFpLiDT5",500,["games","education"],"education"));
