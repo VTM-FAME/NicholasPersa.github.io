@@ -89,7 +89,7 @@ h2 {z-index:150;}
 	position:relative;
 	display:inline-block;
 	left:0;
-	width:50vw;
+	width:50%;
 	background:rgba(255,255,255,.85);
 	box-sizing:border-box;
 }
@@ -457,6 +457,7 @@ h2 {
 }
 
 h6 {/*number*/
+	position:relative;
 	display:inline-block;
 	float:right;
 	font-size:1.7vw;
@@ -492,6 +493,11 @@ h5 {/*title*/
 	float:left;
 	clear:both;
 }
+
+h4 {z-index:100;}
+h5 {z-index:100;}
+h6 {z-index:100;}
+.tags {z-index:100;}
 
 /*BACKGROUND COLOR FOR ARTICLES*/
 .games, .education, .business {

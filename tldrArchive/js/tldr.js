@@ -50,6 +50,8 @@ $(document).ready(function(){
 	articleItems.push(new Article("Chou's Techniques","https://quip.com/PapOARw86ebe",800,["games","development"],"games"));
 	articleItems.push(new Article("Epic Purpose","https://quip.com/nuFuAeH8xBLw",800,["games","development"],"games"));
 	articleItems.push(new Article("Fit Investment","https://quip.com/bLWCA3nNGjFe",800,["games","development"],"games"));
+	articleItems.push(new Article("Community","https://quip.com/i0WbAA7vsTFa",800,["games","development"],"games"));
+	articleItems.push(new Article("Rare & Shiny","https://quip.com/LdPXA0CzbjmC",800,["games","development"],"games"));
 	
 	//EDUCATION
 	articleItems.push(new Article("Good Question Game","https://quip.com/iUDRAFpLiDT5",500,["games","education"],"education"));
@@ -295,7 +297,7 @@ $(document).ready(function(){
 			var color3 = Math.floor(Math.random() * 255);
 			var opacity = .5 * Math.random() + .2;
 			
-			sheet.insertRule("."+tagNames[i]+"Hue::before" + " {position:absolute;content:' ';top: 0; right: 0; bottom: 0; left: 0; background:rgba("+color1+","+color2+","+color3+","+opacity+");}", sheet.cssRules.length);
+			sheet.insertRule("."+tagNames[i]+"Hue::before" + " {position:absolute;content:' ';top: 0; right: 0; bottom: 0; left: 0; background:rgba("+color1+","+color2+","+color3+","+opacity+"); z-index:99;}", sheet.cssRules.length);
 		}
 	}
 	AddClassTags();
