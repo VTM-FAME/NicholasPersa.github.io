@@ -2,14 +2,7 @@
 
 $(document).ready(function(){
 
-	/*var documentArray = [
-	{title:"Good Question Game", link:"https://quip.com/iUDRAFpLiDT5", weight:500, tags:["games","education"], section:"education"},
-	{title:"TLDR Archive", link:"https://quip.com/QDiJAu9KsTa7",weight:1000,tags: ["games","business"], section:"business"}
-	];*/
-	
-	//console.log(documentArray);
-	//console.log(documentArray[0]);
-	
+/*
 	function Article (title, link, weight, tags, section){
 		this.title = title;
 		this.link = link;
@@ -39,7 +32,6 @@ $(document).ready(function(){
 	
 	var articleItems = []
 	
-	
 	//GAMES
 	articleItems.push(new Article("Arrowhead: Magicka","https://quip.com/4T9fAuWAeWx0",600,["development"],"games"));
 	articleItems.push(new Article("M Herman: Rules","https://quip.com/7PuuA7Yl7ufc",800,["development"],"games"));
@@ -52,6 +44,7 @@ $(document).ready(function(){
 	articleItems.push(new Article("Fit Investment","https://quip.com/bLWCA3nNGjFe",800,["development"],"games"));
 	articleItems.push(new Article("Community","https://quip.com/i0WbAA7vsTFa",800,["development"],"games"));
 	articleItems.push(new Article("Rare & Shiny","https://quip.com/LdPXA0CzbjmC",800,["development"],"games"));
+	articleItems.push(new Article("Curios & Expectations","https://quip.com/qkzuA49NDga3",800,["development"],"games"));
 	
 	//EDUCATION
 	articleItems.push(new Article("Good Question Game","https://quip.com/iUDRAFpLiDT5",500,["games"],"education"));
@@ -77,7 +70,7 @@ $(document).ready(function(){
 	articleItems.push(new Article("Learning by Tests","https://quip.com/zRTIAb4zLUys",600,["psychology"],"psychology"));
 	articleItems.push(new Article("Learning with Animation","https://quip.com/a7LmAyHro4bL",600,["psychology"],"psychology"));
 	articleItems.push(new Article("Listen, then Talk","https://quip.com/M64BABTzXwTT",300,["psychology"],"psychology"));
-
+*/
 	//POPULATE THE ARTICLES INTO THE CONTAINER
 	function LoadContainer (items) {
 		
@@ -120,7 +113,7 @@ $(document).ready(function(){
 		//$("#searchContain").append('<div class="titleInfo" data-section="titleInfo"><p>Title</p><div class="visToggle" data-section="null"></div></div><div class="weightInfo" data-section="weightInfo"><p>Weight</p><div class="visToggle" data-section="null"></div></div>')
 		
 		//SORT BY IS A STATIC SEARCH FIELD, NO
-//		$("#sortContain").append('<div class="titleInfo" data-type="titleInfo"><p>Title</p><div class="visToggle" data-type="sort" data-section="titleInfo"><img class="button" src="image/grayButton.png"></div></div><div class="weightInfo" data-type="weightInfo"><p>Weight</p><div class="visToggle" data-section="weightInfo"><img class="button" src="image/grayButton.png"></div></div>')
+		//$("#sortContain").append('<div class="titleInfo" data-type="titleInfo"><p>Title</p><div class="visToggle" data-type="sort" data-section="titleInfo"><img class="button" src="image/grayButton.png"></div></div><div class="weightInfo" data-type="weightInfo"><p>Weight</p><div class="visToggle" data-section="weightInfo"><img class="button" src="image/grayButton.png"></div></div>')
 		
 		//TAG NAMES ARE POPULATED ON ARTICLE LOAD
 		for(var i = 0; i < tags.length; i ++){
@@ -284,18 +277,53 @@ $(document).ready(function(){
 		
 	});
 	
+	//ENABLE ALL GENRES
+	$("#genreAll").click(function(){
+		
+			var showSection = document.getElementsByClassName("linkArticle");
+			for(var i = 0; i < showSection.length; i++){
+				showSection[i].style.display = "inline-block";
+			}
+			
+			for(var i = 0; i < sectionNames.length; i++)
+			{
+				$("#"+sectionNames[i]).removeClass("currentGenre");
+				$("#"+sectionNames[i]).find("img").attr("src", "image/greenButton.png");
+				$("#"+sectionNames[i]).find(".visToggle").removeClass("clicked");
+			}
+	});
+
+	// the initial seed
+	var timeSeed = new Date();
+	Math.seed = timeSeed.getTime();
+	//Math.seed = 1467926970352;
+	document.getElementById("seed").innerHTML = "Color Code: " + Math.seed;
+
+		// in order to work 'Math.seed' must NOT be undefined,
+		// so in any case, you HAVE to provide a Math.seed
+	Math.seededRandom = function(max, min) {
+		max = max || 1;
+		min = min || 0;
+		
+		Math.seed = (Math.seed * 9301 + 49297) % 233280;
+		var rnd = Math.seed / 233280;
+		
+		return min + rnd * (max - min);
+	}
+	
 	//OPERATE CONTEXT OPTIONS FOR TAG DROPDOWN MENU
 	function AddClassTags () {
 	
 		var sheet = document.styleSheets[1];
-		console.log(sheet);
+		//console.log(sheet);
+		//console.log("Color Seed: "+Math.seed);
 		
 		for(var i = 0; i < tagNames.length; i++)
 		{
-			var color1 = Math.floor(Math.random() * 255);
-			var color2 = Math.floor(Math.random() * 255);
-			var color3 = Math.floor(Math.random() * 255);
-			var opacity = .5 * Math.random() + .2;
+			var color1 = Math.floor(Math.seededRandom() * 255);
+			var color2 = Math.floor(Math.seededRandom() * 255);
+			var color3 = Math.floor(Math.seededRandom() * 255);
+			var opacity = .5 * Math.seededRandom() + .2;
 			
 			sheet.insertRule("."+tagNames[i]+"Hue::before" + " {position:absolute;content:' ';top: 0; right: 0; bottom: 0; left: 0; background:rgba("+color1+","+color2+","+color3+","+opacity+"); z-index:99;}", sheet.cssRules.length);
 		}
@@ -366,6 +394,7 @@ $(document).ready(function(){
 		}
 	});
 	
+	
 	//TURN OFF/ON THE SETTINGS MENU
 	$('#settings').click(function(){
 		$('#settingsMenu').toggle();
@@ -415,13 +444,13 @@ $(document).ready(function(){
 	
 	function RandomizeTheme () {
 		var background = [ "Green", "Red", "Purple", "Pink"];
-		var bkSelect = background[Math.round(Math.random () * 3)];
+		var bkSelect = background[Math.round(Math.seededRandom () * 3)];
 		
 		var allThemes = ["tranBox", "lightBox", "darkBox"];
-		var allSelect = allThemes[Math.round(Math.random () * 2)];
+		var allSelect = allThemes[Math.round(Math.seededRandom () * 2)];
 		
 		var flexThemes = ["lightBox", "darkBox"];
-		var flexSelect = flexThemes[Math.round(Math.random () * 1)];
+		var flexSelect = flexThemes[Math.round(Math.seededRandom () * 1)];
 		
 		$("body").removeClass("Red Green Purple Pink");
 		$("body").addClass(bkSelect);

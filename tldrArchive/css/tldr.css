@@ -161,7 +161,7 @@ h2 {
 #settingsMenu {
 	position:absolute;
 	display:none;
-	right:13vw;
+	right:5.5vw;
 	top:100%;
 	width:20vw;
 	margin: 1vh 0 0 0;
@@ -176,6 +176,14 @@ h2 {
 	color:black;
 	border-bottom:1px solid black;
 	cursor:pointer;
+}
+
+#close {
+	position:relative;
+	height:3vh;
+	width:3vh;
+	background:red;
+	border-radius:100px;
 }
 
 #backgroundOptions {
@@ -412,12 +420,29 @@ h2 {
 }
 
 /*CONTAINER FOR ARTICLES*/
+#colorVersion {
+	position:relative;
+	display:inline-block;
+	left:50%;
+	margin-bottom:3vh;
+	-webkit-transform:translateX(-50%);
+	transform:translateX(-50%);
+}
+
+#colorVersion p {
+    color: rgba(0,0,0,.3);
+    background: rgba(0,0,0,.1);
+    padding: 5px 20px;
+    border-radius: 100px;
+}
+
 #itemContainer {
 	position:relative;
 	left:50%;
 	width:90vw;
 	margin:0;
 	margin-top:3vh;
+	margin-bottom:3vh;
 	-webkit-transform:translateX(-50%);
 	transform:translateX(-50%);
 }
@@ -521,6 +546,22 @@ h6 {z-index:100;}
 		opacity:.55;
 		-webkit-filter: brightness(0%); /* Chrome, Safari, Opera */
 		filter: brightness(0%);
+	}
+	
+	#settingsMenu {
+		left:50%;
+		width:60vw;
+		margin: 1vh 0 0 0;
+		-webkit-transform:translateX(-50%);
+		transform:translateX(-50%);
+	}
+	
+	#settingsMenu p {
+		font-size:3.9vh;
+	}
+	
+	#settingsMenu li {
+		font-size:3vh;
 	}
 	
 	#searchBar {
