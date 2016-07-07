@@ -564,6 +564,10 @@ h6 {z-index:100;}
 		font-size:3vh;
 	}
 	
+	#backgroundOptions, #articleOptions {
+		background:rgba(0,0,0,.8);
+	}
+	
 	#searchBar {
 		width:60vw;
 		height:10vh;
